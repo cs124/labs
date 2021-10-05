@@ -40,8 +40,8 @@ Answer the questions below given the sets above.
      C = {+, -}
      P(c | "pretty enjoyable plot") ∝ P(c) * P ("pretty enjoyable plot" | c)
      = P(c) * P(pretty | c) * P(enjoyable | c) * P(plot | c) ~= P(c) * P(pretty | c) * P(plot | c), 'enjoyable' is unknown
-     P( - | "pretty enjoyable plot") = (2/3) * (2/17) * (2/17) = 0.009227
-     P( + | "pretty enjoyable plot") = (1/3) * (2/12) * (1/12) = 0.004629
+     P( - | "pretty enjoyable plot") ∝ (2/3) * (2/17) * (2/17) = 0.009227
+     P( + | "pretty enjoyable plot") ∝ (1/3) * (2/12) * (1/12) = 0.004629
      P( - | "pretty enjoyable plot") is greater, so the test set sentence is classified as class negative. 
      ```
 
