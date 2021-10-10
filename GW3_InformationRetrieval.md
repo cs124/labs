@@ -1,4 +1,4 @@
-# Group Exercises on Information Retrieval
+# Week 4: Group Exercises on Information Retrieval
 
 1. An IR system returns eight relevant documents and ten non-relevant documents. There are a total of twenty relevant documents in the collection. 
 What is the precision of the system on this search, and what is its recall?
