@@ -18,7 +18,7 @@ given these counts for the (only) 3 documents in the corpus:
    Do this by computing the tf-idf cosine between the query and Doc1, the cosine between the query and Doc2, and the cosine between the query and Doc3, 
 and choose the highest value. **You should use the ltc.lnn weighting variation (remember that's ddd.qqq), the same weighting you will use for PA3,** using the following table:
 
-   ![Weighting variations table](/images/cosinechart.jpeg)
+   ![Weighting variations table](cosinechart.jpeg)
 
    **Hint:**
    - Logs are in base 10!
