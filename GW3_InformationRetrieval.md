@@ -22,7 +22,7 @@ and choose the highest value. **You should use the ltc.lnn weighting variation (
 
    **Hint:**
    - Logs are in base 10!
-   - It might help to look at this [useful handout](http://web.stanford.edu/class/cs124/lec/CS124_IR_Handout.pdf)
+   - It might help to look at this [useful handout](CS124_IR_Handout.pdf)
 
 4. **Privacy** in IR: Personalization is an important topic in information retrieval; after all, we'd like our search results to be relevant to us and our interests.
  However, as with many other tasks involving people's personal data, this has ethical implications. Do the following in your group:
