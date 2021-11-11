@@ -8,7 +8,7 @@ After each of the following questions, we will report back some of your results 
 Let's evaluate the features of the dialogue agents on your devices (`Siri`, `Google Now`, `Alexa`, `Cortana`, etc.) or chatbots online like `XiaoIce`, perhaps keeping in mind the rubric for `PA6`. 
 Use voice to write text or emails, add a calendar appointment, get recommendations for a business, or use text to talk to a chatbot, perhaps trying out systems in other languages like `XiaoIce`! 
 
-* Write down some great errors or issues that you'd like to post in polleverywhere! 
+* Write down some great errors or issues that you'd like to post in [polleverywhere](https://pollev.com/danjurafsky451)! 
   Can you characterize their causes? 
   For example did they fail because of speech recognition (the wrong words were recognized) or natural language understanding (the words were right, but the system still didn't understand), or is the problem in the recommendation engine? 
 * What does the system do if it is unsure about what you said? What seems to be the confirmation strategy? (e.g., explicit vs. implicit)? 
