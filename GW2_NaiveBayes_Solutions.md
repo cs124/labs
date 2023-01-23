@@ -28,10 +28,10 @@ Answer the questions below given the sets above.
      ```
      |V| = 9, n- = 8, n+ = 3
      P(-) = 2/3, P(+) = 1/3
-     P(any_vocab_word_in_-_sentence | - ) = (1 + 1) / (8 + 9) = 2/17, e.g. P('boring' | - )
-     P(any_vocab_word_not_in_-_sentence | - ) = (0 + 1) / (8 + 9) = 1/17, e.g. P('interesting' | - )
-     P(any_vocab_word_in_+_sentence | + ) = (1 + 1) / (3 + 9) = 2/12, e.g. P('movie' | + )
-     P(any_vocab_word_not_in_+_sentence | + ) = (0 + 1) / (3 + 9) = 1/12, e.g. P('boring' | + )
+     P(any_vocab_word_in_-_sentence | - ) = (1 + 1) / (n- + |V|) = (1 + 1) / (8 + 9) = 2/17, e.g. P('boring' | - )
+     P(any_vocab_word_not_in_-_sentence | - ) = (0 + 1) / (n- + |V|) = (0 + 1) / (8 + 9) = 1/17, e.g. P('interesting' | - )
+     P(any_vocab_word_in_+_sentence | + ) = (1 + 1) / (n+ + |V|) = (1 + 1) / (3 + 9) = 2/12, e.g. P('movie' | + )
+     P(any_vocab_word_not_in_+_sentence | + ) = (0 + 1) / (n+ + |V|) = (0 + 1) / (3 + 9) = 1/12, e.g. P('boring' | + )
      ```
 
   2. Then compute whether the sentence in the test set is of class positive or negative (you may need a computer for this final computation).
