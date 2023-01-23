@@ -58,7 +58,7 @@ Answer the questions below given the sets above.
      Note that words that do not appear in the training set are unk and we just pretend they aren't there, and they are not included in the vocab. 
      ```
 
-## Part 2: Conceptual Problems
+## Part 2: Ethics and Conceptual Problems
 
    5. Ethics Question 1: For discussion! 
       
@@ -72,13 +72,5 @@ Answer the questions below given the sets above.
       So a complex feature might just occur accidentally in the training set, but will give it a very high probability.
       Such a rare `accidental' feature might never occur in the test set, or if it does might simply randomly occur with the other class. 
       ```
-
-   7. Go to the Sentiment demo at http://nlp.stanford.edu:8080/sentiment/rntnDemo.html. 
-      Come up with 5 sentences that the classifier gets wrong. 
-      Can you figure out what is causing the errors?
-      
-      ```
-      One example that the classifier gets wrong: "I don't not like you." The double negation is interpreted incorrectly.
-      ```
    
-   8. Ethics Question 2: For discussion!
+   7. Ethics Question 2: For discussion!
