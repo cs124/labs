@@ -95,5 +95,5 @@ Answer the questions below given the sets above.
       Can you figure out what is causing the errors?
       Once you are done, we will discuss any particularly interesting sentiment examples as a class!
       
-      Submit your 5 sentences here:
+      Submit your 5 sentences here for extra credit: https://forms.gle/57okKzZzWeijP4RL7
       
