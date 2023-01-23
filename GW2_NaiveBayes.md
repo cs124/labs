@@ -87,7 +87,7 @@ Answer the questions below given the sets above.
 
       Once you are done, we will discuss as a class!
       
-## Part 3: Extra Credit Conceptual Problems
+## Part 3: Extra Credit 
 
 
    8. Now go to the Sentiment demo at https://demo.allennlp.org/sentiment-analysis/glove-sentiment-analysis. 
