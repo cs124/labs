@@ -29,7 +29,7 @@ Answer the questions below given the sets above.
   4. Why do you add |V| to the denominator of add-1 smoothing, instead of just counting the words in one class?
 
 
-## Part 2: Conceptual Problems
+## Part 2: Ethics and Conceptual Problems
 
   5. For the following problem, please choose a group facilitator/representative who will also take notes on your discussion. 
      When we come back to the lecture room, I will call for volunteer groups to report back to the whole class on your thoughts or results, and so I will call some of the representatives to the stage.
@@ -64,8 +64,14 @@ Answer the questions below given the sets above.
         It may be helpful to bring up cases you've seen in the news relating to privacy or fairness and machine learning.
 
       Once you are done, we will discuss as a class!
+      
+   6. Choose a different group facilitator/representative. 
+      Then first do this short ML conceptual problem: It is sometimes the case that more complex features (like trigrams or bigrams) perform better than simple features (like unigrams) on the **training** set, but perform worse than simple features on the **test** set. 
+      This is a particular case of the phenomenon called `overfitting` in machine learning. 
+      Discuss why this might be. 
+      Can you create a tiny training set with 2 3-word documents and a test set with one document for which this overfitting situation holds?
    
-   6. Choose a third group facilitator/representative. 
+   7. Choose a third group facilitator/representative. 
       Now let's continue thinking about data sources. 
       Our data sources are the basis of all of our optimization problems. 
       But who are we optimizing for? 
@@ -83,15 +89,8 @@ Answer the questions below given the sets above.
       
 ## Part 3: Extra Credit Conceptual Problems
 
-   7. Choose a different group facilitator/representative. 
-      Then first do this short ML conceptual problem: It is sometimes the case that more complex features (like trigrams or bigrams) perform better than simple features (like unigrams) on the **training** set, but perform worse than simple features on the **test** set. 
-      This is a particular case of the phenomenon called `overfitting` in machine learning. 
-      Discuss why this might be. 
-      Can you create a tiny training set with 2 3-word documents and a test set with one document for which this overfitting situation holds?
-      
-      Submit your tiny training set here: 
 
-   8. Now go to the Sentiment demo at http://nlp.stanford.edu:8080/sentiment/rntnDemo.html. 
+   8. Now go to the Sentiment demo at https://demo.allennlp.org/sentiment-analysis/glove-sentiment-analysis. 
       Come up with 5 sentences that the classifier gets wrong. 
       Can you figure out what is causing the errors?
       Once you are done, we will discuss any particularly interesting sentiment examples as a class!
