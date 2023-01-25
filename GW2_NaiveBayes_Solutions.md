@@ -48,7 +48,7 @@ Answer the questions below given the sets above.
   3. Would using binary multinomial Naive Bayes change anything?
 
      ```
-     No, using binary multinomial NB would not change anything - there are no duplicate vocabulary items within the same class. 
+     No, using binary multinomial NB would not change anything - there are no duplicate vocabulary items within the same document. 
      ```
 
   4. Why do you add |V| to the denominator of add-1 smoothing, instead of just counting the words in one class?
