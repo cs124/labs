@@ -47,8 +47,10 @@ Discuss the following questions:
    2. Go back to All search results. Using any search engine, type in the queries "why coffee is good for you" and "why coffee is bad for you". Explore other variations on this query, like: "is coffee good for you" and "is coffee bad for you". Does a system have a responsibility to give us unbiased information when we ourselves are biased? What are the potential impacts of this kind of bias in search results? 
    3. Clearly, bias in IR is an unsolved problem! If you were the CEO of a search engine company and wanted to reduce bias, how would you modify the algorithm? Some things you can think about: are there any other factors the algorithm should consider besides the similarity of the query to the retrieved document? How should it detect and handle opinionated queries? Feel free to be creative in your responses!
 
-After you have brainstormed your own ideas, you can check out these additional resources on what search engines are doing to reduce bias:
-
+      After you have brainstormed your own ideas, you can check out these additional resources on what search engines are doing/have attempted doing to reduce bias:
+   https://www.theverge.com/2022/5/11/23064883/google-ai-skin-tone-measure-monk-scale-inclusive-search-results
+   https://blogs.bing.com/search-quality-insights/february-2018/toward-a-more-intelligent-search-bing-multi-perspective-answers
+   
       You can check out these additional resources if you are looking for more readings about the impact of advertising, media, and search results 
 on the perception of different identity groups.
       - https://www.tandfonline.com/doi/abs/10.1080/00913367.1990.10673179
