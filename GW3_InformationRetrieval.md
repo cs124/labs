@@ -18,7 +18,8 @@ and choose the highest value. **You should use the ltc.lnn weighting variation (
    ![Weighting variations table](cosinechart.jpeg)
 
    **Note that logs are in base 10.**
-   **Hint:**
+   
+   **Hints:**
    - If you are confused about what to do, please read through this [useful handout](CS124_IR_Handout.pdf)!
    - You should only need to calculate IDF once per term
    - To help you compute tf-idf cosines, you should make a table for the query and each document similar to slide 56 of [this deck], but note that you are using the ltc.lnn variation, not the variation shown on the slide.
