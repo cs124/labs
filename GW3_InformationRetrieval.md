@@ -22,7 +22,7 @@ and choose the highest value. **You should use the ltc.lnn weighting variation (
    **Hints:**
    - If you are confused about what to do, please read through this [useful handout](CS124_IR_Handout.pdf)!
    - You should only need to calculate IDF once per term
-   - To help you compute tf-idf cosines, you should make a table for the query and each document similar to slide 56 of [this deck], but note that you are using the ltc.lnn variation, not the variation shown on the slide.
+   - To help you compute tf-idf cosines, you should make a table for the query and each document similar to slide 56 of [this deck](https://spark-public.s3.amazonaws.com/cs124/slides/ir-2.pdf), but note that you are using the ltc.lnn variation, not the variation shown on the slide.
 
 3. **Privacy** in IR: Personalization is an important topic in information retrieval; after all, we'd like our search results to be relevant to us and our interests.
  However, as with many other tasks involving people's personal data, this has ethical implications. Do the following in your group:
