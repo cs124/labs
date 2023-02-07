@@ -36,9 +36,8 @@ Discuss the following questions:
 
 After you have brainstormed your own ideas, you can check out these additional resources on what search engines are doing/have attempted doing to reduce bias:
 
-      - https://www.theverge.com/2022/5/11/23064883/google-ai-skin-tone-measure-monk-scale-inclusive-search-results
-      
-      - https://blogs.bing.com/search-quality-insights/february-2018/toward-a-more-intelligent-search-bing-multi-perspective-answers
+         - https://www.theverge.com/2022/5/11/23064883/google-ai-skin-tone-measure-monk-scale-inclusive-search-results 
+         - https://blogs.bing.com/search-quality-insights/february-2018/toward-a-more-intelligent-search-bing-multi-perspective-answers
    
 You can check out these additional resources if you are looking for more readings about the impact of advertising, media, and search results 
 on the perception of different identity groups.
