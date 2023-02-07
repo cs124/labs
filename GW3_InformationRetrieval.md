@@ -47,14 +47,13 @@ on the perception of different identity groups.
 
 4. **Privacy** in IR: Personalization is an important topic in information retrieval; after all, we'd like our search results to be relevant to us and our interests.
  However, as with many other tasks involving people's personal data, this has ethical implications. Do the following in your group:
+ 
    a. Google "marguerite". What is the first search result? Would you expect another person - say, someone in New York - to get the same search result? 
 Discuss any incidents in which your group members have had search engines return such examples of personalization based on location, search and browsing history, or social media?
   
-   b. Discuss these questions:
-   
-      i. What are potential benefits and risks of getting personalized searches? Is it okay that search engines are using our data to personalize our searches? Or is there a limit to what kind of data should be okay for search engines to use? Does any of your group use anonymous search engines to avoid this?
+   b. Discuss: What are potential benefits and risks of getting personalized searches? Is it okay that search engines are using our data to personalize our searches? Or is there a limit to what kind of data should be okay for search engines to use? Does any of your group use anonymous search engines to avoid this?
       
-      ii. In 2009, the French government signed the "Charter of good practices on the right to be forgotten on social networks and search engines." 
+   c. Discuss: In 2009, the French government signed the "Charter of good practices on the right to be forgotten on social networks and search engines." 
       Do you think people should have the right to remove information about themselves from the web (the right to be forgotten)? 
 Do you think Google should be required to remove information about an individual upon request?
 
