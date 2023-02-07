@@ -48,7 +48,9 @@ on the perception of different identity groups.
 Discuss any incidents in which your group members have had search engines return such examples of personalization based on location, search and browsing history, or social media?
   
    2. Discuss these questions:
+   
       i. What are potential benefits and risks of getting personalized searches? Is it okay that search engines are using our data to personalize our searches? Or is there a limit to what kind of data should be okay for search engines to use? Does any of your group use anonymous search engines to avoid this?
+      
       ii. In 2009, the French government signed the "Charter of good practices on the right to be forgotten on social networks and search engines." 
       Do you think people should have the right to remove information about themselves from the web (the right to be forgotten)? 
 Do you think Google should be required to remove information about an individual upon request?
