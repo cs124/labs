@@ -3,8 +3,8 @@
 <sub><sup>*created by deveshi buch & alisa wang, cs124 staff team, winter 2023*</sup></sub>
 
 ## Optional Readings
-* ChatGPT: [an LLM timeline](https://www.technologyreview.com/2023/02/08/1068068/chatgpt-is-everywhere-heres-where-it-came-from/)
-* Generative AI: [opportunities](https://www.forbes.com/sites/forrester/2023/01/19/generative-ai-like-chatgpt-wont-destroy-creativityitll-save-it/), [challenges](https://www.forbes.com/sites/lanceeliot/2023/01/03/sinister-prompting-of-generative-ai-chatgpt-such-as-email-scamming-and-the-coding-of-malware-is-sparking-ire-by-ai-ethics-and-ai-law/), and [policy](https://www.brookings.edu/blog/techtank/2023/02/21/early-thoughts-on-regulating-generative-ai-like-chatgpt/)
+* ChatGPT: [an LLM timeline](https://www.technologyreview.com/2023/02/08/1068068/chatgpt-is-everywhere-heres-where-it-came-from/) and [Ted Chiang on ChatGPT](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+* Generative AI: [opportunities](https://hbr.org/2022/11/how-generative-ai-is-changing-creative-work), [challenges](https://www.recordedfuture.com/i-chatbot), and [policy](https://www.brookings.edu/blog/techtank/2023/02/21/early-thoughts-on-regulating-generative-ai-like-chatgpt/)
 * AI safety and ethics: [ethics of AI chatbots](https://www.wired.com/story/chatbots-got-big-and-their-ethical-red-flags-got-bigger/) and [making ChatGPT safer](https://www.technologyreview.com/2023/02/21/1068893/how-openai-is-trying-to-make-chatgpt-safer-and-less-biased/)
 
 ## Part 0: Setup 
