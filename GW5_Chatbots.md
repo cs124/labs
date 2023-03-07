@@ -37,4 +37,4 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 
 2. You collect two new ratings from User X. User X gives Food 2 a rating of 2 and Food 4 a rating of 5. Update the table to reflect the new ratings from User X. 
 
-3. Should you recommend food 1 or food 3 to User X?
+3. Should you recommend Food 1 or Food 3 to User X?
