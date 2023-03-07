@@ -1,10 +1,4 @@
 # Week 9: Group Exercises on Chatbots/Dialogue Agents, and Recommendation Engines
-<<<<<<< HEAD
-=======
-
-Your goal today is to think deeply about both chatbot implementation and the ethical issues around both chatbots and computer-mediated dialogue in general. 
-After each of the following questions, we will report back some of your results to the whole room, so make note of your group's interesting results. 
->>>>>>> 48a3152d141e422c719fea7161152a37e7ad862e
 
 ## Part 1: Dialogue Agent Performance
 
