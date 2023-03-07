@@ -29,7 +29,7 @@ You decide to move forward with a simplified version of item-item collaborative 
 Each cell in the table contains either a rating from 1 to 5 or no rating. 
 
 
-1. Binarize the values in the dataset. Convert the values to +1 (like), 0 (no rating), and -1 (dislike). Ratings 3 to 5 correspond to liking and ratings 1 to 0 correspond to dislike. 
+1. Binarize the values in the dataset. Convert the values to +1 (like), 0 (no rating), and -1 (dislike). Ratings 3 to 5 correspond to liking and ratings 1 to 2 correspond to dislike. 
 
 
 |        | User 1 | User 2 | User 3 | User 4 |
