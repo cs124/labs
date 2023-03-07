@@ -3,8 +3,8 @@
 <sub><sup>*created by deveshi buch & alisa wang, cs124 staff team, winter 2023*</sup></sub>
 
 ## Optional Readings
-* ChatGPT: [an LLM timeline](https://www.technologyreview.com/2023/02/08/1068068/chatgpt-is-everywhere-heres-where-it-came-from/)
-* Generative AI: [opportunities](https://www.forbes.com/sites/forrester/2023/01/19/generative-ai-like-chatgpt-wont-destroy-creativityitll-save-it/), [challenges](https://www.forbes.com/sites/lanceeliot/2023/01/03/sinister-prompting-of-generative-ai-chatgpt-such-as-email-scamming-and-the-coding-of-malware-is-sparking-ire-by-ai-ethics-and-ai-law/), and [policy](https://www.brookings.edu/blog/techtank/2023/02/21/early-thoughts-on-regulating-generative-ai-like-chatgpt/)
+* ChatGPT: [an LLM timeline](https://www.technologyreview.com/2023/02/08/1068068/chatgpt-is-everywhere-heres-where-it-came-from/) and [Ted Chiang on ChatGPT](https://www.newyorker.com/tech/annals-of-technology/chatgpt-is-a-blurry-jpeg-of-the-web)
+* Generative AI: [opportunities](https://hbr.org/2022/11/how-generative-ai-is-changing-creative-work), [challenges](https://www.recordedfuture.com/i-chatbot), and [policy](https://www.brookings.edu/blog/techtank/2023/02/21/early-thoughts-on-regulating-generative-ai-like-chatgpt/)
 * AI safety and ethics: [ethics of AI chatbots](https://www.wired.com/story/chatbots-got-big-and-their-ethical-red-flags-got-bigger/) and [making ChatGPT safer](https://www.technologyreview.com/2023/02/21/1068893/how-openai-is-trying-to-make-chatgpt-safer-and-less-biased/)
 
 ## Part 0: Setup 
@@ -42,13 +42,6 @@ Creating an account and using ChatGPT is NOT a requirement for this group work! 
 
 ## Part 1: The Good, The Bad, and The ChatGPT
 
-<!-- Learning goal:
-> learn about different capabilities, or the lack thereof
-> creative prompt shows generative capabilities
-> incorrect-ness shows where models like these can fall short in terms of actual reasoning
-> memeness shows how human-like / "relatable" it can be as something that is trained on human-generated text
-> bias prompt illustrates "garbage in, garbage out" idea (not that the training data is garbage! But just that if there is any garbage in the training data, which there definitely is, then it will make itself evident in the model output.) -->
-
 So what actually is ChatGPT? From the [FAQs](https://help.openai.com/en/articles/6783457-chatgpt-faq) on OpenAI's website:
 
 > ChatGPT is fine-tuned from GPT-3.5, a language model trained to produce text. ChatGPT was optimized for dialogue by using Reinforcement Learning with Human Feedback (RLHF) - a method that uses human demonstrations to guide the model toward desired behavior.
@@ -83,22 +76,13 @@ Time to see what ChatGPT is capable of! Here are some examples where ChatGPT...
     * *Option 2 (analyzing ChatGPT):* Find another example (or analyze the example above) where ChatGPT is biased. What are some causes of ChatGPT being biased? How could the model be changed to fix this?
     * *Discuss:* Why might this bias have come up? What could those designing systems like ChatGPT do about it?
 
-<!-- Can people submit pictures in pollev? Then they can submit screenshots of the conversations or something and people can upvote their favorites? Or maybe we create a google slides presentation and on each slide each group will put screenshots of one of the conversations they want to share in one of those categories so everyone can scroll through them and then we have a big slideshow of chatgpt prompts? -->
-
 Once you are done, submit your favorite example from ChatGPT or an insight from your discussion to this Google form: https://forms.gle/EctqgfmXs2ZdWMEp6 
 
 We will discuss your submissions as a class.
 
-<!-- One idea -- allocate parts of the room to each of the 4 things-->
-
 <br>
 
 ## Part 2: ChatGPT, Wearer of Many Hats
-
-<!-- Learning goal:
->> think about the benefits and drawbacks of using ChatGPT for various tasks. Consider if AI can be ethically used in different roles. 
-
-<!-- [Brainstorm with groups, then have 2-3 groups share out.] -->
 
 As the use of ChatGPT has become more widespread, it has been applied to many different areas. Applications range from [writing research journal article abstracts](https://www.nature.com/articles/d41586-023-00056-7) to [writing political speechs delivered in Congress](https://www.theverge.com/2023/1/27/23574000/first-ai-chatgpt-written-speech-congress-floor-jake-auchincloss). This, of course, makes us all wonder if LLMs will take over jobs and tasks itself.
 
@@ -124,16 +108,6 @@ Here are some roles that might use ChatGPT:
 
 ## Part 3: Designing Ethical LLMs
 
-<!-- Learning goal:
->> think about embedding ethical principles within the overall design process
->> how do we prepare for unintended consequences, and use cases beyond what is intended?	
->> how do you make an LLM that works, works well, and works safely?
-
-
->> ethical use (like the cheating stuff)
->> ethical design (sourcing good data, making sure the model is created with data that is sourced with permission from authors, how hard it is to do that, opting out?)
->> ethical development (who is behind all the hard work to keep LLMs safe?)
--->
 ChatGPT is built from lots, and lots, and lots of training data. Ultimately, it's a model that generates outputs based on the inputs it is trained on. Just like there's a lot of great, useful training data out there, there is also a lot of garbage. Unfortunately, this means that ChatGPT output can reflect some of that garbage: "garbage in, garbage out" is a common way to describe this. If a model is trained on data that reflects harmful biases, it can replicate those biases in its output, as we've seen in some examples in class.
 
 It also turns out that making models safer and more ethical comes at a cost: someone has to go through that harmful content, filter it out, and make sure the model doesn't spew bad things. For example, see this article about how [OpenAI used Kenyan workers on less than $2 per hour to make ChatGPT less toxic](https://time.com/6247678/openai-chatgpt-kenya-workers/).
@@ -156,7 +130,7 @@ How do we create an LLM that works accurately, works well, and works safely? We 
     * Who is behind the hard work of keeping LLMs safe?
     * How can LLMs be maintained and improved?
 
-**Your Task:** Imagine you're working for GiraffeSkiAI and you're pitching a new LLM. Define three principles you would use to make your LLM ethical:
+**Your Task:** Imagine you're working for OneTwoFourAI and you're pitching a new LLM. Define three principles you would use to make your LLM ethical:
 
 1.__________________
 
