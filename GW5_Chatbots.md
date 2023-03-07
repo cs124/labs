@@ -2,7 +2,7 @@
 
 ## Part 1: Dialogue Agent Performance
 
-Let's evaluate the features of the dialogue agents on your devices (`Siri`, `Google Now`, `Alexa`, `Cortana`, etc.) or online chatbots, perhaps keeping in mind the rubric for `PA6`. 
+Let's evaluate the features of the dialogue agents on your devices ([Siri](https://support.apple.com/guide/iphone/use-siri-iph83aad8922/ios), [Google Now](https://assistant.google.com/), [Alexa](https://alexa.amazon.com/), [Cortana](https://www.microsoft.com/en-us/cortana), etc.) or online chatbots, perhaps keeping in mind the rubric for `PA7`. 
 Use voice to write text or emails, add a calendar appointment, get recommendations for a business, or use text to talk to a chatbot! If you know another language try out systems in other languages like `XiaoIce`! 
 
 * Write down some great errors or issues that you'd like to post in [polleverywhere](https://pollev.com/danjurafsky451)! 
