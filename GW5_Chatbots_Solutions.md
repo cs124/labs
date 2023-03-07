@@ -49,7 +49,7 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 | Food 3 |        | +1     |        | -1     |        |
 | Food 4 | -1     |        | +1     | -1     | +1     |
 
-3. Use the formula $r_{xi} = \sum_{j\in(f1, f2)} s_{ij}r_{xj}$ to find the best food to recommend. Your colleague found that $r_{x1} = 0$ and that $r_{x2} = -1.8660$. You will calculate $r_{x3}$ and $r_{x4}$. What food would you recommend to User X?
+3. Should you recommend Food 1 or Food 3 to User X?
 
 Food 1:
 
