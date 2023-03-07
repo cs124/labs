@@ -37,4 +37,4 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 
 2. You collect two new ratings from User X. User X gives Food 2 a rating of 2 and Food 4 a rating of 5. Update the table to reflect the new ratings from User X. 
 
-3. Use the formula $r_{xi} = \sum_{j\in(f1, f2)} s_{ij}r_{xj}$ to find the best food to recommend. Your colleague found that $r_{x1} = 0$ and that $r_{x2} = -1.8660$. You will calculate $r_{x3}$ and $r_{x4}$. What food would you recommend to User X?
+3. Should you recommend food 1 or food 3 to User X?
