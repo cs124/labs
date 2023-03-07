@@ -11,9 +11,9 @@ You are working for OneTwoFourAI and you have an idea for a wonderful new app - 
 
 * You debate with a colleague on whether to use item-item collaborative filtering or user-user collaborative filtering. Describe both of these methods. Which one would you use and why?
 
-```
-Item-item collaborative filtering aims to find similar items based on ratings for other items. User-user collaborative filtering aims to find similar users based on ratings for other users. In practice, item-item collaborative filtering often works better than user-user collaborative filtering because items are often similar, and users have multiple tastes. (People are more complex than objects.)
-```
+
+>Item-item collaborative filtering aims to find similar items based on ratings for other items. User-user collaborative filtering aims to find similar users based on ratings for other users. In practice, item-item collaborative filtering often works better than user-user collaborative filtering because items are often similar, and users have multiple tastes. (People are more complex than objects.)
+
 
 
 You decide to move forward with a simplified version of item-item collaborative filtering. You have access to the following dataset: 
