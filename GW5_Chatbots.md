@@ -1,7 +1,4 @@
-# Week 8: Group Exercises on Chatbots/Dialogue Agents, and Recommendation Engines
-
-Your goal today is to think deeply about both chatbot implementation and the ethical issues around both chatbots and computer-mediated dialogue in general. 
-After each of the following questions, we will report back some of your results to the whole room, so make note of your group's interesting results. 
+# Week 9: Group Exercises on Chatbots/Dialogue Agents, and Recommendation Engines
 
 ## Part 1: Dialogue Agent Performance
 
@@ -14,35 +11,30 @@ Use voice to write text or emails, add a calendar appointment, get recommendatio
 * What does the system do if it is unsure about what you said? What seems to be the confirmation strategy? (e.g., explicit vs. implicit)? 
   Does it vary?
 * Does the system seem to be responding only to your exact last sentence or is the system modeling the discourse history in some way (previous turns, remembering things you said, etc)
-* Does the system ever surprise you in a positive way? 
-* Discuss in your groups some abilities you'd like to add to the chatbot. 
 
-## Part 2: Ethical Issues: Gender and Privacy
+## Part 2: Collaborative Filtering
 
-As I discussed in the chatbot lecture and the textbook chapter, ethical issues are especially relevant in chatbots, given that they interface with humans. 
-Discuss these two issues: 
+Let's work through an example of item-item collaborative filtering similar to what will be used in PA7:
 
-* Chatbots are often given female voices, names, pronouns, or avatars. 
-  Moreover, users are more likely to apply gender stereotypes to the chatbot when the it conforms to gender norms or stereotypes [McDonnell & Baxter, 2019](https://academic.oup.com/iwc/article/31/2/116/5448907?casa_token=JOyJzMZWjYUAAAAA:A3gCGZjlXH-I5szqdQ-TGb9SCCwLU0TTsoOu9S4LKymDE9HN3zGS5UTepWMdJ1-OG8wbeRa6n2v9OQ)
-  What are some potential consequences of chatbots perpetuating existing gender norms?
-  What are some ways that you could alter current chatbots to minimize the gender stereotypes that are built into them? 
-* Chatbots also present privacy concerns. 
-  Human-like chatbots can lead people to disclose more [Ischen et al., 2020](https://link-springer-com.stanford.idm.oclc.org/chapter/10.1007%2F978-3-030-39540-7_3), and humans are less likely to be worried about their personal information when the chatbot is perceived to be more human-like.
-  Given this trust in the chatbot, companies can collect valuable data about their consumers, often without them knowing this is occurring.
-  Are you more likely to share personal information with a chatbot that has human-like characteristics? 
-  Do you think computer scientists have a responsibility to specify that a chatbot is a machine and attempt to minimize the amount of data users share with the system? 
-  Do you have any other privacy concerns surrounding chatbots? 
-  
-## Part 3: Ethical Issues in Computer Mediated Human Dialogue
+You are working for OneTwoFourAI and you have an idea for a wonderful new app - a food recommendation system! 
 
-Computers interacting with humans is a subcase of the general issue of computers and conversation, which also includes computers mediating humans interacting with each other. 
-Let's talk about some of the ethical issues in that space, focusing on the recently released Facebook Papers, leaked internal documents about Facebook's role in dealing with problematic human-human interaction. 
-Two ethical issues have been raised in this area: 
-* Should companies who publish social media posts be responsible for detecting and removing calls for genocide, hate speech, and so on?
-  Facebook Papers [suggest](https://cs124.stanford.edu/restricted/WSJhatespeech.pdf) that Facebook chose not to do so in many countries, for example ignoring issues of hate speech in countries like Myanmar, India, and Egypt, choosing not to build hate-speech classifiers for many languages (like Assamese, the lingua franca of Assam, the eastern-most state in India next to Myanmar, or Arabic). 
-  What do you think the responsibility should be of such social media publishers of people's dialogues online? 
-* What should be the balance between removing hate-speech and allowing free speech?
-  Facebook documents suggest (the same WSJ article as above) that the company emphasized leaving up the vast majority of most hate speech in every country to avoid accidentally removing any non-hate-speech, i.e. emphasized avoiding "false positives" in hate speech detection over avoiding "false negatives".
-  Polls suggest that in the US, people in general are more worried about posts being deleted incorrectly (false positives), while in many places abroad, people prioritize hate speech being taken down and are more worried about false negatives. 
-  What is your perspective?
-  
+* You debate with a colleague on whether to use item-item collaborative filtering or user-user collaborative filtering. Describe both of these methods. Which one would you use and why?
+
+You decide to move forward with a simplified version of item-item collaborative filtering. You have access to the following dataset: 
+
+
+|        | User 1 | User 2 | User 3 | User 4 |
+|--------|--------|--------|--------|--------|
+| Food 1 | 3      | 5      | 4      |        |
+| Food 2 | 4      |        | 1      |        |
+| Food 3 |        | 3      |        | 2      |
+| Food 4 | 2      |        | 4      | 1      |
+
+Each cell in the table contains either a rating from 1 to 5 or no rating. 
+
+
+1. Binarize the values in the dataset. Convert the values to +1 (like), 0 (no rating), and -1 (dislike). Ratings 3 to 5 correspond to liking and ratings 1 to 0 correspond to dislike. 
+
+2. You collect two new ratings from User X. User X gives Food B a rating of 2 and Food D a rating of 5. Update the table to reflect the new ratings from User X. 
+
+3. Use the formula $r_{xi} = \sum_{j\in(f1, f2)} s_{ij}r_{xj}$ to find the best food to recommend. Your colleague found that $r_{x1} = 0$ and that $r_{x2} = -1.8660$. You will calculate $r_{x3}$ and $r_{x4}$. What food would you recommend to User X?
