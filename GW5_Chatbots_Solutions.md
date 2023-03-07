@@ -40,7 +40,7 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 | Food 4 | -1     |        | +1     | -1     |
 
 
-2. You collect two new ratings from User X. User X gives Food B a rating of 2 and Food D a rating of 5. Update the table to reflect the new ratings from User X. 
+2. You collect two new ratings from User X. User X gives Food 2 a rating of 2 and Food 4 a rating of 5. Update the table to reflect the new ratings from User X. 
 
 |        | User 1 | User 2 | User 3 | User 4 | User X |
 |--------|--------|--------|--------|--------|--------|
