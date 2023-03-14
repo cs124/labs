@@ -53,9 +53,9 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 
 Food 1:
 
-$s_{1,2} = \frac{(1)(1) + (1)(-1)}{\sqrt{(1^2) + (1^2)} * \sqrt{(1^2) + (-1^2)}} = 0$
+$s_{1,2} = \frac{(1)(1) + (1)(-1)}{\sqrt{(1)^2 + (1)^2} * \sqrt{(1)^2 + (-1)^2}} = 0$
 
-$s_{1,4} = \frac{(1)(-1) + (1)(1)}{\sqrt{(1^2) + (1^2))} * \sqrt{(-1^2) + (1^2)}} = 0$
+$s_{1,4} = \frac{(1)(-1) + (1)(1)}{\sqrt{(1)^2 + (1)^2)} * \sqrt{(-1)^2 + (1)^2}} = 0$
 
 $r_{x1} = \sum_{j\in(f2, f4)} s_{ij}r_{xj} = 0$ 
 
