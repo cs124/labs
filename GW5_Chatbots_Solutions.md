@@ -49,7 +49,7 @@ Each cell in the table contains either a rating from 1 to 5 or no rating.
 | Food 3 |        | +1     |        | -1     |        |
 | Food 4 | -1     |        | +1     | -1     | +1     |
 
-3. Using the formula $r_{xi} = \sum_{j\in(f2, f4)} s_{ij}r_{xj}$, which would you choose to recommend to User X, Food 1 or Food 3?
+3. Using the formula $r_{xi} = \sum_{j\in(f2, f4)} s_{ij}r_{xj}$, which would you choose to recommend to User X, Food 1 or Food 3? Use "overlapping item" cosine similarity in your calculations. 
 
 Food 1:
 
