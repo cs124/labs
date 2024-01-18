@@ -32,8 +32,9 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 ## Part 2: Naive Bayes Toxicity Classification
 
-6. For the following problem, please choose a group facilitator/representative who will also take notes on your discussion.
-   Imagine you’re working for Reddit. Toxic comments are a real problem, so you decide to build a sentiment classifier using Naive Bayes and an automoderator that deletes negative comments. Your classifier trains on these examples:
+For the following problem, please choose a group facilitator/representative who will also take notes on your discussion.
+
+6. Imagine you’re working for Reddit. Toxic comments are a real problem, so you decide to build a sentiment classifier using Naive Bayes and an automoderator that deletes negative comments. Your classifier trains on these examples:
 
 **Training Set**
 
@@ -58,6 +59,8 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 ## Part 3: Performance Disparities
 
-7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, toxicity classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
+For the last problem, please continue taking notes on your discussion.
+
+7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, *toxicity* classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
 
 We will now go back to the whole class and discuss group answers for Part 3 in a final plenary session.

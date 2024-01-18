@@ -52,14 +52,17 @@ Answer the questions below given the sets above.
    ```
 
 5. Suppose "cat" was a demographic attribute like "woman" or "engineer" or "Asian”. What harms from the lecture could this result in, and why?
-   `Representational (harms caused by a system that demeans a social group).`
+   ```
+   Representational (harms caused by a system that demeans a social group).
+   ```
 
 We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
 
 ## Part 2: Naive Bayes Toxicity Classification
 
-6. For the following problem, please choose a group facilitator/representative who will also take notes on your discussion.
-   Imagine you’re working for Reddit. Toxic comments are a real problem, so you decide to build a sentiment classifier using Naive Bayes and an automoderator that deletes negative comments. Your classifier trains on these examples:
+For the following problem, please choose a group facilitator/representative who will also take notes on your discussion.
+
+6. Imagine you’re working for Reddit. Toxic comments are a real problem, so you decide to build a sentiment classifier using Naive Bayes and an automoderator that deletes negative comments. Your classifier trains on these examples:
 
 **Training Set**
 
@@ -84,17 +87,17 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
       </li>
       <li>Having realized the harm from part (d) that your automoderator is causing, you change it so that negative comments are not deleted. Instead, they are just highlighted in red and marked “negative”. Now, what kind of harm from lecture is the aforementioned group experiencing?
          <code>Censorship harms (incorrectly flagging non-toxic sentences that simply
-         mention identities)</code>
+         mention identities).</code>
       </li>
       <li>You are now trying to improve the automoderator to reduce this type of harm from occurring in the future. As a group, describe 3 distinct problems in the automoderator that led to this harm.
          <code>Potential answers:
          1. Using a sentiment analysis tool to analyze toxicity when sentiment and toxicity are not the same thing
          2. Toxicity is contextual. However, there was no consideration of context in the example (e.g., "Bears" might be likely to mean something else in the r/bayarea subreddit vs. the r/camping subreddit)
-         3. Naive bayes is relatively simple, it doesn't consider language semantics
+         3. Naive bayes is relatively simple, it doesn't consider language semantics.
          </code>
       </li>
       <li>As a group, describe a plan for how you might fix one of the problems you described in part f. If you don’t have any ideas, explain why this seems hard. For whatever question you answer, your group should write at least 2-4 sentences.
-         <code>Answers may vary. One answer is that it is hard to differentiate between the contexts of different subreddits without an existing understanding of what various words mean, meaning mis-classification is almost guaranteed.</code>
+         <code>Answers may vary. One answer is that it is hard to differentiate between the contexts of different subreddits on a specific word, when using one classifier for all contexts, meaning mis-classification is almost guaranteed in some context.</code>
       </li>
    </ol>
 
@@ -103,10 +106,12 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 ## Part 3: Performance Disparities
 
-7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, toxicity classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
+For the last problem, please continue taking notes on your discussion.
+
+7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, *toxicity* classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
 
 ```
-Answer coming.
+Answers may vary. Any subreddit with a less-common language, vernacular, or context will work here.
 ```
 
 We will now go back to the whole class and discuss group answers for Part 3 in a final plenary session.
