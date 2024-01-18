@@ -1,99 +1,63 @@
 # Week 3: Group Exercises on Naive Bayes and Sentiment
 
-## Part 1: Quick Naive Bayes review
+## Part 1: Naive Bayes review
 
 First, form a group of 3 students to work together!
 
-We want to build a naive bayes sentiment classifier using add-1 smoothing, as described in the lecture (not binary naive bayes, regular naive bayes). 
-Here is our training corpus:
+We want to build a naive bayes sentiment classifier using add-1 smoothing, as described in the lecture (not binary naive bayes, regular naive bayes). Our training and testing data consist of comments on a social media platform. Here is our training and testing corpus:
 
 **Training Set**
 
-    - the movie has no plot
-    - honestly pretty boring
-    + pretty interesting movie 
-    
+    - a cat ruined my sweater
+    - hate that cat
+    + my friends rock
 
 **Test Set**
 
-    pretty enjoyable plot
-    
+    adore my cat
+
 Answer the questions below given the sets above.
 
-  1. Compute the prior for the two classes + and -, and the likelihoods for each word given the class (leave in the form of fractions).
+1. Compute the prior for the two classes + and -, and the likelihood for each word that appears in the test sentence given either class.
 
-  2. Then compute whether the sentence in the test set is of class positive or negative (you may need a computer for this final computation).
+2. Then compute whether the sentence in the test set is of class positive or negative (you may need a computer for this final computation).
 
-  3. Would using binary multinomial Naive Bayes change anything?
+3. Do you think that the predicted class is the correct sentiment of this sentence? Explain, in your own words, what about the Naïve Bayes classifier led it to the correct or incorrect answer. What assumptions made by Naïve Bayes led to this result? Identify a specific assumption and be prepared to justify.
 
-  4. Why do you add |V| to the denominator of add-1 smoothing, instead of just counting the words in one class?
+4. Why do you add |V| to the denominator of add-1 smoothing, instead of just counting the words in one class?
 
+5. Suppose "cat" was a demographic attribute like "woman" or "engineer" or "Asian”. What harms from the lecture could this result in, and why?
 
-## Part 2: Ethics and Conceptual Problems
+We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
 
-  5. For the following problem, please choose a group facilitator/representative who will also take notes on your discussion. 
-     When we come back to the lecture room, I will call for volunteer groups to report back to the whole class on your thoughts or results, and so I will call some of the representatives to the stage.
-     
-     Data ethics is an important component of any supervised machine learning task, since the data has to come from somewhere. 
-     For example, all research involving human subjects in the United States must follow the 3 "Belmont Principles", which are:
+## Part 2: Naive Bayes Toxicity Classification
 
-     * justice (the equitable distribution of benefits and burdens of research),
+6. For the following problem, please choose a group facilitator/representative who will also take notes on your discussion.
+   Imagine you’re working for Reddit. Toxic comments are a real problem, so you decide to build a sentiment classifier using Naive Bayes and an automoderator that deletes negative comments. Your classifier trains on these examples:
 
-     * beneficence (the obligation to not only "do no harm" but to actively maximize benefits and minimize harms to subjects)
+**Training Set**
 
-     * respect for persons (people should be able to make autonomous decisions), 
-     
-     (the full Belmont report is [here](https://www.hhs.gov/ohrp/sites/default/files/the-belmont-report-508c_FINAL.pdf))
+    - the dangerous bears
+    - bears destroyed the yard
+    + beautiful redwood trees
 
-     Do the following:
-     
-     * Figure out (from the web; Googling may help) the age of the person who wrote this sentence in a movie review:
-       
-        > There are many, many characters to enjoy in this fanciful tale; my personal favorite has always been Inigo Montoya.
+   The week after training, the Big Game (between Stanford and Cal) happens. Users on /r/bayarea are excited. Alice, a Cal student, wants to support her team and comments `“Go bears!”`. Bob, a Stanford student, wants to support his team and comments `“Go trees!”`. Answer the following questions:
 
-     * Discuss these questions in your group, with the goal of some groups reporting back to the whole class:
-        
-        *  Is it ok that we can figure this out?
-        *  Is it ok that we are using this person's data to train our sentiment analyzers?
-        *  Should researchers not use publically posted data like this?
-        *  Is it ok that we are using IMDB data for a homework?
-        *  Should IMDB.com own this review?
-        *  How does this all relate to the Belmont Principles? 
-      
-        Your opinions will likely differ from each other, and of course we expect you will discuss this respectfully!! 
-        It may be helpful to bring up cases you've seen in the news relating to privacy or fairness and machine learning.
-
-      Once you are done, we will discuss as a class!
-      
-   6. Choose a different group facilitator/representative. 
-      Then first do this short ML conceptual problem: It is sometimes the case that more complex features (like trigrams or bigrams) perform better than simple features (like unigrams) on the **training** set, but perform worse than simple features on the **test** set. 
-      This is a particular case of the phenomenon called `overfitting` in machine learning. 
-      Discuss why this might be. 
-      Can you create a tiny training set with 2 3-word documents and a test set with one document for which this overfitting situation holds?
-   
-   7. Choose a third group facilitator/representative. 
-      Now let's continue thinking about data sources. 
-      Our data sources are the basis of all of our optimization problems. 
-      But who are we optimizing for? 
-      Should we be concerned that we are building systems in response to the people who create the most text on the web, namely men from wealthy, English-speaking countries? 
-      According to the [researcher Ricardo Baeza-Yates in the journal CACM](https://cacm.acm.org/magazines/2018/6/228035-bias-on-the-web/fulltext), "the percentage of all publicly reported Wikipedia female editors is just 11%". 
-      Furthermore, "it is estimated that over 50% of the most popular websites are in English, while the percentage of native English speakers in the world is approximately only 5%".
-
-      What are the potential effects of biases in internet data sources? 
-      Does this bias negatively impact some populations more than others? 
-      If so, whom and in which ways? Do think we should attempt to remediate these biases, and if so do you have any ideas for steps that can be taken? 
-      Or do you think that remediation should not be a focus for data researchers? 
-      Again, your opinions will likely differ from each other, and of course we expect you will discuss this respectfully!!
-
-      Once you are done, we will discuss as a class!
-      
-## Part 3: Extra Credit 
+   <ol type="a">
+      <li>Is Alice’s comment deleted by your automoderator?</li>
+      <li>Is Bob’s comment deleted by your automoderator?</li>
+      <li>Which two groups of people is your automoderator treating differently, even though membership in these groups doesn’t have a clear connection to comment toxicity?</li>
+      <li>What kind of harm from the lecture is experienced by the group whose comments are getting deleted?</li>
+      <li>Having realized the harm from part (d) that your automoderator is causing, you change it so that negative comments are not deleted. Instead, they are just highlighted in red and marked “negative”. Now, what kind of harm from lecture is the aforementioned group experiencing?</li>
+      <li>You are now trying to improve the automoderator to reduce this type of harm from occurring in the future. As a group, describe 3 distinct problems in the automoderator that led to this harm.</li>
+      <li>As a group, describe a plan for how you might fix one of the problems you described in part f. If you don’t have any ideas, explain why this seems hard. For whatever question you answer, your group should write at least 2-4 sentences.</li>
+   </ol>
 
 
-   8. Now go to the Sentiment demo at https://demo.allennlp.org/sentiment-analysis/glove-sentiment-analysis. 
-      Come up with 5 sentences that the classifier gets wrong. 
-      Can you figure out what is causing the errors?
-      Once you are done, we will discuss any particularly interesting sentiment examples as a class!
-      
-      Submit your 5 sentences here for extra credit: https://forms.gle/57okKzZzWeijP4RL7
-      
+   We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
+
+## Part 3: Performance Disparities
+
+7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, toxicity classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
+
+We will now go back to the whole class and discuss group answers for Part 3 in a final plenary session.
