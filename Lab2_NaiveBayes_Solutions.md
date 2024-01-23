@@ -22,19 +22,20 @@ Answer the questions below given the sets above.
    ```
    |V| = 9, n- = 8, n+ = 3
    P(-) = 2/3, P(+) = 1/3
-   P(adore | - ) = unk
-   P(adore | + ) = unk
+   P(adore | - ) = unseen in training*
+   P(adore | + ) = unseen in training*
    P(my | - ) = (1 + 1) / (n- + |V|) = (1 + 1) / (8 + 9) = 2/17
    P(my | + ) = (1 + 1) / (n+ + |V|) = (1 + 1) / (3 + 9) = 2/12
    P(cat | - ) = (2 + 1) / (n- + |V|) = (2 + 1) / (8 + 9) = 3/17
    P(cat | + ) = (0 + 1) / (n+ + |V|) = (0 + 1) / (3 + 9) = 1/12
+   * Words in test set that were completely unseen in training are simply removed from the test set. So, we do not compute these probabilities.
    ```
 
 2. Then compute whether the sentence in the test set is of class positive or negative (you may need a computer for this final computation).
    ```
    C = {+, -}
    P(c | "adore my cat") ∝ P(c) * P ("adore my cat" | c)
-   = P(c) * P(adore | c) * P(my | c) * P(cat | c) ~= P(c) * P(my | c) * P(cat | c), 'adore' is unknown
+   = P(c) * P(adore | c) * P(my | c) * P(cat | c) ~= P(c) * P(my | c) * P(cat | c), 'adore' is unseen in training, so we ignore it in computing probabilities
    P( - | "adore my cat") ∝ (2/3) * (2/17) * (3/17) = 0.01384
    P( + | "adore my cat") ∝ (1/3) * (2/12) * (1/12) = 0.00463
    P( - | "adore my cat") is greater, so the test set sentence is classified as class negative.
@@ -83,11 +84,11 @@ For the following problem, please choose a group facilitator/representative who 
          <code>Cal students (people who use "bears") and Stanford students (people who use "trees") are being treated differently.</code>
       </li>
       <li>What kind of harm from the lecture is experienced by the group whose comments are getting deleted?
-         <code>Representational harms, same as Part 1 (harms caused by a system that demeans a social group).</code>
+          <code>Censorship harms (incorrectly deleting non-toxic sentences that simply
+         mention identities).</code>
       </li>
       <li>Having realized the harm from part (d) that your automoderator is causing, you change it so that negative comments are not deleted. Instead, they are just highlighted in red and marked “negative”. Now, what kind of harm from lecture is the aforementioned group experiencing?
-         <code>Censorship harms (incorrectly flagging non-toxic sentences that simply
-         mention identities).</code>
+         <code>Representational harms, same as Part 1 (harms caused by a system that demeans a social group).</code>
       </li>
       <li>You are now trying to improve the automoderator to reduce this type of harm from occurring in the future. As a group, describe 3 distinct problems in the automoderator that led to this harm.
          <code>Potential answers:
@@ -96,7 +97,7 @@ For the following problem, please choose a group facilitator/representative who 
          3. Naive bayes is relatively simple, it doesn't consider language semantics.
          </code>
       </li>
-      <li>As a group, describe a plan for how you might fix one of the problems you described in part f. If you don’t have any ideas, explain why this seems hard. For whatever question you answer, your group should write at least 2-4 sentences.
+      <li>As a group, describe a plan for how you might fix one of the problems you described in part f. If you don’t have any ideas, explain why this seems hard. For whatever question you answer, be prepared to share.
          <code>Answers may vary. One answer is that it is hard to differentiate between the contexts of different subreddits on a specific word, when using one classifier for all contexts, meaning mis-classification is almost guaranteed in some context.</code>
       </li>
    </ol>
@@ -108,7 +109,7 @@ For the following problem, please choose a group facilitator/representative who 
 
 For the last problem, please continue taking notes on your discussion.
 
-7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, *toxicity* classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why in 2-4 sentences. 
+7. Your manager at Reddit comes to you and asks you to completely scrap the Naïve Bayes sentiment classifier in the automoderation system. Instead, you are to use an entirely new, state of the art, *toxicity* classifier that is trained on the entire internet. Your manager believes this will solve all the harms introduced by the Naïve Bayes classifier. But you know otherwise. To convince your manager that things aren’t so simple, find a subreddit where harm might be more likely to occur because of a performance disparity in the general classifier and explain why. Be prepared to share. 
 
 ```
 Answers may vary. Any subreddit with a less-common language, vernacular, or context will work here.
