@@ -1,4 +1,4 @@
-# Week 3: Group Exercises on Naive Bayes and Sentiment
+# Lab 2: Naive Bayes, Sentiment, and Harms of Classification (Week 3)
 
 ## Part 1: Quick Naive Bayes review
 
