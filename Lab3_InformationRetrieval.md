@@ -23,7 +23,7 @@ You will use the following equation:
 
 Here is an [example](https://docs.google.com/spreadsheets/d/1GI3yJCODven4HAY--tGCpOVPGvcamSjYWKDRbjfzFhQ/edit?usp=sharing) of how to compute the *regular* tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. This example uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns).
 
-Once this example makes sense yo you, fill out this spreadsheet [TODO], which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the ltc.lnn variation of cosine score. (Hint: your formulas should be very similar to those in the textbook example, but some computations can be omitted based on the parts of the equation above that are grayed out.)
+Once this example makes sense yo you, fill out this spreadsheet [TODO], which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula. (Hint: your formulas should be very similar to those in the textbook example, but some computations can be omitted based on the parts of the equation above that are grayed out.)
 
 1. Which document is returned for your one-word query, “apple”, and what is the cosine?
 
@@ -31,11 +31,11 @@ Now, imagine the IR system has been tracking and logging your previous queries. 
 
 2. Which document is returned for the two-word query, “apple phone”, and what is the cosine? (Hint: you should only have to change one cell in your spreadsheet to get the new answer.)
 
-Search engines commonly track our queries in order to personalize search results and maximize relevance. However, they frequently do this without us knowing. For the following three questions, write your answers down and be prepared to discuss. Be prepared to share your answers in class.  
+Search engines commonly track our queries in order to personalize search results and maximize relevance. However, they frequently do this without us knowing. For the following three questions, write your answers down and be prepared to share.
 
 3. What are the potential benefits and risks of personalized searches? 
 
-4. Are there certain kinds of data that are OK for search engines to use? If so, what are they, and why is it ok for search engines to use them? What is the limit to the kinds of data that search engines should be allowed to use to personalize our searches?
+4. Are there certain kinds of data that are OK for search engines to use? If so, what are they, and why is it OK for search engines to use them? What is the limit to the kinds of data that search engines should be allowed to use to personalize our searches?
 
 5. Some search engines allow users to make private searches by not recording user queries or tracking users at all (e.g., DuckDuckGo). What are the potential benefits, limitations, and consequences of these private search engines? 
 
@@ -43,36 +43,38 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 ## Part 2: Precision and Recall
 
-For this next part, have someone take notes for your group so that you are prepared to discuss. 
+For this next part, have someone take notes for your group so that you are prepared to share. 
 
-Now imagine you have a more sophisticated IR system than the one in Part 1, with far more query terms and documents. You are tasked with evaluating its performance and how it might be used for different searches. 
+Imagine you have a more sophisticated IR system than the one in Part 1, with far more query terms and documents. You are tasked with evaluating its performance and how it might be used for different searches. 
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
-6. What is the precision of the system on this search, and what is its recall?
+6. What is the precision of the system on this search, and what is its recall? 
 
-You know that people will be using your IR system primarily to search for medical information. Specifically, people will use your IR system to search for treatments to ailments they face. You are trying to decide whether you should improve the recall of your system. Suppose we define a true positive document as: a document which does not just describe the ailment, but also, which contains accurate treatment information. 
+You know that people will be using your IR system primarily to search for treatments to medical ailments they face. You are trying to decide whether you should improve the recall of your system. Suppose we define a true positive document as: a document which does not just describe the relevant ailment, but also, which contains accurate treatment information for this ailment. 
 
-7. Given the above system, answer the following:
+7. Given the above context, answer the following and be prepared to explain:
    <ol type="a">
-      <li>Why might you prioritize high precision in this task? Be prepared to explain. </li>
-      <li>Why might you prioritize high recall in this task? Be prepared to explain. </li>
+      <li>Why might you prioritize high precision in this task?</li>
+      <li>Why might you prioritize high recall in this task?</li>
    </ol>
 
 Precision and recall are relevant metrics not just in IR tasks, but also, in broader NLP tasks. These metrics can have significant consequences not just on the performance of your system, but also on the social impact of your system. For example, let’s consider the role of precision and recall when evaluating a hate speech classifier.
 
 [TODO rest of 8]
 
-8. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why. Be prepared to explain your answer. 
+8. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
 
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-9. Write a scenario related to an IR or broader NLP task where you would prioritize precision over recall. Make sure you define what a “true positive” document is, as in the examples above. Be prepared to explain your response.  
+9. Write a scenario related to an IR or broader NLP task where you would prioritize *precision* over recall. Make sure you define what a “true positive” is, as in the examples above.
 
-10. Write a scenario related to an IR or broader NLP task where you would prioritize recall over precision. Make sure you define what a “true positive” document is, as in the examples above. Be prepared to explain your response. 
+10. Write a scenario related to an IR or broader NLP task where you would prioritize *recall* over precision. Make sure you define what a “true positive” is, as in the examples above.
 
 We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
 
-## Part 1: The Right to be Forgotten
+## Part 3: The Right to be Forgotten
 
 [TODO add]
+
+We will now go back to the whole class and discuss group answers for Part 3 in a plenary session.
