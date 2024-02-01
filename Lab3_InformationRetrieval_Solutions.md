@@ -97,22 +97,17 @@ Some potential benefits:
 - Improved search quality: more easily find the information you're looking for
 
 Some risks:
-- Personalized/targeted ads, which may sometimes mischaracterize you and show you things you don't want to be  shown
+- Personalized/targeted ads, which may sometimes mischaracterize you and show you things you don't want to be shown
 - Overpersonalization: users seeing the same content over and over again, with no opportunities to expand their horizons.
 ```
 
 4. Are there certain kinds of data that are OK for search engines to use? If so, what are they, and why is it OK for search engines to use them? What is the limit to the kinds of data that search engines should be allowed to use to personalize our searches?
 ```
-TODO
-```
-
-5. Some search engines allow users to make private searches by not recording user queries or tracking users at all (e.g., DuckDuckGo). What are the potential benefits, limitations, and consequences of these private search engines? 
-```
-TODO
+Any answer with justification is valid. An example response is:
+Data pertaining to consumer goods is OK to use, because the most nefarious use it can be applied to is personalized advertisements. Data pertaining to personal information is not OK to use, since this violates an individual's right to privacy. The difference between these types of data can be hard to determine.
 ```
 
 We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
-
 
 ## Part 2: Precision and Recall
 
@@ -123,7 +118,7 @@ Imagine you have a more sophisticated IR system than the one in Part 1, with far
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
-6. What is the precision of the system on this search, and what is its recall? 
+5. What is the precision of the system on this search, and what is its recall? 
 
 ```
 Precision: 8/18 (or 4/9)
@@ -132,7 +127,7 @@ Recall: 8/20 (or 2/5)
 
 You know that people will be using your IR system primarily to search for treatments to medical ailments they face. You are trying to decide whether you should improve the recall of your system. Suppose we define a true positive document as: a document which does not just describe the relevant ailment, but also, which contains accurate treatment information for this ailment. 
 
-7. Given the above context, answer the following and be prepared to explain:
+6. Given the above context, answer the following and be prepared to explain:
       
 <ol type="a">
    <li>Why might you prioritize high precision in this task?
@@ -147,7 +142,7 @@ Precision and recall are relevant metrics not just in IR tasks, but also, in bro
 
 [TODO rest of 8]
 
-8. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
+7. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
 ```
 Arguments for either are valid:
 Precision - Avoid censoring people's benign speech
@@ -156,17 +151,17 @@ Recall - Ensure that the majority of existing hate speech is correctly flagged
    
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-9. Write a scenario related to an IR or broader NLP task where you would prioritize *precision* over recall. Make sure you define what a “true positive” is, as in the examples above.
+8. Write a scenario related to an IR or broader NLP task where you would prioritize *precision* over recall. Make sure you define what a “true positive” is, as in the examples above.
 ```
 Any answer with justification is valid.
-Examples are: criminal justice applications, like recidivism risk assessments
+Example scenarios are: criminal justice applications, like recidivism risk assessments
 (scenarios where false positives could be costly).
 ```
 
-10. Write a scenario related to an IR or broader NLP task where you would prioritize *recall* over precision. Make sure you define what a “true positive” is, as in the examples above.
+9. Write a scenario related to an IR or broader NLP task where you would prioritize *recall* over precision. Make sure you define what a “true positive” is, as in the examples above.
 ```
 Any answer with justification is valid.
-Examples are: medical diagnoses, loan approval systems, content moderation
+Example scenarios are: medical diagnoses, loan approval systems, content moderation
 (scenarios where false negatives could be costly).
 ```
 
@@ -174,10 +169,20 @@ We will now go back to the whole class and discuss group answers for Part 2 in a
 
 ## Part 3: The Right to be Forgotten
 
-[TODO add]
+In Part 1, we considered the benefits and risks of personalized searches. Some search engines (e.g. DuckDuckGo) address the risks by allowing users to make private searches. They enable private searches by not recording user queries or tracking users at all. This protects the privacy of the searcher.
+
+But what about cases where the search-- whether personalized or not-- is for information about another individual? In these cases, what about the privacy of the searchee (the person being searched)? In the EU’s GDPR Article 17 – The Right to be Forgotten, individuals can require publishers and search engines to take down information about themselves under certain circumstances. 
+
+10. Spend 5 minutes reading more about this regulation at the links below, and any relevant articles you wish to browse:
+
+   - https://gdpr-info.eu/art-17-gdpr/
+   - https://gdpr.eu/right-to-be-forgotten/
+
+Then, discuss in your groups the benefits and tradeoffs of taking information down vs. leaving it up. Do you think people should have the right to remove information about themselves from the web? In which circumstances? Be prepared to share your responses with the rest of the class. 
 
 ```
-Answer TODO
+Any answer with justification is valid. An example response is:
+Since the right to privacy is a basic human right, everyone should have the ability to take down information about themselves that they do not wish to have public. The exception to this is the scenarios outlined in the GDPR, like when the information is being used for legal defense. The onus for this should fall on the platforms that are publishing the information, and should be backed with legal consequences for refusing to take down the information in question.
 ```
 
 We will now go back to the whole class and discuss group answers for Part 3 in a plenary session.
