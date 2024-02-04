@@ -8,7 +8,7 @@ Imagine you are using a simple IR system. It has the following term-document cou
 
    | Term    | Doc1 | Doc2 |
    |:--------|:----:|:----:|
-   | apple   | 3    | 1    | 
+   | apple   | 3    | 0    | 
    | phone   | 0    | 2    | 
    | fruit   | 2    | 0    | 
 
@@ -23,7 +23,7 @@ You will use the following equation:
 
 Here is an [example](https://docs.google.com/spreadsheets/d/1GI3yJCODven4HAY--tGCpOVPGvcamSjYWKDRbjfzFhQ/edit?usp=sharing) of how to compute the *regular* tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. This example uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns).
 
-Once this example makes sense yo you, fill out this spreadsheet [TODO], which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula. (Hint: your formulas should be very similar to those in the textbook example, but some computations can be omitted based on the parts of the equation above that are grayed out.)
+Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1pUtFoz_SNW3kGlRRFwZhXiumvSKPgVq4Gy-rY1hgH1o/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula. (Hint: your formulas should be very similar to those in the textbook example, but some computations will be omitted, based on the parts of the equation above that are grayed out. Figure out which columns are omitted, and why!)
 
 1. Which document is returned for your one-word query, “apple”, and what is the cosine?
    ```
@@ -140,7 +140,18 @@ You know that people will be using your IR system primarily to search for treatm
 
 Precision and recall are relevant metrics not just in IR tasks, but also, in broader NLP tasks. These metrics can have significant consequences not just on the performance of your system, but also on the social impact of your system. For example, let’s consider the role of precision and recall when evaluating a hate speech classifier.
 
-[TODO rest of 8]
+Suppose you implement a hate speech classifier which classifies a Reddit comment as either “toxic” or “benign”. You define true positives, true negatives, false positives, and false negatives as follows (this is sometimes called a confusion matrix):
+
+   | Term                 | Actual positive | Actual negative |
+   |:---------------------|:---------------:|:---------------:|
+   | Predicted positive   | True Positive: a comment classified as toxic that is actually toxic    | False Positive: a comment classified as toxic that is actually benign    | 
+   | Predicted negative   | False Negative: a comment classified as benign that is actually toxic    | True Negative: a comment classified as benign that is actually benign    | 
+
+You are trying to decide whether to prioritize precision vs. recall for your system.
+
+If you prioritize precision, your classifier will minimize *false positives*, meaning it will try not to mis-identify benign speech as toxic. This means the comments you classify as toxic are likely to be actually toxic – but you might miss some toxic comments.
+
+If you prioritize recall, your classifier will minimize *false negatives*, meaning it will try not to mis-identify toxic speech as benign. This means your classifier will correctly classify most of the existing toxic comments as toxic, but might be over-eager, and classify benign comments as toxic as well.
 
 7. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
 ```
