@@ -27,9 +27,10 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
 
 1. Which document is returned for your one-word query, “apple”, and what is the cosine?
    ```
-   Solution below:
+   Written solution below:
    ```
-
+   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1dNhmpI1Ityw6j5m-qI3sxSbG5VzDMJlJ3HPiPDYxHxY/edit?usp=sharing).
+   
    Let's start with our query "apple".
    
    |  term   | tf-raw |     tf-wt      |
@@ -68,8 +69,9 @@ Now, imagine the IR system has been tracking and logging your previous queries. 
 
 2. Which document is returned for the two-word query, “apple phone”, and what is the cosine? (Hint: you should only have to change one cell in your spreadsheet to get the new answer.)
    ```
-   Solution below:
+   Written solution below:
    ```
+   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1dNhmpI1Ityw6j5m-qI3sxSbG5VzDMJlJ3HPiPDYxHxY/edit?usp=sharing).
 
    Our new query is "apple phone", so we only need to change one cell in our sheet: the count of phone in the query.
    
