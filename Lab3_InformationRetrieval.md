@@ -1,5 +1,7 @@
 # Week 5: Group Exercises on Information Retrieval
 
+<sub><sup>*created by jasper mcavity, uma phatak, & veronica rivera, cs124 staff team, winter 2024*</sup></sub>
+
 ## Part 1: IR with tf-idf weighting
 
 First, form a group of 3 students to work together! Introduce yourselves to one another.

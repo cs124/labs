@@ -1,5 +1,7 @@
 # Lab 2: Naive Bayes, Sentiment, and Harms of Classification (Week 3)
 
+<sub><sup>*ethics portions written by uma phatak, & veronica rivera, cs124 staff team, winter 2024*</sup></sub>
+
 ## Part 1: Naive Bayes review
 
 First, form a group of 3 students to work together!
