@@ -41,9 +41,9 @@ LLM-based chatbots are powerful tools for many tasks, like summarizing text, sea
 
 Imagine you are working on a research project investigating bias in NLP, which you hope to publish in a top-tier NLP publication venue. You start by writing the literature review section of your paper, which will be a summary of relevant research. It is important that you properly discuss and cite prior work accurately; the people whose work you discuss will most likely be reading your paper, and you don’t want to look foolish.
 
-1. Use this prompt in your LLM of choice to help you identify articles for your literature review: "I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?" Once you get a response, verify its accuracy with any tools you would like to use. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
+1. Use this prompt in your LLM of choice to help you identify articles for your literature review: `I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?` Once you get a response, verify its accuracy with any tools you would like to use. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
 
-2. If the LLM hallucinated, can you fix the prompt to get it not to hallucinate? How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
+2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
 
 3. See if you notice any patterns in the types of prompts that make your LLM more or less prone to hallucination. Discuss with your partner. If you used different LLMs, compare the results.
 

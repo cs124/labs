@@ -41,14 +41,16 @@ LLM-based chatbots are powerful tools for many tasks, like summarizing text, sea
 
 Imagine you are working on a research project investigating bias in NLP, which you hope to publish in a top-tier NLP publication venue. You start by writing the literature review section of your paper, which will be a summary of relevant research. It is important that you properly discuss and cite prior work accurately; the people whose work you discuss will most likely be reading your paper, and you don’t want to look foolish.
 
-1. Use this prompt in your LLM of choice to help you identify articles for your literature review: "I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?" Once you get a response, verify its accuracy with any tools you would like to use. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
+1. Use this prompt in your LLM of choice to help you identify articles for your literature review: 
+    `I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?` 
+    Once you get a response, verify its accuracy with any tools you would like to use. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
     ```
-    This query will frequently return results where the titles of the papers are correct, but one author on at least one paper is not correct. Results may vary between LLMs and slight prompt nuances.
+    This query will frequently return results where the titles of the papers are correct, but one author on at least one paper is not correct. Results may vary depending on LLMs and slight prompt nuances.
     ```
 
-2. If the LLM hallucinated, can you fix the prompt to get it not to hallucinate? How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
+2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
     ```
-    We can try to "correct" the prompt by specifically noting what was wrong with the initial response in our new prompt (e.g. "Please ensure the names of all authors are correct.") However, this is hard to standardize because we don't actually know why the model hallucinated in teh first place, and we don't know how it is crafting its response. So, "correcting" the prompt can only be a process of trial and error.
+    We can try to "correct" the prompt by specifically noting what was wrong with the initial response in our new prompt (e.g. "Please ensure the names of all authors are correct.") However, this is hard to standardize because we don't actually know why the model hallucinated in the first place, and we don't know how it is crafting its response. So, "correcting" the prompt can only be a process of trial and error.
     ```
 
 3. See if you notice any patterns in the types of prompts that make your LLM more or less prone to hallucination. Discuss with your partner. If you used different LLMs, compare the results.
@@ -78,5 +80,5 @@ Once you have gotten a response, consider the following questions:
 
 5. Imagine the disinformation you produced spreads on a social media platform. Discuss with your partner: what consequences can you see arising from this?
     ```
-    Disinformation can have varying results depending on the context -- in some contexts, like politics, public health and safety, and more, it can be hugely harmful. As LLMs produce content that is more believable, this will become more of a problem.
+    Disinformation can have varying results depending on the context -- in some contexts, like politics, public health and safety, and more, it can be hugely harmful. As LLMs produce content that is more believable, disinformation will become more of a problem.
     ```
