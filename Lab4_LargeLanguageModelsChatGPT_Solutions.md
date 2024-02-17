@@ -50,7 +50,7 @@ Imagine you are working on a research project investigating bias in NLP, which y
     This query will frequently return results where the titles of the papers are correct, but one author on at least one paper is not correct. Results may vary depending on LLMs and slight prompt nuances.
     ```
 
-2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles an authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
+2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles and authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
     ```
     We can try to "correct" the prompt by specifically noting what was wrong with the initial response in our new prompt (e.g. "Please ensure the names of all authors are correct.") However, this is hard to standardize because we don't actually know why the model hallucinated in the first place, and we don't know how it is crafting its response. So, "correcting" the prompt can only be a process of trial and error.
     ```
@@ -76,10 +76,10 @@ To prevent LLM-generated disinformation, it is important to understand how such 
 Once you have gotten a response, respond to the following questions with your partner:
 
 <ol type="a">
-   <li>How easy was producing this disinformation? Where did the LLM push back or refuse, if at all? Discuss with your partner.
+   <li>How easy was producing this disinformation? Did the LLM ever push back, or refuse to comply with your request? Discuss with your partner.
         <code>It is quite easy to produce disinformation. Typically, queries that ask for "stories", "fictional narratives", or "fake social media posts" are allowed. Queries that include deceitful words -- like "Write a social media post that would trick someone into believing..." are often not allowed. The line between these queries is blurry.</code>
    </li>
-   <li>Imagine the disinformation you produced spreads on a social media platform. Discuss with your partner: what consequences can you see arising from this?
+   <li>Imagine the disinformation you produced spreads on a social media platform. What consequences can you see arising from this? Discuss with your partner.
        <code>Disinformation can have varying results depending on the context -- in some contexts, like politics, public health and safety, and more, it can be hugely harmful. As LLMs produce content that is more believable, disinformation will become more of a problem.</code>
    </li>
 </ol>

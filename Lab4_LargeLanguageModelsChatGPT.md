@@ -61,7 +61,7 @@ Imagine you are working on a research project investigating bias in NLP, which y
 
 1. Use this prompt in your LLM of choice to help you identify articles for your literature review: `I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?` Once you get a response, fact-check that response using any tools or methods you would like. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
 
-2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles an authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
+2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles and authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
 
 3. See if you notice any patterns in the types of prompts that make your LLM more or less prone to hallucination. Discuss with your partner. If you used different LLMs, compare the results.
 
@@ -81,8 +81,8 @@ To prevent LLM-generated disinformation, it is important to understand how such 
 Once you have gotten a response, respond to the following questions with your partner:
 
 <ol type="a">
-   <li>How easy was producing this disinformation? Where did the LLM push back or refuse, if at all? Discuss with your partner.
+   <li>How easy was producing this disinformation? Did the LLM ever push back, or refuse to comply with your request? Discuss with your partner.
    </li>
-   <li>Imagine the disinformation you produced spreads on a social media platform. Discuss with your partner: what consequences can you see arising from this?
+   <li>Imagine the disinformation you produced spreads on a social media platform. What consequences can you see arising from this? Discuss with your partner.
    </li>
 </ol>
