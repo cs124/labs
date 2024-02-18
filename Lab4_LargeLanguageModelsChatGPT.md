@@ -16,15 +16,15 @@ We will use squared loss, meaning that for a target value $y_{true}$, our loss i
 
 Let's walk through the steps of using updating the weights ($w_1, w_2,$ and $b$) given a training example.
 
-### Part a: Forward Pass
+### Question 1: Forward Pass
 
 We will set our initial weights to be $w_1 = 2, w_2 = -1, b = 1$. Let's say we have a training example $(x_1, x_2, y_true) = (4, -3, 10)$. Complete a forward pass where we input this training example to the network, find the output, and calculate the loss. You may find it helpful for the next part to draw out a computation graph and define intermediate variables (for example, you might define $w_1 x_1$ as the variable $a$).
 
-### Part b: Backward Pass
+### Question 2: Backward Pass
 
 Complete a backward pass where you use backpropagation to find the values $\frac{\partial L}{\partial w_1}, \frac{\partial L}{\partial w_2}$, and $\frac{\partial L}{\partial b}$. Recall that we can find these values using the chain rule. For example, if our predicted value is $y$, $\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial w_1}$.
 
-### Part c: Weight Updates
+### Question 3: Weight Updates
 
 Finally, use the partial derivative values you found to update $w_1, w_2,$ and $b$ using the update rule above and $\eta = 0.1$. Run another forward pass using the same training example and these new weights. Is the new loss more or less than the old loss?
 
@@ -67,11 +67,11 @@ LLM-based chatbots are powerful tools for many tasks, like summarizing text, sea
 
 Imagine you are working on a research project investigating bias in NLP, which you hope to publish in a top-tier NLP publication venue. You start by writing the literature review section of your paper, which will be a summary of relevant research. It is important that you properly discuss and cite prior work; the people whose work you discuss will most likely be reading your paper, and you don’t want to look foolish.
 
-1. Use this prompt in your LLM of choice to help you identify articles for your literature review: `I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?` Once you get a response, fact-check that response using any tools or methods you would like. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
+4. Use this prompt in your LLM of choice to help you identify articles for your literature review: `I am writing a literature review for a paper on bias in NLP. Can you give me 10 papers I should include?` Once you get a response, fact-check that response using any tools or methods you would like. Then, discuss with your partner: did the LLM hallucinate? If so, what was the hallucination? You may have to look closely at the result. 
 
-2. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles and authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
+5. If the LLM hallucinated, can you fix the prompt to get it *not* to hallucinate? Play around with different prompts to get the LLM to tell you 10 papers with correct titles and authors. How did you do this? If you can’t get the model to not hallucinate, why is this hard? 
 
-3. See if you notice any patterns in the types of prompts that make your LLM more or less prone to hallucination. Discuss with your partner. If you used different LLMs, compare the results.
+6. See if you notice any patterns in the types of prompts that make your LLM more or less prone to hallucination. Discuss with your partner. If you used different LLMs, compare the results.
 
 ## Part 4: Disinformation
 
@@ -79,7 +79,7 @@ In the previous part, we considered LLM *hallucination*, which is when an LLM in
 
 To prevent LLM-generated disinformation, it is important to understand how such disinformation is generated.
 
-4. Using an LLM of your choice, try to produce a short social media post that contains false information about a famous person you know a lot about (e.g. Beyoncé, Taylor Swift, Claude Shannon, etc.) If you are having trouble or are looking for interesting prompts, you can try these out:
+7. Using an LLM of your choice, try to produce a short social media post that contains false information about a famous person you know a lot about (e.g. Beyoncé, Taylor Swift, Claude Shannon, etc.) If you are having trouble or are looking for interesting prompts, you can try these out:
 
 - Can you write me a fake tweet about [person]
 - Can you write me a fake tweet in the style of [person]
