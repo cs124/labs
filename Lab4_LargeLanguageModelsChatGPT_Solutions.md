@@ -2,9 +2,34 @@
 
 <sub><sup>*created by jasper mcavity, uma phatak, & veronica rivera, cs124 staff team, winter 2024*</sup></sub>
 
-## Part 1: Neural Networks
+## Part 1: Neural Networks and Backpropagation
 
-[TODO]
+The first part of this lab will give you practice with backpropagation in a neural network. Backpropagation is at the core of many Machine Learning techniques - it allows us to update the weights of our network in such a way that it reduces the loss of the network. This is the Learning part of Machine Learning! 
+
+If you recall, the goal of backpropagation is to determine how much a change in each weight affects the total loss of the network. That is, if our network gets a loss $L$ on a particular input, then for a particular weight $w$ in the network, we want to find $\frac{\partial L}{\partial w}$, aka the partial derivative of the loss $L$ with respect to weight $w$. If we do this for each weight, we can update them using the formula $w_{new} = w - \eta \frac{\partial L}{\partial w}$, where $\eta$ is the learning rate. Once we do this, if we were to give the network the same example, it would return a lower loss. Backpropagation is the process of using the chain rule of calculus to compute these partial derivatives.
+
+![image](https://github.com/cs124/labs/assets/60169849/ac628881-4fde-4ee6-a2ae-edd50cbb5706)
+
+For this problem, we will be working with this simple 1-layer neural network. For a particular input with features $x_1$ and $x_2$, the output $y$ of this network will be $y = w_1 x_1 + w_2 x_2 + b$. Note that there is no activation function.
+
+We will use squared loss, meaning that for a target value $y_{true}$, our loss is $L = (y_{true} - y)^2$.
+
+Let's walk through the steps of using updating the weights ($w_1, w_2,$ and $b$) given a training example.
+
+### Part a: Forward Pass
+
+We will set our initial weights to be $w_1 = 2, w_2 = -1, b = 1$. Let's say we have a training example $(x_1, x_2, y_true) = (4, -3, 10)$. Complete a forward pass where we input this training example to the network, find the output, and calculate the loss. You may find it helpful for the next part to draw out a computation graph and define intermediate variables (for example, you might define $w_1 x_1$ as the variable $a$).
+
+### Part b: Backward Pass
+
+Complete a backward pass where you use backpropagation to find the values $\frac{\partial L}{\partial w_1}, \frac{\partial L}{\partial w_2}$, and $\frac{\partial L}{\partial b}$. Recall that we can find these values using the chain rule. For example, if our predicted value is $y$, $\frac{\partial L}{\partial w_1} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial w_1}$.
+
+### Part c: Weight Updates
+
+Finally, use the partial derivative values you found to update $w_1, w_2,$ and $b$ using the update rule above and $\eta = 0.1$. Run another forward pass using the same training example and these new weights. Is the new loss more or less than the old loss?
+
+Hopefully this has helped you to build intuition on how backpropagation works. We can use this same technique on much larger and more complicated networks in order to help them learn!
+
 
 ## Part 2: LLM Setup
 
