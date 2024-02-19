@@ -26,7 +26,7 @@ Complete a backward pass where you use backpropagation to find the values $\frac
 
 3. Weight Updates
 
-Finally, use the partial derivative values you found to update $w_1, w_2,$ and $b$ using the update rule above and $\eta = 0.1$. Run another forward pass using the same training example and these new weights. Is the new loss more or less than the old loss?
+Finally, use the partial derivative values you found to update $w_1, w_2,$ and $b$ using the update rule above and $\eta = 0.01$. Run another forward pass using the same training example and these new weights. Is the new loss more or less than the old loss?
 
 Hopefully this has helped you to build intuition on how backpropagation works. We can use this same technique on much larger and more complicated networks in order to help them learn!
 
