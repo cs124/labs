@@ -18,11 +18,11 @@ Let's walk through the steps of using updating the weights ($w_1, w_2,$ and $b$)
 
 1. Forward Pass
 
-We will set our initial weights to be $w_1 = 2, w_2 = -1, b = 1$. Let's say we have a training example $(x_1, x_2, y_true) = (4, -3, 10)$. Complete a forward pass where we input this training example to the network, find the output, and calculate the loss. You may find it helpful for the next part to draw out a computation graph and define intermediate variables (for example, you might define $w_1 x_1$ as the variable $h_1$). We also provide this [spreadsheet](https://docs.google.com/spreadsheets/d/1Co0qEW51ERu_j5wYXb1cVUTHX37-HD2RR7_ZZjEX9hM/edit?usp=sharing) to help you keep track of/calculate the variables needed throughout the problem.
+We will set our initial weights to be $w_1 = 2, w_2 = -1, b = 1$. Let's say we have a training example $(x_1, x_2, y_true) = (4, -3, 10)$. Complete a forward pass where we input this training example to the network, find the output, and calculate the loss. You may find it helpful for the next part to draw out a computation graph and define intermediate variables (for example, you might define $w_1 x_1$ as the variable $h_1$). Also make sure to add a node for the final loss $L$ after $y$. We also provide this [spreadsheet](https://docs.google.com/spreadsheets/d/1Co0qEW51ERu_j5wYXb1cVUTHX37-HD2RR7_ZZjEX9hM/edit?usp=sharing) to help you keep track of/calculate the variables needed throughout the problem.
 
 2. Backward Pass
 
-Complete a backward pass where you use backpropagation to find the values $\frac{\partial L}{\partial w_1}, \frac{\partial L}{\partial w_2}$, and $\frac{\partial L}{\partial b}$. Recall that we can find these values using the chain rule. For example, if our predicted value is $y$, $\frac{\partial L}{\partial b} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial b}$.
+Complete a backward pass where you use backpropagation to find the values $\frac{\partial L}{\partial w_1}, \frac{\partial L}{\partial w_2}$, and $\frac{\partial L}{\partial b}$. Recall that we can find these values using the chain rule. For example, if our predicted value is $y$, $\frac{\partial L}{\partial b} = \frac{\partial L}{\partial y} \frac{\partial y}{\partial b}$. You'll want to start by computing $\frac{\partial L}{\partial y}$, i.e.  you should first compute the derivative of the loss function $L= (y_{true} - y)^2$.
 
 3. Weight Updates
 
