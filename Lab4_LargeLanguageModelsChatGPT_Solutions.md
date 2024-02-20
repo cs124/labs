@@ -27,7 +27,12 @@ We will set our initial weights to be $w_1 = 2, w_2 = -1, b = 1$. Let's say we h
 
     L = (y_true - y)^2 = (10 - 12)^2 = 4.
 
-    To draw out computation graph with intermediate variables, we define w_1 x_1 as h_1 and w_2 x_2 as h_2.
+    To draw out computation graph with intermediate variables, we define w_1 x_1 as h_1 and w_2 x_2 as h_2. 
+    Below is what the nodes in the computation graph would look like. Note that because we don't need gradients
+    for x_1, x_2, and y_true, we don't include them as nodes in the graph and can just treat them as constants.
+    
+![diagram drawio](https://github.com/cs124/labs/assets/60169849/41cf0c4d-a493-4e64-a51f-ad1edf1cdac0)
+
     
 
 2. Backward Pass
