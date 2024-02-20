@@ -94,3 +94,6 @@ Once you have gotten a response, respond to the following questions with your pa
    <li>Imagine the disinformation you produced spreads on a social media platform. What consequences can you see arising from this? Discuss with your partner.
    </li>
 </ol>
+
+## Part 5: PA7 Partners
+If you're looking for a group for PA7, we invite you to come to the front at the end of lab to meet people!
