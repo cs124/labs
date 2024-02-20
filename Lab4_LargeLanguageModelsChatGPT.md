@@ -28,7 +28,7 @@ Complete a backward pass where you use backpropagation to find the values $\frac
 
 Finally, use the partial derivative values you found to update $w_1, w_2,$ and $b$ using the update rule above and $\eta = 0.01$. Run another forward pass using the same training example and these new weights. Is the new loss more or less than the old loss?
 
-Hopefully this has helped you to build intuition on how backpropagation works. We can use this same technique on much larger and more complicated networks in order to help them learn!
+Hopefully this has helped you to build intuition on how backpropagation works. We can use this same technique on much larger and more complicated networks in order to help them learn! In PA6, you will apply these concepts directly to a neural network with more than one layer and more than one input.
 
 ## Part 2: LLM Setup
 
