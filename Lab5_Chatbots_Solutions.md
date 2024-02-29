@@ -1,7 +1,7 @@
-# Week 9: Group Exercises on Chatbots/Dialogue Agents, and Recommendation Engines Solutions
+# Week 9: PA7 Overview, Group Exercises on Recommendation Systems, Github Setup, Group Norms
 
-## Part 1: Dialogue Agent Performance
-For discussion!
+## Part 1: PA7 Overview
+Check out the screencast if you need to recall anything here!
 
 ## Part 2: Collaborative Filtering
 
