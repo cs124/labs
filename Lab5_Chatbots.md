@@ -89,7 +89,7 @@ For this part (as in PA7) we will use raw cosine similarity, NOT mean-centered o
 
 Recall the formula for the cosine similarity of two vectors:
 
-$$\text{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum_{i=1}^{n} v_{1,i}^{2}} * \sqrt{\sum_{i=1}^{n} v_{2,i}^{2}}}$$
+$$\text{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
 
 Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\text{sim}(M1, M2)$, $\text{sim}(M1, M5)$, and $\text{sim}(M5, M6)$.
 
