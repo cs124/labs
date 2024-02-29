@@ -110,7 +110,7 @@ $\texttt{sim}(M1, M5)$ = ??
 
 $\texttt{sim}(M5, M6)$ = ??
 
-## Step 3: Compute New User's Ratings
+### Step 3: Compute New User's Ratings
 
 Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
 
@@ -124,7 +124,7 @@ $\texttt{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
 
 Now you calculate for M1 and M6.
 
-## Step 4: Recommend a Movie
+### Step 4: Recommend a Movie
 
 Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
 
@@ -137,3 +137,9 @@ If you don't have git installed (the command line tool) you can either download 
 ## Step 1: Creating a Private Repository
 
 Only one person in your group needs to do this.  
+
+Work in progress!
+
+## Part 4: Setting Group Norms
+
+We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by midnight tonight**!  Everyone needs to submit individually in your group.
