@@ -89,11 +89,11 @@ For this part (as in PA7) we will use raw cosine similarity, NOT mean-centered o
 
 Recall the formula for the cosine similarity of two vectors:
 
-$$\text{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
+$$\texttt{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
 
-Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\text{sim}(M1, M2)$, $\text{sim}(M1, M5)$, and $\text{sim}(M5, M6)$.
+Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M2)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
 
-Note this is a symmetric matrix, that is $\text{sim}(M1,M2) = \text{sim}(M2,M1)$.
+Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
 
 |    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
 |----|---:|---:|--------------:|-------------:|-------------:|------------:|
@@ -104,11 +104,11 @@ Note this is a symmetric matrix, that is $\text{sim}(M1,M2) = \text{sim}(M2,M1)$
 | M5 |    |    |               |              |            1 |          ?? |
 | M6 |    |    |               |              |              |           1 |
 
-$\text{sim}(M1, M2)$ = ??
+$\texttt{sim}(M1, M2)$ = ??
 
-$\text{sim}(M1, M5)$ = ??
+$\texttt{sim}(M1, M5)$ = ??
 
-$\text{sim}(M5, M6)$ = ??
+$\texttt{sim}(M5, M6)$ = ??
 
 ## Step 3: Compute New User's Ratings
 
@@ -118,9 +118,9 @@ We will take the weighted average over the binarized ratings of all movies rated
 
 For example the predicted rating for movie 2 is:
 
-$\text{Rating}(M2) = \text{sim}(M2,M3) \cdot \text{binarized rating M3} + \text{sim}(M2,M4) \cdot \text{binarized rating M4} + \text{sim}(M2,M5) \cdot \text{binarized rating M5}$
+$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + \texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + \texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
 
-$\text{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
+$\texttt{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
 
 Now you calculate for M1 and M6.
 
