@@ -118,7 +118,9 @@ We will take the weighted average over the binarized ratings of all movies rated
 
 For example the predicted rating for movie 2 is:
 
-$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} $  + $ \texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} $ + $ \texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
+$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + $
+$\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
+$\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
 
 $\texttt{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
 
@@ -137,8 +139,6 @@ If you don't have git installed (the command line tool) you can either download 
 ## Step 1: Creating a Private Repository
 
 Only one person in your group needs to do this.  
-
-Work in progress!
 
 ## Part 4: Setting Group Norms
 
