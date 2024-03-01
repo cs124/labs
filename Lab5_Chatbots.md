@@ -104,7 +104,7 @@ Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,
 | M5 |    |    |               |              |            1 |          ?? |
 | M6 |    |    |               |              |              |           1 |
 
-$\texttt{sim}(M1, M2)$ = ??
+$\texttt{sim}(M1, M3)$ = ??
 
 $\texttt{sim}(M1, M5)$ = ??
 
@@ -142,4 +142,4 @@ Only one person in your group needs to do this.
 
 ## Part 4: Setting Group Norms
 
-We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by midnight tonight**!  Everyone needs to submit individually in your group.
+We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by 11:59PM tonight**!  Everyone needs to submit individually in your group.

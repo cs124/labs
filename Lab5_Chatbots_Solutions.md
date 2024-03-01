@@ -7,65 +7,116 @@ Check out the screencast if you need to recall anything here!
 
 Let's work through an example of item-item collaborative filtering similar to what will be used in PA7:
 
-You are working for OneTwoFourAI and you have an idea for a wonderful new app - a food recommendation system! 
+It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1RalPHyrnGHc3dGnDVzAZNZG4uNiZxrcMiO--Xo8awsw/edit#gid=0).
 
-* You debate with a colleague on whether to use item-item collaborative filtering or user-user collaborative filtering. Describe both of these methods. Which one would you use and why?
+**Check out the solutions spreadsheet [here](https://docs.google.com/spreadsheets/d/1ne8lkV_2DZo4KmcpD3RXeuLxiTH3ECS7JpW9OI8JBsE/edit#gid=0).**
 
+Let's say we have this matrix of movie reviews from various users:
 
->Item-item collaborative filtering aims to find similar items based on ratings for other items. User-user collaborative filtering aims to find similar users based on ratings for other users. In practice, item-item collaborative filtering often works better than user-user collaborative filtering because items are often similar, and users have multiple tastes. (People are more complex than objects.)
+|    | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 | U9 | U10 | U11 | U12 |
+|----|---:|---:|---:|---:|---:|---:|---:|---:|---:|----:|----:|----:|
+| M1 |  1 |    |  3 |    |    |  5 |    |    |  5 |     |   4 |     |
+| M2 |    |    |  5 |  4 |    |    |  4 |    |    |   2 |   1 |   3 |
+| M3 |  2 |  4 |    |  1 |  2 |    |  3 |    |  4 |   3 |   5 |     |
+| M4 |    |  2 |  4 |    |  5 |    |    |  4 |    |     |   2 |     |
+| M5 |    |  4 |  3 |  4 |  2 |    |    |    |    |     |   2 |   5 |
+| M6 |  1 |    |  3 |    |  3 |    |    |  2 |    |     |   4 |     |
 
+We have a new user with the following preferences:
 
+U = [M1: ??, M2: ??, M3: 5, M4: 2, M5: 3, M6: ??]
 
-You decide to move forward with a simplified version of item-item collaborative filtering. You have access to the following dataset: 
+Out of the movies they have not seen (M1, M2, and M6) we want to recommend the film that they are likely to rate the highest.
 
+### Step 1.  Binarize the Ratings
 
-|        | User 1 | User 2 | User 3 | User 4 |
-|--------|--------|--------|--------|--------|
-| Food 1 | 3      | 5      | 4      |        |
-| Food 2 | 4      |        | 1      |        |
-| Food 3 |        | 3      |        | 2      |
-| Food 4 | 2      |        | 4      | 1      |
+Start by binarizing the ratings!  We will use the following cutoffs (same as PA7):
 
-Each cell in the table contains either a rating from 1 to 5 or no rating. 
+0 $\leq$ rating $\lt$ 3: **-1**
 
+Unrated: **0**
 
-1. Binarize the values in the dataset. Convert the values to +1 (like), 0 (no rating), and -1 (dislike). Ratings 3 to 5 correspond to liking and ratings 1 to 2 correspond to dislike. 
+3 $\leq$ rating $\leq$ 5: **1**
 
+We partially fill out this table for you.  Please fill out the missing binarization for M1 and M6, as well as the New User.
 
-|        | User 1 | User 2 | User 3 | User 4 |
-|--------|--------|--------|--------|--------|
-| Food 1 | +1     | +1     | +1     |        |
-| Food 2 | +1     |        | -1     |        |
-| Food 3 |        | +1     |        | -1     |
-| Food 4 | -1     |        | +1     | -1     |
-
-
-2. You collect two new ratings from User X. User X gives Food 2 a rating of 2 and Food 4 a rating of 5. Update the table to reflect the new ratings from User X. 
-
-|        | User 1 | User 2 | User 3 | User 4 | User X |
-|--------|--------|--------|--------|--------|--------|
-| Food 1 | +1     | +1     | +1     |        |        |
-| Food 2 | +1     |        | -1     |        | -1     |
-| Food 3 |        | +1     |        | -1     |        |
-| Food 4 | -1     |        | +1     | -1     | +1     |
-
-3. Using the formula $r_{xi} = \sum_{j\in(f2, f4)} s_{ij}r_{xj}$, which would you choose to recommend to User X, Food 1 or Food 3? Use "overlapping item" cosine similarity in your calculations. 
-
-Food 1:
-
-$s_{1,2} = \frac{(1)(1) + (1)(-1)}{\sqrt{(1)^2 + (1)^2} * \sqrt{(1)^2 + (-1)^2}} = 0$
-
-$s_{1,4} = \frac{(1)(-1) + (1)(1)}{\sqrt{(1)^2 + (1)^2} * \sqrt{(-1)^2 + (1)^2}} = 0$
-
-$r_{x1} = \sum_{j\in(f2, f4)} s_{ij}r_{xj} = 0$ 
-
-For Food 3:
-
-$s_{3,2} = 0$
-
-$s_{3,4} = \frac{(-1)(-1)}{\sqrt{(-1)^2} * \sqrt{(-1)^2}} = 1$
-
-$r_{x3} = \sum_{j\in(f2, f4)} s_{ij}r_{xj} = (0)(-1) + 1(1) = 1$ 
+Binarized Matrix:
+|    | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 | U9 | U10 | U11 | U12 |
+|----|---:|---:|---:|---:|---:|---:|---:|---:|---:|----:|----:|----:|
+| M1 |  -1 |  0 |  1 |  0 |  0 |  1 |  0 |  0 |  1 |   0 |   1 |   0 |
+| M2 |  0 |  0 |  1 |  1 |  0 |  0 |  1 |  0 |  0 |  -1 |  -1 |   1 |
+| M3 | -1 |  1 |  0 | -1 | -1 |  0 |  1 |  0 |  1 |   1 |   1 |   0 |
+| M4 |  0 | -1 |  1 |  0 |  1 |  0 |  0 |  1 |  0 |   0 |  -1 |   0 |
+| M5 |  0 |  1 |  1 |  1 | -1 |  0 |  0 |  0 |  0 |   0 |  -1 |   1 |
+| M6 |  -1 |  0 |  1 |  0 |  1 |  0 |  0 |  -1 |  0 |   0 |   1 |   0 |
 
 
-$r_{x3}$ is higher than $r_{x1}$. So, we will recommend **Food 3** to User X. 
+New User:
+| movie | binarized rating |
+|-------|------------------|
+|    M1 |                0 |
+|    M2 |                0 |
+|    M3 |                1 |
+|    M4 |               -1 |
+|    M5 |                1 |
+|    M6 |                0 |
+
+
+### Step 2: Compute Similarity Scores
+
+For this part (as in PA7) we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.  Note that in PA7 we do not use mean-centering at all.
+
+Recall the formula for the cosine similarity of two vectors:
+
+$$\texttt{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
+
+Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M2)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
+
+Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
+
+|    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
+|----|---:|---:|--------------:|-------------:|-------------:|------------:|
+| M1 |  1 |  0 |            0.47 |            0 |           0 |         0.6 |
+| M2 |    |  1 | -0.29 | 0.37 | 0.67 |           0 |
+| M3 |    |    |             1 | -0.47 |            0 | 0.16 |
+| M4 |    |    |               |            1 |            0 |           0 |
+| M5 |    |    |               |              |            1 |          -0.18 |
+| M6 |    |    |               |              |              |           1 |
+
+>$\texttt{sim}(M1, M3)$ = $\frac{(-1)(-1) + (0)(1) + (1)(0) + ... + (0)(0)}{\sqrt{(-1)^2 + 0^2 +... + 0^2}\cdot\sqrt{(-1)^2 + 1^2 + ... + 0^2}} = \frac{3}{\sqrt{5} \cdot \sqrt{8}} = 0.474341$
+
+> $\texttt{sim}(M1, M5)$ = $\frac{(-1)(0) + (0)(1) + (1)(1) + ... + (0)(1)}{\sqrt{(-1)^2 + 0^2 +... + 0^2}\cdot\sqrt{0^2 + 1^2 + ... + 1^2}} = \frac{0}{\sqrt{5} \cdot \sqrt{6}} = 0$
+
+> $\texttt{sim}(M5, M6)$ = $\frac{(0)(-1) + (1)(0) + (1)(1) + ... + (1)(0)}{\sqrt{0^2 + 1^2 + ... + 1^2}\cdot\sqrt{(-1)^2 + 0^2 + ... + 0^2}} = \frac{-1}{\sqrt{6} \cdot \sqrt{5}} = -0.1825742$
+
+### Step 3: Compute New User's Ratings
+
+Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
+
+We will take the weighted average over the binarized ratings of all movies rated by the new user.  We will weigh on similarity.
+
+For example the predicted rating for movie 2 is:
+
+$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + $
+$\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
+$\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
+
+$\texttt{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
+
+Now you calculate for M1 and M6.
+
+> $\texttt{Rating}(M1) = (0.47)(1) + (0)(-1) + (0)(1) = 0.47$
+> $\texttt{Rating}(M6) = (0.16)(1) + (0)(-1) + (-0.18)(1) = -0.02$
+
+### Step 4: Recommend a Movie
+
+Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
+
+> M1 had the highest predicted rating, so we'll recommend that one!
+
+## Part 3: Getting started with Github
+We are uploading a Github tutorial to canvas after the lab if you're looking for a refresher
+
+## Part 4: Setting Group Norms
+
+We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by 11:59PM tonight**!  Everyone needs to submit individually in your group.
