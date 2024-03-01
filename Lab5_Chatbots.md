@@ -22,7 +22,7 @@ Here's the point breakdown:
 
 You can find the rubric for PA7 coding [here](https://docs.google.com/spreadsheets/d/1MXqnPk60nwNWoNQQcLK2rTWIolZsi8u8pmQx31ewh8Y/edit#gid=2094045160).
 
-All submissions will be made through gradescope.
+All submissions will be made through gradescope.  **Note that no late days can be used for PA7!!!**
 
 We will now go over a live demo of the different components of the project!
 
