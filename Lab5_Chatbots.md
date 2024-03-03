@@ -53,7 +53,7 @@ Out of the movies they have not seen (M1, M2, and M6) we want to recommend the f
 
 Start by binarizing the ratings!  We will use the following cutoffs (same as PA7):
 
-0 $\leq$ rating $\leq$ 2.5: **-1**
+0 $\lt$ rating $\leq$ 2.5: **-1**
 
 Unrated: **0**
 
