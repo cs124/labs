@@ -81,7 +81,7 @@ Compute the cosine similarity over all the ***MOVIE*** (item) vectors.  These ar
 | M2 |    |  1 | -0.41 | 0.5 | 0.82 |           0.5 |
 | M3 |    |    |             1 | -0.41 |            0 | 0.41 |
 | M4 |    |    |               |            1 |            0 |           0.5 |
-| M5 |    |    |               |              |            1 |          -0.41 |
+| M5 |    |    |               |              |            1 |          0.41 |
 | M6 |    |    |               |              |              |           1 |
 
 >$\texttt{sim}(M1, M3)$ = $\frac{(-1)(-1) + (1)(1) + (1)(0) + (0)(-1)}{\sqrt{(-1)^2 + 1^2 + 1^2 + 0^2}\cdot\sqrt{(-1)^2 + 1^2 + 0^2 + (-1)^2}} = \frac{2}{\sqrt{3} \cdot \sqrt{3}} = 0.66667$
