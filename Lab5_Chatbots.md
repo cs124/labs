@@ -132,13 +132,59 @@ Now that we have the expected ratings of the user for the movies they have not s
 
 ## Part 3: Getting started with Github
 
-If you don't have a Github account yet, make one [here](https://github.com/)!
+If you don't have a Github account yet, make one [here](https://github.com/)!  **Everyone in your group will need a GitHub account.**  We have found that chrome and edge work better for this than safari due to GitHub's unique captcha test.  After account creation any browser should work fine!
 
-If you don't have git installed (the command line tool) you can either download [Github desktop](https://desktop.github.com), or directly install git for [Windows](https://git-scm.com/download/win) or [OSX](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).  Github desktop provides a user interface for all the things we are doing today, but everything will be accessible from the command line.
+Also be sure to install [Github desktop](https://desktop.github.com) which will be our tool of choice for connecting to GitHub and sending/recieving updates to our codebase.
 
-## Step 1: Creating a Private Repository
+### Step 1: Creating a Private Repository
 
-Only one person in your group needs to do this.  
+Only one person in your group needs to do this.  Navigate to the [new repository creation page](https://github.com/new) on GitHub.
+
+![Create New Repo](img/GitHubRepoCreation.png)
+
+You can call the repository whatever you'd like but be sure to mark it as a `Private` repository since we'll be storing your project code here.
+
+Leave the rest of the settings to their defaults and click `Create repository`.
+
+### Step 2: Inviting Collaborators
+
+Click the `Invite collaborators` button to invite your group partners to the repository.
+
+![Invite collaborators by selecting the invite collaborators button](img/InviteCollaborators.png)
+
+Under `Manage access` click `Add people`.  Search for your partners and add them to the repository.  You can add them with `Admin` access.  They will need to check their email for an invitation.
+
+### Step 3: Setting up GitHub Desktop
+
+**All Group Members should follow this step!**
+
+Open up Github Desktop which you can download [here](https://desktop.github.com).
+
+Sign in to GitHub Desktop.  There may be a button to do so when you first open it, but if not you can still sign in through the menu.  If you are on mac, click `GitHub Desktop` and then `Settings`.
+
+![Settings Mac](img/GithubDesktopSettingsMac.png)
+
+Then click `Sign Into GitHub.com`.
+
+If you are on Windows, click `File` then `Options`
+
+![Options Windows](img/GithubDesktopSettingsWindows.png)
+
+Then click `Sign In` under `GitHub.com`, not GitHub Enterprise.
+
+Sign in with your browser and enable the permissions requested for GitHub Desktop.
+
+### Step 4: Setting up your Local Repository
+
+If this is your first time using Github Desktop you may see a `Clone a repository from the internet` button
+
+![Clone a repository from the internet](img/GitHubDesktopClone.png)
+
+Otherwise you'll find the `Clone` button under `Current Repository`, `Add`, `Clone Repository`
+
+There you'll find the option to clone `Your Repositories` from GitHub.com.  You'll also find repositories that you've been added as a collaborator to.
+
+Choose to `Clone`
 
 ## Part 4: Setting Group Norms
 
