@@ -34,14 +34,14 @@ It will help to make a copy and follow along in [this spreadsheet](https://docs.
 
 Let's say we have this matrix of movie reviews from various users:
 
-|    | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 | U9 | U10 | U11 | U12 |
-|----|---:|---:|---:|---:|---:|---:|---:|---:|---:|----:|----:|----:|
-| M1 |  1 |    |  3 |    |    |  5 |    |    |  5 |     |   4 |     |
-| M2 |    |    |  5 |  4 |    |    |  4 |    |    |   2 |   1 |   3 |
-| M3 |  2 |  4 |    |  1 |  2 |    |  3 |    |  4 |   3 |   5 |     |
-| M4 |    |  2 |  4 |    |  5 |    |    |  4 |    |     |   2 |     |
-| M5 |    |  4 |  3 |  4 |  2 |    |    |    |    |     |   2 |   5 |
-| M6 |  1 |    |  3 |    |  3 |    |    |  2 |    |     |   4 |     |
+|    | U1 | U2 | U3 | U4 |
+|----|---:|---:|---:|---:|
+| M1 |  1 |  5 |  3 |    |
+| M2 |    |    |  5 |  4 |
+| M3 |  2 |  4 |    |  1 |
+| M4 |    |  2 |  4 |    |
+| M5 |    |  4 |  3 |  4 |
+| M6 |  1 |    |  3 |    |
 
 We have a new user with the following preferences:
 
@@ -59,28 +59,28 @@ Unrated: **0**
 
 2.5 $\lt$ rating $\leq$ 5: **1**
 
-We partially fill out this table for you.  Please fill out the missing binarization for M1 and M6, as well as the New User.
+We fill out this table for you in the interest of time!  Please ensure you understand how we got this matrix!
 
 Binarized Matrix:
-|    | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 | U9 | U10 | U11 | U12 |
-|----|---:|---:|---:|---:|---:|---:|---:|---:|---:|----:|----:|----:|
-| M1 |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |   ? |   ? |   ? |
-| M2 |  0 |  0 |  1 |  1 |  0 |  0 |  1 |  0 |  0 |  -1 |  -1 |   1 |
-| M3 | -1 |  1 |  0 | -1 | -1 |  0 |  1 |  0 |  1 |   1 |   1 |   0 |
-| M4 |  0 | -1 |  1 |  0 |  1 |  0 |  0 |  1 |  0 |   0 |  -1 |   0 |
-| M5 |  0 |  1 |  1 |  1 | -1 |  0 |  0 |  0 |  0 |   0 |  -1 |   1 |
-| M6 |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |  ? |   ? |   ? |   ? |
+|    | U1 | U2 | U3 | U4 |
+|----|---:|---:|---:|---:|
+| M1 | -1 |  1 |  1 |  0 |
+| M2 |  0 |  0 |  1 |  1 |
+| M3 | -1 |  1 |  0 | -1 |
+| M4 |  0 | -1 |  1 |  0 |
+| M5 |  0 |  1 |  1 |  1 |
+| M6 | -1 |  0 |  1 |  0 |
 
 
 New User:
 | movie | binarized rating |
 |-------|------------------|
-|    M1 |                ? |
-|    M2 |                ? |
-|    M3 |                ? |
-|    M4 |                ? |
-|    M5 |                ? |
-|    M6 |                ? |
+|    M1 |                0 |
+|    M2 |                0 |
+|    M3 |                1 |
+|    M4 |               -1 |
+|    M5 |                1 |
+|    M6 |                0 |
 
 
 ### Step 2: Compute Similarity Scores
@@ -97,12 +97,12 @@ Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,
 
 |    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
 |----|---:|---:|--------------:|-------------:|-------------:|------------:|
-| M1 |  1 |  0 |            ?? |            0 |           ?? |         0.6 |
-| M2 |    |  1 | -0.29 | 0.37 | 0.67 |           0 |
-| M3 |    |    |             1 | -0.47 |            0 | 0.16 |
-| M4 |    |    |               |            1 |            0 |           0 |
-| M5 |    |    |               |              |            1 |          ?? |
-| M6 |    |    |               |              |              |           1 |
+| M1 |  1 | 0.41 |          **??** |            0 |         **??** |        0.82 |
+| M2 |    |  1 | -0.41         | 0.5          | 0.82         |         0.5 |
+| M3 |    |    |             1 |        -0.41 |            0 |        0.41 |
+| M4 |    |    |               |            1 |            0 |         0.5 |
+| M5 |    |    |               |              |            1 |         **??**  |
+| M6 |    |    |               |              |              |          1  |
 
 $\texttt{sim}(M1, M3)$ = ??
 
@@ -122,7 +122,7 @@ $\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + 
 $\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
 $\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
 
-$\texttt{Rating}(M2) = (-0.29)(1) + (0.37)(-1) + (0.67)(1) = 0.01$
+$\texttt{Rating}(M2) = (-0.41)(1) + (0.5)(-1) + (0.82)(1) = -0.09$
 
 Now you calculate for M1 and M6.
 
