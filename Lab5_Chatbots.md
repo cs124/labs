@@ -95,6 +95,8 @@ Use the binarized vectors when computing the cosine similarity.  We provide a fe
 
 Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
 
+Compute the cosine similarity over all the ***MOVIE*** (item) vectors.  These are the rows of the above matrix.
+
 |    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
 |----|---:|---:|--------------:|-------------:|-------------:|------------:|
 | M1 |  1 | 0.41 |          **??** |            0 |         **??** |        0.82 |
