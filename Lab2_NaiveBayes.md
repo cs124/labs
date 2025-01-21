@@ -27,8 +27,8 @@ Answer the questions below given the sets above.
 3. Do you think that the predicted class is the correct sentiment of this sentence? Explain, in your own words, what about the Naïve Bayes classifier led it to the correct or incorrect answer. What assumptions made by Naïve Bayes led to this result? Identify a specific assumption and be prepared to justify.
 
 4. Why do you add |V| to the denominator of add-1 smoothing, instead of just counting the words in one class?
-
-We will now go back to the whole class and discuss group answers for questions 3 and 4 from part 1 in a plenary session.
+   
+We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
 
 ## Part 2: Naive Bayes Toxicity Classification
 
