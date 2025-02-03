@@ -106,7 +106,7 @@ Now, imagine you have a more sophisticated IR system than the one in Part 1, wit
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
-5. What is the precision of the system on this search, and what is its recall? 
+3. What is the precision of the system on this search, and what is its recall? 
 
 ```
 Precision: 8/18 (or 4/9)
@@ -128,7 +128,7 @@ If you prioritize precision, your classifier will minimize *false positives*, me
 
 If you prioritize recall, your classifier will minimize *false negatives*, meaning it will try not to mis-identify toxic speech as benign. This means your classifier will correctly classify most of the existing toxic comments as toxic, but might be over-eager, and classify benign comments as toxic as well.
 
-7. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
+4. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
 ```
 Arguments for either are valid:
 Precision - Avoid censoring people's benign speech
@@ -137,10 +137,9 @@ Recall - Ensure that the majority of existing hate speech is correctly flagged
    
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-8. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. EXplain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
+5. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. EXplain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
 ```
 Any answer with justification is valid.
 Example scenarios for precision over recall are: criminal justice applications, like recidivism risk assessments (scenarios where false positives could be costly).
-Example scenarios for recall over precision are: medical diagnoses, loan approval systems, content moderation
-(scenarios where false negatives could be costly).
+Example scenarios for recall over precision are: medical diagnoses, loan approval systems, content moderation (scenarios where false negatives could be costly).
 ```
