@@ -39,7 +39,7 @@ For this next part, have someone take notes for your group so that you are prepa
 
 Here's a quick refresher on the definition of precision and recall, from the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf) (Chapter 4, page 12):
 
-Precision measures the percentage of the items that the system detected (i.e., the system labeled as positive) that are in fact positive. It asks the question, "_Out of everything the model identified as positive, how many were actually positive?_ Precision is defined as:
+Precision measures the percentage of the items that the system detected (i.e., the system labeled as positive) that are in fact positive. It asks the question, _"Out of everything the model identified as positive, how many were actually positive?"_ Precision is defined as:
 
    ![precision-defn](precision_equation.png)
 
