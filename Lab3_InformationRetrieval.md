@@ -21,17 +21,15 @@ You will use the following equation:
    ![tf-idf simplified equation](tf_idf_simple_equation.png)
 
 
-* Note that this is a **simplified version** of the regular tf-idf cosine score. The regular tf-idf cosine score is explained in the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/14.pdf) (Chapter 14, pages 4-6). (The simplified version we are having you compute is sometimes called the ltc.lnn weighting variation, using the SMART notation defined in the [Manning textbook](https://site.ebrary.com/lib/stanford/docDetail.action?docID=10240274), although you don’t have to remember that). This version omits all the grayed out components from the regular score.
+This tf-idf cosine score equation is explained in the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/14.pdf) (Chapter 14, pages 4-6). Here is an [example](https://docs.google.com/spreadsheets/d/1GI3yJCODven4HAY--tGCpOVPGvcamSjYWKDRbjfzFhQ/edit?usp=sharing) of how to compute the tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. This example uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns).
 
-Here is an [example](https://docs.google.com/spreadsheets/d/1GI3yJCODven4HAY--tGCpOVPGvcamSjYWKDRbjfzFhQ/edit?usp=sharing) of how to compute the *regular* tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. This example uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns).
-
-Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1pUtFoz_SNW3kGlRRFwZhXiumvSKPgVq4Gy-rY1hgH1o/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula. (Hint: your formulas should be very similar to those in the textbook example, but some computations will be omitted, based on the parts of the equation above that are grayed out. Figure out which columns are omitted, and why!)
+Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1pUtFoz_SNW3kGlRRFwZhXiumvSKPgVq4Gy-rY1hgH1o/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula.
 
 1. Which document is returned for your one-word query, “apple”, and what is the cosine?
 
 Now, imagine the IR system has been tracking and logging your previous queries. The last query you searched was “new phone”. In a simplified version of personalized search, the IR system adds “phone” to your one-word query under the hood, so that the final query used is “apple phone”.
 
-2. Which document is returned for the two-word query, “apple phone”, and what is the cosine? (Hint: you should only have to change one cell in your spreadsheet to get the new answer.)
+2. Which document is returned for the two-word query, “apple phone”, and what is the cosine?
 
 Search engines commonly track our queries in order to personalize search results and maximize relevance. However, they frequently do this without us knowing. For the following three questions, write your answers down and be prepared to share.
 
