@@ -90,10 +90,19 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 ## Part 2: Precision and Recall
 
-
 For this next part, have someone take notes for your group so that you are prepared to share. 
 
-Imagine you have a more sophisticated IR system than the one in Part 1, with far more query terms and documents. You are tasked with evaluating its performance and how it might be used for different searches. 
+Here's a quick refresher on the definition of precision and recall, from the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf) (Chapter 4, page 12):
+
+Precision measures the percentage of the items that the system detected (i.e., the system labeled as positive) that are in fact positive. It asks the question, _"Out of everything the model identified as positive, how many were actually positive?"_ Precision is defined as:
+
+   ![precision-defn](precision_equation.png)
+
+Recall measures the percentage of items actually present in the input that were correctly identified by the system. It asks the question, _"Out of all the actual positives, how many did the model catch?"_ If there are false negatives (positives that the model missed), recall will decrease. Recall is defined as:
+
+   ![recall-defn](recall_equation.png)
+
+Now, imagine you have a more sophisticated IR system than the one in Part 1, with far more query terms and documents. You are tasked with evaluating its performance and how it might be used for different searches. 
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
@@ -103,19 +112,6 @@ For a particular query, your system returns 8 relevant documents and 10 non-rele
 Precision: 8/18 (or 4/9)
 Recall: 8/20 (or 2/5)
 ```
-
-You know that people will be using your IR system primarily to search for treatments to medical ailments they face. You are trying to decide whether you should improve the recall of your system. Suppose we define a true positive document as: a document which does not just describe the relevant ailment, but also, which contains accurate treatment information for this ailment. 
-
-6. Given the above context, answer the following and be prepared to explain:
-      
-<ol type="a">
-   <li>Why might you prioritize high precision in this task?
-      <code>I might prioritize precision to make sure the documents I return are likely to be relevant to the user's need, because I think the purpose of my system is for users to get accurate and relevant treatment information. I run the risk of missing a few relevant documents.</code>
-   </li>
-   <li>Why might you prioritize high recall in this task?
-      <code>I might prioritize recall so I don't miss any documents that might be relevant, because I think the purpose of my system is for users to be able to see as much relevant treatment information as possible. I run the risk of returning a few irrelevant documents.</code>
-   </li>
-</ol>
 
 Precision and recall are relevant metrics not just in IR tasks, but also, in broader NLP tasks. These metrics can have significant consequences not just on the performance of your system, but also on the social impact of your system. For example, let’s consider the role of precision and recall when evaluating a hate speech classifier.
 
@@ -141,38 +137,10 @@ Recall - Ensure that the majority of existing hate speech is correctly flagged
    
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-8. Write a scenario related to an IR or broader NLP task where you would prioritize *precision* over recall. Make sure you define what a “true positive” is, as in the examples above.
+8. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. EXplain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
 ```
 Any answer with justification is valid.
-Example scenarios are: criminal justice applications, like recidivism risk assessments
-(scenarios where false positives could be costly).
-```
-
-9. Write a scenario related to an IR or broader NLP task where you would prioritize *recall* over precision. Make sure you define what a “true positive” is, as in the examples above.
-```
-Any answer with justification is valid.
-Example scenarios are: medical diagnoses, loan approval systems, content moderation
+Example scenarios for precision over recall are: criminal justice applications, like recidivism risk assessments (scenarios where false positives could be costly).
+Example scenarios for recall over precision are: medical diagnoses, loan approval systems, content moderation
 (scenarios where false negatives could be costly).
 ```
-
-We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
-
-## Part 3: The Right to be Forgotten
-
-In Part 1, we considered the benefits and risks of personalized searches. Some search engines (e.g. DuckDuckGo) address the risks by allowing users to make private searches. They enable private searches by not recording user queries or tracking users at all. This protects the privacy of the searcher.
-
-But what about cases where the search-- whether personalized or not-- is for information about another individual? In these cases, what about the privacy of the searchee (the person being searched)? In the EU’s GDPR Article 17 – The Right to be Forgotten, individuals can require publishers and search engines to take down information about themselves under certain circumstances. 
-
-10. Spend 5 minutes reading more about this regulation at the links below, and any relevant articles you wish to browse:
-
-   - https://gdpr-info.eu/art-17-gdpr/
-   - https://gdpr.eu/right-to-be-forgotten/
-
-Then, discuss in your groups the benefits and tradeoffs of taking information down vs. leaving it up. Do you think people should have the right to remove information about themselves from the web? In which circumstances? Be prepared to share your responses with the rest of the class. 
-
-```
-Any answer with justification is valid. An example response is:
-Since the right to privacy is a basic human right, everyone should have the ability to take down information about themselves that they do not wish to have public. The exception to this is the scenarios outlined in the GDPR, like when the information is being used for legal defense. The onus for this should fall on the platforms that are publishing the information, and should be backed with legal consequences for refusing to take down the information in question.
-```
-
-We will now go back to the whole class and discuss group answers for Part 3 in a plenary session.
