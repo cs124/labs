@@ -29,7 +29,7 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
    ```
    Written solution below:
    ```
-   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1dNhmpI1Ityw6j5m-qI3sxSbG5VzDMJlJ3HPiPDYxHxY/edit?usp=sharing).
+   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?usp=sharing).
    
    Let's start with our query "apple".
    
@@ -71,7 +71,7 @@ Now, imagine the IR system has been tracking and logging your previous queries. 
    ```
    Written solution below:
    ```
-   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1dNhmpI1Ityw6j5m-qI3sxSbG5VzDMJlJ3HPiPDYxHxY/edit?usp=sharing).
+   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?usp=sharing).
 
    Our new query is "apple phone", so we only need to change one cell in our sheet: the count of phone in the query.
    
