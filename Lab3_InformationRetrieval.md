@@ -1,6 +1,6 @@
 # Week 5: Group Exercises on Information Retrieval
 
-<sub><sup>*created by jasper mcavity, uma phatak, & veronica rivera, cs124 staff team, winter 2024*</sup></sub>
+<sub><sup>*created by cs124 staff team, winter 2025*</sup></sub>
 
 ## Part 1: IR with tf-idf weighting
 
@@ -30,12 +30,6 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
 Now, imagine the IR system has been tracking and logging your previous queries. The last query you searched was “new phone”. In a simplified version of personalized search, the IR system adds “phone” to your one-word query under the hood, so that the final query used is “apple phone”.
 
 2. Which document is returned for the two-word query, “apple phone”, and what is the cosine?
-
-Search engines commonly track our queries in order to personalize search results and maximize relevance. However, they frequently do this without us knowing. For the following three questions, write your answers down and be prepared to share.
-
-3. What are the potential benefits and risks of personalized searches? 
-
-4. Are there certain kinds of data that are OK for search engines to use? If so, what are they, and why is it OK for search engines to use them? What is the limit to the kinds of data that search engines should be allowed to use to personalize our searches?
 
 We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
 
