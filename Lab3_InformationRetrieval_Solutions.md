@@ -137,7 +137,7 @@ Recall - Ensure that the majority of existing hate speech is correctly flagged
    
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-5. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. EXplain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
+5. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. Explain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
 ```
 Any answer with justification is valid.
 Example scenarios for precision over recall are: criminal justice applications, like recidivism risk assessments (scenarios where false positives could be costly).
