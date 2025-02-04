@@ -35,7 +35,7 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
    
    |  term  | tf-raw |       tf-wt        | df |       idf        |        tf-idf         |                  normalized                   |
    |--------|--------|--------------------|----|------------------|-----------------------|-----------------------------------------------|
-   | apple   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0.301^2 + 0.301^2) = 0.577 |
+   | apple   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0^2 + 0^2) = 1 |
    
    Now let's do our calculations for Doc 1.
    
@@ -55,12 +55,12 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
    
    Now for the cosine similarity of each document, we take the dot product of the normalized vector for the query and the normalized vector for that document. We get the following:
    
-   `Doc1: (0.577 x 0.750)  = 0.433`
+   `Doc1: (1 x 0.750)  = 0.750`
    
    
-   `Doc2: (0.577 x 0) = 0`
+   `Doc2: (1 x 0) = 0`
    
-   The highest score belongs to Doc 1, so this is the returned document with a cosine of 0.433.
+   The highest score belongs to Doc 1, so this is the returned document with a cosine of 0.750.
 
 Now, imagine the IR system has been tracking and logging your previous queries. The last query you searched was “new phone”. In a simplified version of personalized search, the IR system adds “phone” to your one-word query under the hood, so that the final query used is “apple phone”.
 
@@ -68,23 +68,23 @@ Now, imagine the IR system has been tracking and logging your previous queries. 
    ```
    Written solution below:
    ```
-   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?usp=sharing).
+   Google sheet with the solutions is [here](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?gid=1913608939#gid=1913608939).
 
    Our new query is "apple phone", so we only need to change one cell in our sheet: the count of phone in the query.
 
    |  term  | tf-raw |       tf-wt        | df |       idf        |        tf-idf         |                  normalized                   |
    |--------|--------|--------------------|----|------------------|-----------------------|-----------------------------------------------|
-   | apple   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0.301^2 + 0.301^2) = 0.577 |
-   | phone   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0.301^2 + 0.301^2) = 0.577 |
+   | apple   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0.301^2 + 0^2) = 0.7071 |
+   | phone   |   1    | 1 + log(1) = 1 | 1  | log(2/1) = 0.301 | 1 x 0.301 = 0.301 | 0.301 / sqrt(0.301^2 + 0.301^2 + 0^2) = 0.7071 |
    
    Keeping the rest of the sheet the same, we again take the dot product of the normalized query vector and the normalized 
    document vector. We get the following:
    
-   `Doc1: (0.577 x 0.750) + (0.577 x 0)  = 0.433`
+   `Doc1: (0.7071 x 0.750) + (0.7071 x 0) + (0 x 0.661)  = 0.531`
    
-   `Doc2: (0.577 x 0) + (0.577 x 1) = 0.577`
+   `Doc2: (0.7071 x 0) + (0.7071 x 1) + (0 x 0) = 0.7071`
    
-   Now, the highest score belongs to Doc 2, so this is the returned document with a cosine of 1. This cosine value should make sense to you, given the document!
+   Now, the highest score belongs to Doc 2, so this is the returned document with a cosine of 0.7071. This cosine value should make sense to you, given the document!
 
 We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
 
