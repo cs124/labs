@@ -1,30 +1,34 @@
 # Week 9: PA7 Overview, Group Exercises on Recommendation Systems, Github Setup, Group Norms
 
 Agenda:
- - PA7 Overview (2 minutes)
- - Recommendation Systems Question (25 minutes)
- - Getting started with Github (25 minutes)
- - Group Norms (20 minutes)
+ - Reminder: Quiz 8 out today!
+ - PA7 Overview (5 minutes)
+ - Recommendation Systems Question (30 minutes)
+ - Getting started with Github (30 minutes)
+ - Group Norms (10 minutes)
 
 ## Part 1: PA7 Overview
 
 For PA7 we will be building a custom movie recommendation chatbot!  We will implement our chatbot with 3 different designs: slot-filling dialogue agent (GUS), LLM prompting chatbot, and a hybrid LLM augmented bot.
 
-PA7 is worth 16\% of your total grade, and conveniently split into exactly 100 points!  You're going to earn 5 of them today!
+PA7 is worth 18\% of your total grade, and conveniently split into exactly 100 points!
 
 Here's the point breakdown:
- - [PA7 Group Work Form](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit?usp=sharing) (5 Points)
- - [PA7 Coding](https://docs.google.com/spreadsheets/d/1MXqnPk60nwNWoNQQcLK2rTWIolZsi8u8pmQx31ewh8Y/edit#gid=2094045160) (85 Points)
- - [PA7 User Testing](https://docs.google.com/document/d/1liX4MC5qfBceQB0oCPICgxnRmoH0RKfdq5jmwsp7wRw/edit#heading=h.k5axkkjlu35) (5 Points)
- - [PA7 Reflection](https://docs.google.com/document/d/1gDKuWzuI3f6Nmue60UqoESsrWIzRK62GmdKRh1_y_DM/edit#heading=h.90ic4jpslfqf) (5 points)
+ - [PA7 Coding](https://github.com/cs124/pa7-chatbot?tab=readme-ov-file) (85 Points)
+ - [PA7 User Testing](https://docs.google.com/document/d/1liX4MC5qfBceQB0oCPICgxnRmoH0RKfdq5jmwsp7wRw/edit?usp=sharing) (5 Points)
+ - [PA7 Reflection](https://docs.google.com/document/d/1gDKuWzuI3f6Nmue60UqoESsrWIzRK62GmdKRh1_y_DM/edit?usp=sharing) (10 points)
 
- We will cover the Group Work Form at the end of today's Lab!
-
-You can find the rubric for PA7 coding [here](https://docs.google.com/spreadsheets/d/1MXqnPk60nwNWoNQQcLK2rTWIolZsi8u8pmQx31ewh8Y/edit#gid=2094045160).
+You can find instructions, rubrics, FAQs, and links to all resources for PA7 coding in the [PA7 GitHub README page](https://github.com/cs124/pa7-chatbot?tab=readme-ov-file).
 
 All submissions will be made through gradescope.  **Note that no late days can be used for PA7!!!**
 
-For more details be sure to check out the PA7 Screencast!
+You will have time to discuss with your teammates at the end of today's Lab!
+
+**Before you start:**
+- Watch lecture videos up to Chatbots & Recommender Systems.
+- Make sure your team has received together.ai credit.
+- Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/203819/files/14775807?module_item_id=2129781) for detailed info!
+- We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
 
 ## Part 2: Collaborative Filtering
 
@@ -325,4 +329,4 @@ If you happen to have finished with your GitHub setup early then now would be a 
 
 ## Part 4: Setting Group Norms
 
-We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by 11:59PM tonight**!  Everyone needs to submit individually in your group.
+Communication is the key to success in team work. Communicate your expectations and plans for this project with your teammates!  Meanwhile, if you have any questions, the CAs are here to help you. Enjoy!
