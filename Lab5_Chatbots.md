@@ -140,6 +140,15 @@ Now that we have the expected ratings of the user for the movies they have not s
 
 ## Part 3: Getting started with Github
 
+### Why use Git?
+
+Working on a coding project with a large team can be messy! Everytime you or your teammates make any changes, you need to sync the files with everyone. What if two of you make changes at the same time? That's why we need version control tools like Git. Git allows you to:
+
+- Manage the changes made by collaborators easily.
+- View the full history of code changes and revert to earlier version.
+
+We will use Git with GitHub!
+
 If you don't have a Github account yet, make one [here](https://github.com/)!  **Everyone in your group will need a GitHub account.**  We have found that chrome and edge work better for this than safari due to GitHub's unique captcha test.  After account creation any browser should work fine!
 
 Also be sure to install [Github desktop](https://desktop.github.com) which will be our tool of choice for connecting to GitHub and sending/recieving updates to our codebase.
