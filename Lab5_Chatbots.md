@@ -89,7 +89,7 @@ New User:
 
 ### Step 2: Compute Similarity Scores
 
-For this part (as in PA7) we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.  Note that in PA7 we do not use mean-centering at all.
+**Important Note:** In lecture and Quiz 8, you will use mean-centered overlapping cosine similarity. But here (and in PA7), we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.
 
 Recall the formula for the cosine similarity of two vectors:
 
@@ -117,6 +117,8 @@ $\texttt{sim}(M1, M5)$ = ??
 $\texttt{sim}(M5, M6)$ = ??
 
 ### Step 3: Compute New User's Ratings
+
+**Important Note:** In lecture and Quiz 8, you will normalize the rating by dividing the sum of the similarity scores. But here (and in PA7), we will NOT do normalization.
 
 Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
 
