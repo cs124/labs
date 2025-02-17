@@ -3,8 +3,8 @@
 Agenda:
  - *Reminder: Quiz 8 out today!*
  - PA7 Overview (5 minutes)
- - Recommendation Systems Question (30 minutes)
- - Getting started with Github (30 minutes)
+ - Recommendation Systems Question (25 minutes)
+ - Getting started with Github (35 minutes)
  - Group Norms (10 minutes)
 
 ## Part 1: PA7 Overview
