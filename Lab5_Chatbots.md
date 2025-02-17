@@ -147,6 +147,8 @@ Working on a coding project with a large team can be messy! Everytime you or you
 - Manage the changes made by collaborators easily.
 - View the full history of code changes and revert to earlier version.
 
+Git has a lot of jargon and can be confusing. We have prepared a [handbook](https://docs.google.com/document/d/1iydelsyAJvKXhxFVoc7sMinqlYZDCm_xcOfe-s4wEYc/edit?usp=sharing) for your reference in case you get lost.
+
 We will use Git with GitHub!
 
 If you don't have a Github account yet, make one [here](https://github.com/)!  **Everyone in your group will need a GitHub account.**  We have found that chrome and edge work better for this than safari due to GitHub's unique captcha test.  After account creation any browser should work fine!
