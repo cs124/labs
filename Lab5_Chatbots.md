@@ -1,7 +1,7 @@
 # Week 9: PA7 Overview, Group Exercises on Recommendation Systems, Github Setup, Group Norms
 
 Agenda:
- - Reminder: Quiz 8 out today!
+ - *Reminder: Quiz 8 out today!*
  - PA7 Overview (5 minutes)
  - Recommendation Systems Question (30 minutes)
  - Getting started with Github (30 minutes)
