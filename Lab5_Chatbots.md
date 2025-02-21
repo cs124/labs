@@ -147,7 +147,7 @@ Working on a coding project with a large team can be messy! Everytime you or you
 - Manage the changes made by collaborators easily.
 - View the full history of code changes and revert to earlier version.
 
-Git has a lot of jargon and can be confusing. We have prepared a [handbook](https://docs.google.com/document/d/1iydelsyAJvKXhxFVoc7sMinqlYZDCm_xcOfe-s4wEYc/edit?usp=sharing) for your reference in case you get lost.
+Git has a lot of jargon and can be confusing. We have prepared an (optional) [handbook](https://docs.google.com/document/d/1iydelsyAJvKXhxFVoc7sMinqlYZDCm_xcOfe-s4wEYc/edit?usp=sharing) for your reference in case you get lost.
 
 We will use Git with GitHub!
 
