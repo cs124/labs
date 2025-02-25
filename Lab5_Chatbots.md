@@ -1,10 +1,10 @@
-# Week 8: PA7 Overview, Group Exercises on Recommendation Systems, Github Setup, Group Norms
+# Week 8: PA7 Overview, Github Setup, Group Norms
 
 Agenda:
  - *Reminder: Quiz 8 out today!*
  - PA7 Overview (5 minutes)
- - Recommendation Systems Question (25 minutes)
- - Getting started with Github (35 minutes)
+ - Recommendation Systems Question (NOT THIS TIME - Lab 4 next week!)
+ - Getting started with Github (45 minutes)
  - Group Norms (10 minutes)
 
 ## Part 1: PA7 Overview
