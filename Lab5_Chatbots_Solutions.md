@@ -121,4 +121,4 @@ We are uploading a Github tutorial to canvas after the lab if you're looking for
 
 ## Part 4: Setting Group Norms
 
-We are giving you 5 points for just taking some time now to communicate expectations for this project with your group!  Please follow this [discussion guide](https://docs.google.com/document/d/12G0x5YhdnO6qaR2RHvKaTGUG6k2pYj3-PRLZSE0BsPY/edit), answer the questions, and **submit to gradescope by 11:59PM tonight**!  Everyone needs to submit individually in your group.
+Enjoy the discussion!
