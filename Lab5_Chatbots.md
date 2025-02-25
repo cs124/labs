@@ -343,3 +343,29 @@ If you happen to have finished with your GitHub setup early then now would be a 
 ## Part 4: Setting Group Norms
 
 Communication is the key to success in team work. Communicate your expectations and plans for this project with your teammates!  Meanwhile, if you have any questions, the CAs are here to help you. Enjoy!
+
+Below are some tips on effective and efficient group discussion:
+
+<img src="https://github.com/user-attachments/assets/f1b61aee-1fc3-48c7-9e41-2755fb981183" alt="drawing" width="600"/>
+
+<br>
+
+<img src="https://github.com/user-attachments/assets/ce3f5162-184b-4391-a802-d47445be862b" alt="drawing" width="600"/>
+
+
+<br>
+
+<img src="https://github.com/user-attachments/assets/a6d8cbea-46d7-483a-9bc4-0de751d52409" alt="drawing" width="600"/>
+
+<br>
+
+<img src="https://github.com/user-attachments/assets/31758561-3279-4b9b-aa3f-bbf9478e6d15" alt="drawing" width="600"/>
+
+<br>
+
+<img src="https://github.com/user-attachments/assets/c8f2b401-dee0-4c12-96e0-d9ff1578e578" alt="drawing" width="600"/>
+
+
+
+
+
