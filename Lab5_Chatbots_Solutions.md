@@ -1,4 +1,4 @@
-# Week 9: PA7 Overview, Group Exercises on Recommendation Systems, Github Setup, Group Norms
+# Week 8: PA7 Overview, Github Setup, Group Norms
 
 ## Part 1: PA7 Overview
 Check out the screencast if you need to recall anything here!
