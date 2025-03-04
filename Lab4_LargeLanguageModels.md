@@ -168,7 +168,7 @@ Keep the language clear and direct, and feel free to use the examples we provide
 Include a brief (1–2 sentence) explanation of why you made the choices you did. For example, if you’re allowing limited AI usage, how do you ensure it fosters learning rather than replacing it? Think about potential inequalities (e.g., some students may have more familiarity or better access to AI tools). Consider how your policy might affect collaboration and group work.
 
 #### Submission Instructions
-Save your file as a PDF, and submit at [insert google form here eek].
+Save your file as a PDF, and submit at [THIS GOOGLE FORM](https://docs.google.com/forms/d/e/1FAIpQLSfdDQ4r5H9NE5S7U7-r3Juj5EHlsQrlA62WSi-7Kur93_sN2Q/viewform).
 
 ## Conclusion
 We will now go back to the whole class and share out the policies you've created!
