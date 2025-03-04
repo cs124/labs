@@ -170,5 +170,5 @@ Include a brief (1–2 sentence) explanation of why you made the choices you did
 #### Submission Instructions
 Save your file as a PDF, and submit at [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfdDQ4r5H9NE5S7U7-r3Juj5EHlsQrlA62WSi-7Kur93_sN2Q/viewform). This is also how we'll track your attendance for today's lab.
 
-## Conclusion & Share Out (~15 mins)
+### Conclusion & Share Out (~15 mins)
 We will now go back to the whole class and share out the policies you've created!
