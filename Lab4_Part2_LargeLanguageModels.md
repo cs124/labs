@@ -115,7 +115,7 @@ Now you calculate for M1 and M6.
 Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
 
 ## Part 2: The use of LLMs in the classroom
-For this next section, form groups of 3-4 people as always. Your goal for today is  to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
+For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
 
 ### Review Existing Policies (15 mins)
 Writing course policies on the use of generative AI in the classroom is hard; we need to balance the potential benefits of using these tools for both students and faculty against the potential educational harms that may arise from their misuse. Below, we’ve compiled some example course policies that balance these tradeoffs well. First, review those policies. As you review these policies, discuss the following questions among your group members. Spend no more than 15 minutes on this exercise:
@@ -148,13 +148,15 @@ After reading these course policies, spend some time with your group discussing 
 - Should instructors disclose that AI was used in evaluating their work?<br/>
 
 ### Building Your Own Policy (20 mins)
-After discussing the policies above with your group, spend the next ~20 minutes crafting your own Generative AI policy for CS 124. Here’s how we recommend structuring your work:<br/>
+After discussing the policies above with your group, spend the next ~20 minutes crafting your own Generative AI policy for CS 124. We expect 2-4 short paragraphs (in total) to specify clear cases in which 1) students can use LLMs in their coursework, and 2) the teaching team can use LLMs in grading and providing feedback. Here’s how we recommend structuring your work:<br/>
 #### Trade Offs
 What might be lost if you ban the use of generative AI altogether? What would be gained? Where should the line be drawn between acceptable help and academic misconduct?
 
 #### Identify Key Areas to Address
 1. <b>Scope:</b> Which assignments or activities does your policy cover? (e.g., homework, exams, coding projects, written reflections)
-2. <b>Allowed vs. Prohibited Uses:</b> Specify exactly what is permissible– brainstorming, debugging, small snippets of generated code, etc.–and what clearly isn’t.
+2. <b>Allowed vs. Prohibited Uses:</b> 
+   - For students: Define what is allowed, such as brainstorming, debugging, etc.
+   - For the teaching team: Specify acceptable practices, including providing feedback on papers, autograding, or other instructional support.
 3. <b>Disclosure:</b> If you allow AI usage, must students disclose it? If so, how?
 4. <b>Consequences:</b> How does your policy tie into Stanford’s Honor Code? What happens if a student violates your AI rules?
 
