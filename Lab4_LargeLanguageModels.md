@@ -147,7 +147,7 @@ After reading these course policies, spend some time with your group discussing 
 - For TAs or instructors, when do you think it would be okay to use an LLM to help grade assignments or provide feedback? What risks might arise from incorporating LLMs into the workflow of grading and giving feedback (e.g. privacy risks, errors in grading, quality of feedback)?<br/>
 - Should instructors disclose that AI was used in evaluating their work?<br/>
 
-### Building Your Own Policy (20 mins)
+### Building Your Own Policy (~20 mins)
 After discussing the policies above with your group, spend the next ~20 minutes crafting your own Generative AI policy for CS 124. We expect <b><ins>2-4 short paragraphs</ins></b> (in total) to specify clear cases in which 1) students can use LLMs in their coursework, and 2) the teaching team can use LLMs in grading and providing feedback. Here’s how we recommend structuring your work:<br/>
 #### Trade Offs
 What might be lost if you ban the use of generative AI altogether? What would be gained? Where should the line be drawn between acceptable help and academic misconduct?
@@ -170,5 +170,5 @@ Include a brief (1–2 sentence) explanation of why you made the choices you did
 #### Submission Instructions
 Save your file as a PDF, and submit at [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfdDQ4r5H9NE5S7U7-r3Juj5EHlsQrlA62WSi-7Kur93_sN2Q/viewform). This is also how we'll track your attendance for today's lab.
 
-## Conclusion
+## Conclusion & Share Out (~15 mins)
 We will now go back to the whole class and share out the policies you've created!
