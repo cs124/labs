@@ -21,7 +21,9 @@ You will use the following equation:
    ![tf-idf simplified equation](tf_idf_simple_equation.png)
 
 
-This tf-idf cosine score equation is explained in the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/14.pdf) (Chapter 14, pages 4-6). Here is an [example](https://docs.google.com/spreadsheets/d/12GBxGoEST_m9GpLGbwmQTHDMaoxPAr7mRaU1UBh9EQo/edit?usp=sharing) of how to compute the tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. This example uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns).
+This tf-idf cosine score equation is explained in the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/11.pdf) (Chapter 11, pages 4-8).
+
+[This spreadsheet](https://docs.google.com/spreadsheets/d/12GBxGoEST_m9GpLGbwmQTHDMaoxPAr7mRaU1UBh9EQo/edit?usp=sharing) contains an example of how to compute the tf-idf score for the example outlined in the textbook on page 5 of Chapter 14. Take a look at it to understand how it uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns). 
 
 Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1cVnvF6pELowuuMkAvZLHMHaIJyd46yqjbSQ9PTi-mX8/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above. You will need to fill in the Excel formulas to implement the math between columns. Use the above formula.
 
@@ -92,7 +94,7 @@ We will now go back to the whole class and discuss group answers for Part 1 in a
 
 For this next part, have someone take notes for your group so that you are prepared to share. 
 
-Here's a quick refresher on the definition of precision and recall, from the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf) (Chapter 4, page 12):
+Here's a quick refresher on the definition of precision and recall, from the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/4.pdf) (Chapter 4, pages 22-23):
 
 Precision measures the percentage of the items that the system detected (i.e., the system labeled as positive) that are in fact positive. It asks the question, _"Out of everything the model identified as positive, how many were actually positive?"_ Precision is defined as:
 
@@ -106,14 +108,14 @@ Now, imagine you have a more sophisticated IR system than the one in Part 1, wit
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
-3. What is the precision of the system on this search, and what is its recall? 
+3. What is the precision of the system on this search, and what is its recall?
 
 ```
 Precision: 8/18 (or 4/9)
 Recall: 8/20 (or 2/5)
 ```
 
-Precision and recall are relevant metrics not just in IR tasks, but also, in broader NLP tasks. These metrics can have significant consequences not just on the performance of your system, but also on the social impact of your system. For example, let’s consider the role of precision and recall when evaluating a hate speech classifier.
+Now, let’s consider precision and recall in a more consequential case. After all, these metrics are relevant not just in IR tasks, but also in broader NLP tasks, where they can have significant consequences not only on system performance, but on the system's social impact as well. For example, let’s examine the role of precision and recall when evaluating a hate speech classifier.
 
 Suppose you implement a hate speech classifier which classifies a Reddit comment as either “toxic” or “benign”. You define true positives, true negatives, false positives, and false negatives as follows (this is sometimes called a confusion matrix):
 
