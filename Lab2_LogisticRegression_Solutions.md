@@ -294,6 +294,8 @@ $$
 z_{\text{new}} = (0.15)(3) + 0.05 = 0.50 \Rightarrow \hat{y}_{\text{new}} = s(0.50) > 0.5.
 $$
 
+We will now reconvene as a class to discuss Case 1 before moving on.
+
 ---
 
 ### Case 2: The same comment is labeled negative ($y=0$)

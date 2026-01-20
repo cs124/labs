@@ -201,6 +201,8 @@ Let the learning rate be $h = 0.1$.
 # Your answer here
 ```
 
+We will now reconvene as a class to discuss Case 1 before moving on.
+
 ---
 
 ### Case 2: The same comment is labeled negative ($y=0$)
