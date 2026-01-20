@@ -400,10 +400,7 @@ In Lab 1, we discussed how the origins of a dataset (like the New York Times Ann
 # Answer below
 ```
 
-*Discussion question—no single correct answer. Key points to look for:*
-- A high threshold amplifies biases in the training data: only candidates who look most like historical "successes" pass
-- If historical hiring was biased (e.g., favored certain demographics), the model learns those patterns
-- High confidence predictions tend to be for candidates most similar to the majority in the training data
+If the training data is historically biased (e.g., favoring specific universities or demographics), the model learns that these features are high-confidence indicators of success. Setting a high threshold means you are only selecting the safest bets according to the model, which effectively locks in and automates those historical inequities. As a result, candidates with non-traditional backgrounds often have feature vectors that the model hasn't seen frequently, so the model assigns them lower confidence scores. A high threshold acts as a rigid and abstract barrier that these candidates can find difficult to cross, even if they are highly qualified.
 
 11. If you lower the threshold to 0.3 to be more inclusive, what is the "cost" to the hiring team? How do you narrow in on a fair threshold?
 
@@ -411,10 +408,7 @@ In Lab 1, we discussed how the origins of a dataset (like the New York Times Ann
 # Answer below
 ```
 
-*Discussion question—no single correct answer. Key points to look for:*
-- Cost: more candidates to interview → more time/resources for the hiring team
-- Trade-off between inclusivity and efficiency
-- Narrowing in on a fair threshold might involve: examining outcomes across demographic groups, consulting stakeholders, iterating based on feedback
+Lowering the threshold to 0.3 makes the process more inclusive, but it shifts the burden from the algorithm to the humans. The "cost" here is time and efficiency: the hiring team will have to manually review many more resumes, many of which might not be a good fit. Narrowing in on a fair threshold is moreso about avoiding overreliance on automatic classifications than finding a magic threshold number. A fair approach might involve a system in which the model handles the obvious rejections, but humans take over for any candidate in the middle range. This system can also be calibrated to ensure the threshold yields a representative interview pool.
 
 12. Beyond accuracy, what are some considerations or metrics a team should look at when deciding on a threshold for a hiring tool? How could you evaluate the fairness of your chosen threshold?
 
@@ -422,7 +416,10 @@ In Lab 1, we discussed how the origins of a dataset (like the New York Times Ann
 # Answer below
 ```
 
-*Discussion question—no single correct answer. Key points to look for:*
-- Metrics: false positive/negative rates across demographic groups, disparate impact analysis, calibration
-- Considerations: legal requirements, company values, candidate experience, transparency
-- Evaluation approaches: audit outcomes by protected attributes, compare threshold effects across groups, involve diverse stakeholders in the decision
+**Selection Rate:** Does the threshold result in a selection rate for one group that is significantly lower than the highest-performing group?
+
+**False Negative Rate:** How many highly qualified people are we rejecting? In hiring, a False Negative (missing a great hire) is often a bigger loss for diversity than a False Positive (interviewing someone who isn't a fit).
+
+**Feedback Loops:** Is the threshold narrowing our future training data? If we only hire $0.9$ candidates, our model will never learn that "0.4" candidates can be successful, creating a permanent blind spot.
+
+**Evaluation Strategy:** Test the threshold on a test set of diverse resumes where you already know the outcome to see if the model/threshold combination would have excluded them.
