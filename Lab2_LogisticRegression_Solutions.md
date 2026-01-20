@@ -30,7 +30,7 @@ With your group, work through this part. This is meant to be straightforward—i
 
 * We call $z$, the input to the sigmoid, the **"logit"**.
 
-Below are three different scores ($z$). Using the figure above, rank the predicted probabilities ($\hat{y}=s(z)$) from largest to smallest, and briefly justify using only the *shape* of the sigmoid:
+Below are three different scores ($z$). Using the figure above, rank the predicted probabilities ( $\hat{y}=s(z)$ ) from largest to smallest, and briefly justify using only the *shape* of the sigmoid:
 
 1. $z = 0.2$
 2. $z = 2$
@@ -157,11 +157,7 @@ Each document (sentence/comment) is converted into a feature vector $x$. In this
   * $w$ is the weight for the feature
   * $b$ is a bias term (a constant offset)
 
-* **predicted probability:** $\hat{y} = s(z)$, where
-
-  $$
-  s(z)=\frac{1}{1+\exp(-z)}
-  $$
+* **predicted probability:** $\hat{y} = s(z)$, where $s(z)=\frac{1}{1+\exp(-z)}$
 
   $\hat{y}$ is the model's predicted probability that $y=1$ for this document.
 
@@ -170,7 +166,7 @@ Each document (sentence/comment) is converted into a feature vector $x$. In this
   * $y=1$: positive (or "class 1")
   * $y=0$: negative (or "class 0")
 
-The loss we use in lecture is the cross-entropy loss ($L_{CE}$). For a single training example ($(x,y)$), the derivatives of the loss are:
+The loss we use in lecture is the cross-entropy loss ($L_{CE}$). For a single training example ( $(x,y)$ ), the derivatives of the loss are:
 
 $$
 \frac{\partial L_{CE}}{\partial w} = (\hat{y}-y)x \qquad \frac{\partial L_{CE}}{\partial b} = \hat{y}-y
@@ -245,13 +241,7 @@ $$
 
 Negative.
 
-2. Using
-
-   $$
-   \frac{\partial L_{CE}}{\partial w} = (\hat{y}-y)x,
-   $$
-
-   determine the sign (positive or negative) of $\frac{\partial L_{CE}}{\partial w}$.
+2. Using $\frac{\partial L_{CE}}{\partial w} = (\hat{y}-y)x$, determine the sign (positive or negative) of $\frac{\partial L_{CE}}{\partial w}$.
 
 ```
 # Answer below
@@ -265,13 +255,7 @@ $$
 
 The gradient is negative.
 
-3. Gradient descent updates:
-
-   $$
-   w \leftarrow w - h\frac{\partial L_{CE}}{\partial w}
-   $$
-
-   Will $w$ increase or decrease?
+3. Gradient descent updates: $w \leftarrow w - h\frac{\partial L_{CE}}{\partial w}$. Will $w$ increase or decrease?
 
 ```
 # Answer below
