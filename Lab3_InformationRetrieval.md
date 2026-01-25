@@ -1,10 +1,12 @@
 # Week 5: Group Exercises on Information Retrieval
 
-<sub><sup>*created by cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by julia biswas & isha sinha, cs124 staff team, winter '25/'26*</sup></sub>
 
-## Part 1: IR with tf-idf weighting
+## Part 1: tf-idf Weighting and Dense Retrieval
 
 First, form a group of 3 students to work together! Introduce yourselves to one another.
+
+### A. tf-idf Ranking
 
 Imagine you are using a simple IR system. It has the following term-document count matrix:
 
@@ -23,19 +25,43 @@ You will use the following equation:
 
 This tf-idf cosine score equation is explained in the [Jurafsky textbook](https://web.stanford.edu/~jurafsky/slp3/11.pdf) (Chapter 11, pages 4-8). 
 
-[This spreadsheet](https://docs.google.com/spreadsheets/d/1GmcHc-PP0rQuHV_3CVhyHFzE0tBA8DBWr3gE2j7Ke5g/edit?usp=sharing) contains an example of how to compute the tf-idf score for the example outlined in the textbook on page 8 of Chapter 11.Take a look at it to understand how it uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns). 
+[This spreadsheet](https://docs.google.com/spreadsheets/d/1GmcHc-PP0rQuHV_3CVhyHFzE0tBA8DBWr3gE2j7Ke5g/edit?usp=sharing) contains an example of how to compute the tf-idf score for the example outlined in the textbook on page 8 of Chapter 11. Take a look at it to understand how it uses Excel formulas to implement the math between columns (e.g. tf-idf is the product of the tf and idf columns). 
 
-Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1cVnvF6pELowuuMkAvZLHMHaIJyd46yqjbSQ9PTi-mX8/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above. Fill in the Excel formulas to implement the math between columns, using the formula given above.
+Once this example makes sense to you, make a **copy** of [this spreadsheet](https://docs.google.com/spreadsheets/d/1cVnvF6pELowuuMkAvZLHMHaIJyd46yqjbSQ9PTi-mX8/edit?usp=sharing), which has the term and document counts for the IR system we’ve outlined above.
 
-Once you have done this, answer the following questions:
+**Question 1.** Using the formula given above, fill in the Excel formulas to implement the math between columns for the query ("apple") and Doc1. Once you are done, determine what the cosine similarity is between the query and Doc1.
 
-1. Which document is returned for your one-word query, “apple”, and what is the cosine?
+```
+# Your answer here
+```
 
-Now, imagine the IR system has been tracking and logging your previous queries. The last query you searched was “new phone”. In a simplified version of personalized search, the IR system adds “phone” to your one-word query under the hood, so that the final query used is “apple phone”.
+We’ll pause here to check our calculations so far as a class.
 
-2. Which document is returned for the two-word query, “apple phone”, and what is the cosine?
+**Question 2.** Finish filling in the spreadsheet. Once you are done, determine which document is returned for your one-word query, “apple”, and what the cosine similarity is.
 
-We will now go back to the whole class and discuss group answers for Part 1 in a plenary session.
+```
+# Your answer here
+```
+
+We will now reconvene as a class to discuss our calculations.
+
+### B. tf-idf vs. Dense Retrieval
+
+Now imagine you're using a dense retrieval system. Suppose the query is still “apple”, and the system is ranking the following two documents: “apple fruit” and “pineapple fruit."
+
+**Question 3.** Explain why the dense retrieval system might assign a non-zero similarity to “pineapple fruit” for the query “apple,”  while our simple IR system would assign it little or no score.
+
+```
+# Your answer here
+```
+
+**Question 4.** What does this example illustrate about what dense retrieval captures that tf-idf does not?
+
+```
+# Your answer here
+```
+
+We will now go back to the whole class and discuss group answers for Part 1B in a plenary session.
 
 ## Part 2: Precision and Recall
 
@@ -55,7 +81,11 @@ Now, imagine you have a more sophisticated IR system than the one in Part 1, wit
 
 For a particular query, your system returns 8 relevant documents and 10 non-relevant documents. There are a total of 20 relevant documents in the collection.
 
-3. What is the precision of the system on this search, and what is its recall?
+**Question 5.** What is the precision of the system on this search, and what is its recall?
+
+```
+# Your answer here
+```
 
 Now, let’s consider precision and recall in a more consequential case. After all, these metrics are relevant not just in IR tasks, but also in broader NLP tasks, where they can have significant consequences not only on system performance, but on the system's social impact as well. For example, let’s examine the role of precision and recall when evaluating a hate speech classifier.
 
@@ -72,10 +102,18 @@ If you prioritize precision, your classifier will minimize *false positives*, me
 
 If you prioritize recall, your classifier will minimize *false negatives*, meaning it will try not to mis-identify toxic speech as benign. This means your classifier will correctly classify most of the existing toxic comments as toxic, but might be over-eager, and classify benign comments as toxic as well.
 
-4. Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
+**Question 6.** Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
+
+```
+# Your answer here
+```
 
 Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
 
-5. Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. Explain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
+**Question 7.** Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. Explain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
+
+```
+# Your answer here
+```
 
 We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
