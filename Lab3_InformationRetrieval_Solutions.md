@@ -1,4 +1,4 @@
-# Week 5: Solutions to Group Exercises on Information Retrieval
+# Week 4: Solutions to Group Exercises on Information Retrieval
 
 <sub><sup>*written by julia biswas & isha sinha, cs124 staff team, winter '25/'26*</sup></sub>
 
