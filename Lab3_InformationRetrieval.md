@@ -1,4 +1,4 @@
-# Week 4: Group Exercises on Information Retrieval
+# Lab 3: Information Retrieval (Week 4)
 
 <sub><sup>*written by julia biswas & isha sinha, cs124 staff team, winter '25/'26*</sup></sub>
 
