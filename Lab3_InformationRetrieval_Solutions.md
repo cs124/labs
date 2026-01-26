@@ -1,4 +1,4 @@
-# Lab 3: Information Retrieval (Solutions)
+# Lab 3: Information Retrieval (Solutions) (Week 4)
 
 <sub><sup>*written by julia biswas & isha sinha, cs124 staff team, winter '25/'26*</sup></sub>
 
@@ -132,28 +132,42 @@ Suppose you implement a hate speech classifier which classifies a Reddit comment
    | Predicted positive   | True Positive: a comment classified as toxic that is actually toxic    | False Positive: a comment classified as toxic that is actually benign    | 
    | Predicted negative   | False Negative: a comment classified as benign that is actually toxic    | True Negative: a comment classified as benign that is actually benign    | 
 
-You are trying to decide whether to prioritize precision vs. recall for your system.
+**Question 6.** Precision and recall can be applied to predictions in many real-world applications beyond standard search. Pick a real-world application (one from the list below or one of your own) and make an argument for which metric you would prioritize and what the "tension" or tradeoff is in that specific case.
 
-If you prioritize precision, your classifier will minimize *false positives*, meaning it will try not to mis-identify benign speech as toxic. This means the comments you classify as toxic are likely to be actually toxic – but you might miss some toxic comments.
-
-If you prioritize recall, your classifier will minimize *false negatives*, meaning it will try not to mis-identify toxic speech as benign. This means your classifier will correctly classify most of the existing toxic comments as toxic, but might be over-eager, and classify benign comments as toxic as well.
-
-**Question 6.** Discuss the tradeoff between precision and recall in the hate speech classifier, which you would prioritize, and why.
+* **Medical Diagnosis**: An AI that screens X-rays for early signs of a rare but aggressive lung disease.
+* **Criminal Justice**: A recidivism risk assessment tool used by judges to determine bail amounts.
 
 ```
-Arguments for either are valid:
-Precision - Avoid censoring people's benign speech
-Recall - Ensure that the majority of existing hate speech is correctly flagged
+Any answer with a logical justification is valid.
+Medical Diagnosis: Most students will argue for prioritizing Recall.
+The Argument: In an aggressive disease, a False Negative (missing the disease) is a life-threatening failure. You want the model to catch every possible case.
+The Tension: Prioritizing recall leads to more False Positives, meaning healthy patients undergo unnecessary, stressful, and expensive follow-up testing.
+Criminal Justice: Arguments can be made for either, but many prioritize Precision.
+The Argument: Prioritizing precision minimizes False Positives, ensuring that individuals are not unjustly denied bail or kept in jail based on a faulty prediction of future crime.
+The Tension: Prioritizing precision increases False Negatives, meaning the system may fail to identify individuals who genuinely pose a risk to public safety before their trial.
 ```
+**Question 7.** Modern AI has shifted from just finding existing documents (Information Retrieval) to creating new content based on learned patterns (Generative AI). This introduces new ethical questions regarding how a system represents historical or social facts.
 
-Now that you’ve played around with definitions of precision and recall, it’s time to come up with your own scenarios.
+##### The Pope Example
+* **Standard Search**: If you perform a Google Search for "The Pope," the top results will almost exclusively show the current Pope and his predecessors. These results are highly accurate in a literal sense.
+* **Generative AI**: In February 2024, Google’s Gemini chatbot faced scrutiny for how it handled historical prompts. You can read the background in this Economist article: [Is Google’s Gemini chatbot woke by accident, or design?](https://www.economist.com/united-states/2024/02/28/is-googles-gemini-chatbot-woke-by-accident-or-design)
+* **The Result**: When asked to "generate an image of a Pope," the model provided a diverse range of results, including people of different ethnicities and genders. While this was a deliberate attempt to avoid repeating an alleged demographic bias found in training datasets, it also resulted in historical inaccuracies.
 
-**Question 7.** Write a scenario related to an IR or broader NLP task where you would need to prioritize *either* precision over recall or recall over precision. Clearly define what constitutes a “true positive” in your scenario, as in the examples above. Explain why the chosen metric is more important. Some domains you might consider writing scenarios about include: criminal justice applications (like recidivism risk assessments), medical diagnoses, or loan approval systems. 
+##### The "Mirror" vs. "Aspiration" Framework 
+One way to think about this is whether a search engine should act as a "mirror" (reflecting the world exactly as it is/was) or as an "aspiration" (deliberately boosting diverse results to provide a more inclusive view).
+
+**Question 7a.** Compare the results of a Google Search for "The Pope" with the generative AI example above. How does either approach affect the searcher’s potential intent?
+```
+# Your answer here
+```
+**Question 7b.** In which specific scenarios would you opt for the mirror approach? In which would you opt for aspiration?
 
 ```
-Any answer with justification is valid.
-Example scenarios for precision over recall are: criminal justice applications, like recidivism risk assessments (scenarios where false positives could be costly).
-Example scenarios for recall over precision are: medical diagnoses, loan approval systems, content moderation (scenarios where false negatives could be costly).
+# Your answer here
+```
+**Question 7c.** The Stereotype Trap: Sometimes, in trying to be "diverse," AI models fall into a stereotype trap—returning the same specific visual style or average representation every time a certain group is mentioned. Does this repetition of stereotypes actually solve the problem of representation, or does it create a new form of bias?
+```
+# Your answer here
 ```
 
 We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
