@@ -156,9 +156,9 @@ One way to think about this is whether a search engine should act as a "mirror" 
 
 **Question 7a.** Compare the results of a Google Search for "The Pope" with the generative AI example above. How does either approach affect the searcher’s potential intent?
 ```
-The Mirror approach (standard search) prioritizes the searcher's intent for historical accuracy. High precision
-for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only showing what has
-historically existed.
+The Mirror approach (standard search) prioritizes the searcher's intent for historical accuracy. High
+precision for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only
+showing what has historically existed.
 
 The Aspiration approach (generative AI) prioritizes inclusive representation but may frustrate a searcher
 looking for a specific historical fact, as it introduces elements that did not exist in that context.
@@ -166,11 +166,11 @@ looking for a specific historical fact, as it introduces elements that did not e
 **Question 7b.** In which specific scenarios would you opt for the mirror approach? In which would you opt for aspiration?
 
 ```
-Mirror: Historical research, legal documentation, or medical records where accuracy is the primary safety/functional
-requirement.
+Mirror: Historical research, legal documentation, or medical records where accuracy is the primary
+safety/functional requirement.
 
-Aspiration: Creative writing, marketing, or children’s media where the goal is to show potential futures and a broad
-range of human possibilities.
+Aspiration: Creative writing, marketing, or children’s media where the goal is to show potential futures
+and a broad range of human possibilities.
 ```
 **Question 7c.** The Stereotype Trap: Sometimes, in trying to be "diverse," AI models fall into a stereotype trap—returning the same specific visual style or average representation every time a certain group is mentioned. Does this repetition of stereotypes actually solve the problem of representation, or does it create a new form of bias?
 ```
