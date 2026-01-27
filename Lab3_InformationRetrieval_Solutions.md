@@ -34,7 +34,7 @@ Once this example makes sense to you, make a **copy** of [this spreadsheet](http
  ```
 0.750
 ```
-You can find the calculations in [this spreadsheet](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?usp=sharing) or written below:
+You can find the calculations in [this spreadsheet](https://docs.google.com/spreadsheets/d/1lsiCN4kWG2xV6-ooJvZYzWMYDUJgOh6uKmUbslH3z4c/edit?usp=sharing) or written below:
 
    For our query "apple":
    
@@ -59,7 +59,7 @@ We’ll pause here to check our calculations so far as a class.
  ```
 Doc1; 0.750
 ```
-You can find the calculations in [this spreadsheet](https://docs.google.com/spreadsheets/d/1bGQbz7Ojwa4_h6Nga310u3zl916KjE2-3IsBPoK9ksI/edit?usp=sharing) or written below:
+You can find the calculations in [this spreadsheet](https://docs.google.com/spreadsheets/d/1lsiCN4kWG2xV6-ooJvZYzWMYDUJgOh6uKmUbslH3z4c/edit?usp=sharing) or written below:
 
  For Doc2:
    
