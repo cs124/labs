@@ -82,9 +82,9 @@ Now imagine you're using a dense retrieval system. Suppose the query is still �
 ```
 Dense retrieval represents words and documents as vectors in a space where semantic similarity (similarity in
 meaning) is reflected by closeness. Because “pineapple” and “apple” are both fruits and have related meanings,
-their vectors are near each other, so the cosine similarity between the query vector (“apple”) and the document
-vector (“pineapple fruit”) is greater than zero. In contrast, tf-idf only counts exact word matches, so
-“pineapple” does not match “apple” and contributes nothing to the score.
+their vectors are near each other, so the cosine similarity between the query vector (“apple”) and the
+document vector (“pineapple fruit”) is greater than zero. In contrast, tf-idf only counts exact word matches,
+so “pineapple” does not match “apple” and contributes nothing to the score.
 ```
 
 **Question 4.** What does this example illustrate about what dense retrieval captures that tf-idf does not?
