@@ -149,18 +149,26 @@ One way to think about this is whether a search engine should act as a "mirror" 
 
 **Question 7a.** Compare the results of a Google Search for "The Pope" with the generative AI example above. How does either approach affect the searcher’s potential intent?
 ```
-The Mirror approach (standard search) prioritizes the searcher's intent for historical accuracy. High Precision for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only showing what has historically existed. 
-The Aspiration approach (generative AI) prioritizes inclusive representation but may frustrate a searcher looking for a specific historical fact, as it introduces elements that did not exist in that context.
+The Mirror approach (standard search) prioritizes the searcher's intent for historical accuracy. High precision
+for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only showing what has
+historically existed. The Aspiration approach (generative AI) prioritizes inclusive representation but may
+frustrate a searcher looking for a specific historical fact, as it introduces elements that did not exist in
+that context.
 ```
 **Question 7b.** In which specific scenarios would you opt for the mirror approach? In which would you opt for aspiration?
 
 ```
-Mirror: Historical research, legal documentation, or medical records where accuracy is the primary safety/functional requirement. 
-Aspiration: Creative writing, marketing, or children’s media where the goal is to show potential futures and a broad range of human possibilities.
+Mirror: Historical research, legal documentation, or medical records where accuracy is the primary safety/functional
+requirement.
+
+Aspiration: Creative writing, marketing, or children’s media where the goal is to show potential futures and a broad
+range of human possibilities.
 ```
 **Question 7c.** The Stereotype Trap: Sometimes, in trying to be "diverse," AI models fall into a stereotype trap—returning the same specific visual style or average representation every time a certain group is mentioned. Does this repetition of stereotypes actually solve the problem of representation, or does it create a new form of bias?
 ```
-No, it often creates a new bias. If diversity is boiled down to a single repetitive archetype (e.g., the same clothing, setting, or descriptor for every person of x descent), it erases the true diversity within that group and can create new, flattened stereotypes.
+No, it often creates a new bias. If diversity is boiled down to a single repetitive archetype (e.g., the same
+clothing, setting, or descriptor for every person of x descent), it erases the true diversity within that group
+and can create new, flattened stereotypes.
 ```
 
 We will now go back to the whole class and discuss group answers for Part 2 in a plenary session.
