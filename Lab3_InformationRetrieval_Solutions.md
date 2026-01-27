@@ -160,9 +160,8 @@ The Mirror approach (standard search) prioritizes the searcher's intent for hist
 for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only showing what has
 historically existed.
 
-The Aspiration approach (generative AI) prioritizes inclusive representation but may
-frustrate a searcher looking for a specific historical fact, as it introduces elements that did not exist in
-that context.
+The Aspiration approach (generative AI) prioritizes inclusive representation but may frustrate a searcher
+looking for a specific historical fact, as it introduces elements that did not exist in that context.
 ```
 **Question 7b.** In which specific scenarios would you opt for the mirror approach? In which would you opt for aspiration?
 
