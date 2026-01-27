@@ -87,7 +87,11 @@ For a particular query, your system returns 8 relevant documents and 10 non-rele
 # Your answer here
 ```
 
-**Question 6.** Precision and recall can be applied to predictions in many real-world applications beyond standard search. Pick a real-world application (one from the list below or one of your own) and make an argument for which metric you would prioritize and what the "tension" or tradeoff is in that specific case.
+**Question 6.** Precision and recall can be applied to predictions in many real-world applications beyond standard search. However, in real applications there is a tension (tradeoff) between precision and recall, and we often need to decide whether to prioritize one or the other:
+* If you prioritize precision for a task, the classifier will minimize false positives, meaning it will try not to mis-identify negative examples as positive.
+* If you prioritize recall, the classifier will minimize false negatives, meaning it will try not to mis-identify positive examples as negative.
+
+Pick a real-world application (one from the list below or one of your own) and make an argument for which metric you would prioritize and what the "tension" or tradeoff is in that specific case.
 
 * **Medical Diagnosis**: An AI that screens X-rays for early signs of a rare but aggressive lung disease.
 * **Criminal Justice**: A recidivism risk assessment tool used by judges to determine bail amounts.
