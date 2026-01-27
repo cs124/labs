@@ -130,12 +130,18 @@ Recall: 8/20 (or 2/5)
 
 ```
 Any answer with a logical justification is valid.
+
 Medical Diagnosis: Most students will argue for prioritizing Recall.
-The Argument: In an aggressive disease, a False Negative (missing the disease) is a life-threatening failure. You want the model to catch every possible case.
-The Tension: Prioritizing recall leads to more False Positives, meaning healthy patients undergo unnecessary, stressful, and expensive follow-up testing.
+    The Argument: In an aggressive disease, a False Negative (missing the disease) is a life-threatening failure.
+      You want the model to catch every possible case.
+    The Tension: Prioritizing recall leads to more False Positives, meaning healthy patients undergo unnecessary,
+      stressful, and expensive follow-up testing.
+
 Criminal Justice: Arguments can be made for either, but many prioritize Precision.
-The Argument: Prioritizing precision minimizes False Positives, ensuring that individuals are not unjustly denied bail or kept in jail based on a faulty prediction of future crime.
-The Tension: Prioritizing precision increases False Negatives, meaning the system may fail to identify individuals who genuinely pose a risk to public safety before their trial.
+    The Argument: Prioritizing precision minimizes False Positives, ensuring that individuals are not unjustly
+      denied bail or kept in jail based on a faulty prediction of future crime.
+    The Tension: Prioritizing precision increases False Negatives, meaning the system may fail to identify
+      individuals who genuinely pose a risk to public safety before their trial.
 ```
 **Question 7.** Modern AI has shifted from just finding existing documents (Information Retrieval) to creating new content based on learned patterns (Generative AI). This introduces new ethical questions regarding how a system represents historical or social facts.
 
@@ -151,7 +157,9 @@ One way to think about this is whether a search engine should act as a "mirror" 
 ```
 The Mirror approach (standard search) prioritizes the searcher's intent for historical accuracy. High precision
 for the query "Pope" but can reinforce the "erasure" of certain groups from public memory by only showing what has
-historically existed. The Aspiration approach (generative AI) prioritizes inclusive representation but may
+historically existed.
+
+The Aspiration approach (generative AI) prioritizes inclusive representation but may
 frustrate a searcher looking for a specific historical fact, as it introduces elements that did not exist in
 that context.
 ```
