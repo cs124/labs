@@ -87,17 +87,6 @@ For a particular query, your system returns 8 relevant documents and 10 non-rele
 # Your answer here
 ```
 
-Now, let’s consider precision and recall in a more consequential case. After all, these metrics are relevant not just in IR tasks, but also in broader NLP tasks, where they can have significant consequences not only on system performance, but on the system's social impact as well. For example, let’s examine the role of precision and recall when evaluating a hate speech classifier.
-
-Suppose you implement a hate speech classifier which classifies a Reddit comment as either “toxic” or “benign”. You define true positives, true negatives, false positives, and false negatives as follows (this is sometimes called a confusion matrix):
-
-   | Term                 | Actual positive | Actual negative |
-   |:---------------------|:---------------:|:---------------:|
-   | Predicted positive   | True Positive: a comment classified as toxic that is actually toxic    | False Positive: a comment classified as toxic that is actually benign    | 
-   | Predicted negative   | False Negative: a comment classified as benign that is actually toxic    | True Negative: a comment classified as benign that is actually benign    | 
-
-
-
 **Question 6.** Precision and recall can be applied to predictions in many real-world applications beyond standard search. Pick a real-world application (one from the list below or one of your own) and make an argument for which metric you would prioritize and what the "tension" or tradeoff is in that specific case.
 
 * **Medical Diagnosis**: An AI that screens X-rays for early signs of a rare but aggressive lung disease.
