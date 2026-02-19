@@ -1,41 +1,42 @@
 # Week 8: PA7 Overview, Github Setup, Group Norms
 
 Agenda:
- - *Reminder: Quiz 8 out today!*
- - PA7 Overview (5 minutes)
- - Recommendation Systems Question (NOT THIS TIME - Lab 4 next week!)
- - Getting started with Github (45 minutes)
- - Group Norms (10 minutes)
+
+- _Reminder: Quiz 8 out today!_
+- PA7 Overview (5 minutes)
+- Getting started with Github (45 minutes)
+- Group Norms (10 minutes)
 
 ## Part 1: PA7 Overview
 
-For PA7 we will be building a custom movie recommendation chatbot!  We will implement our chatbot with 3 different designs: slot-filling dialogue agent (GUS), LLM prompting chatbot, and a hybrid LLM augmented bot.
+For PA7 we will be building a custom movie recommendation agent! We will use the DSPy library to build our agent to make tool calling. For each user query, the agent will first reason and determine which tools in the tool list are relevant, then call each tool (e.g. the recommend_movies tool) to complete each sub-component of the task.
 
-PA7 is worth 18\% of your total grade, and conveniently split into exactly 100 points!
+The assignment consists of a two parts. In the first part, you will implement the collaborative filtering algorithm to recommend movies to the user. In the second part, you will implement an LLM agent that can make tool calls to take on web search and memory functionalities.
+
+PA7 is worth 18\% of your total grade, and conveniently split into exactly 75 points, with an additional 5 points of extra credit!
 
 Here's the point breakdown:
- - [PA7 Coding](https://github.com/cs124/pa7-chatbot?tab=readme-ov-file) (85 Points)
- - [PA7 User Testing](https://docs.google.com/document/d/1liX4MC5qfBceQB0oCPICgxnRmoH0RKfdq5jmwsp7wRw/edit?usp=sharing) (5 Points)
- - [PA7 Reflection](https://docs.google.com/document/d/1gDKuWzuI3f6Nmue60UqoESsrWIzRK62GmdKRh1_y_DM/edit?usp=sharing) (10 points)
 
-You can find instructions, rubrics, FAQs, and links to all resources for PA7 coding in the [PA7 GitHub README page](https://github.com/cs124/pa7-chatbot?tab=readme-ov-file).
+- [part 1] (53 Points)
+- [part 2] (5 Points)
 
-All submissions will be made through gradescope.  **Note that no late days can be used for PA7!!!**
+You can find instructions, rubrics, FAQs, and links to all resources for PA7 coding in the [PA7 GitHub README page](https://github.com/cs124/pa7-agent/blob/PA7_update/README.md).
+
+All submissions will be made through gradescope. **Note that no late days can be used for PA7!!!**
 
 You will have time to discuss with your teammates at the end of today's Lab!
 
 **Before you start:**
-- Watch lecture videos up to Chatbots & Recommender Systems.
+
+- Watch lecture videos up to Chatbots & Recommender Systems and Collaborative Filtering.
 - Make sure your team has received together.ai credit.
-- Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/203819/files/14775807?module_item_id=2129781) for detailed info!
+<!-- - Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/203819/files/14775807?module_item_id=2129781) for detailed info! -->
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
 
-
-|    M3 |                1 |
-|    M4 |               -1 |
-|    M5 |                1 |
-|    M6 |                0 |
-
+<!-- | M3 | 1 |
+| M4 | -1 |
+| M5 | 1 |
+| M6 | 0 | -->
 
 ## Part 2: Getting started with Github
 
@@ -50,13 +51,13 @@ Git has a lot of jargon and can be confusing. We have prepared an (optional) [ha
 
 We will use Git with GitHub!
 
-If you don't have a Github account yet, make one [here](https://github.com/)!  **Everyone in your group will need a GitHub account.**  We have found that chrome and edge work better for this than safari due to GitHub's unique captcha test.  After account creation any browser should work fine!
+If you don't have a Github account yet, make one [here](https://github.com/)! **Everyone in your group will need a GitHub account.** We have found that chrome and edge work better for this than safari due to GitHub's unique captcha test. After account creation any browser should work fine!
 
 Also be sure to install [Github desktop](https://desktop.github.com) which will be our tool of choice for connecting to GitHub and sending/recieving updates to our codebase.
 
 ### Step 1: Creating a Private Repository
 
-Only one person in your group needs to do steps 1 and 2.  Navigate to the [new repository creation page](https://github.com/new) on GitHub.
+Only one person in your group needs to do steps 1 and 2. Navigate to the [new repository creation page](https://github.com/new) on GitHub.
 
 ![Create New Repo](img/GitHubRepoCreation.png)
 
@@ -70,7 +71,7 @@ Click the `Invite collaborators` button to invite your group partners to the rep
 
 ![Invite collaborators by selecting the invite collaborators button](img/InviteCollaborators.png)
 
-Under `Manage access` click `Add people`.  Search for your partners and add them to the repository.  You can add them with `Admin` access.  They will need to check their email for an invitation.
+Under `Manage access` click `Add people`. Search for your partners and add them to the repository. You can add them with `Admin` access. They will need to check their email for an invitation.
 
 ### Step 3: Setting up GitHub Desktop
 
@@ -78,7 +79,7 @@ Under `Manage access` click `Add people`.  Search for your partners and add them
 
 Open up Github Desktop which you can download [here](https://desktop.github.com).
 
-Sign in to GitHub Desktop.  There may be a button to do so when you first open it, but if not you can still sign in through the menu.  If you are on mac, click `GitHub Desktop` and then `Settings`.
+Sign in to GitHub Desktop. There may be a button to do so when you first open it, but if not you can still sign in through the menu. If you are on mac, click `GitHub Desktop` and then `Settings`.
 
 ![Settings Mac](img/GithubDesktopSettingsMac.png)
 
@@ -102,9 +103,9 @@ If this is your first time using Github Desktop you may see a `Clone a repositor
 
 Otherwise you'll find the `Clone` button under `Current Repository`, `Add`, `Clone Repository`
 
-There you'll find the option to clone `Your Repositories` from GitHub.com.  You'll also find repositories that you've been added as a collaborator to.
+There you'll find the option to clone `Your Repositories` from GitHub.com. You'll also find repositories that you've been added as a collaborator to.
 
-Choose to `Clone` your group's repository to somewhere convenient on your PC.  Choose a path that you'll remember and know where to find!
+Choose to `Clone` your group's repository to somewhere convenient on your PC. Choose a path that you'll remember and know where to find!
 
 ![Clone your group repository](img/GitHubCloneRepo.png)
 
@@ -120,45 +121,45 @@ Click `Code` and `Download ZIP`.
 
 ![Click Code then Download ZIP](img/PA7Download.png)
 
-This should've downloaded a file `pa7-chatbot-main`.  If it is still zipped, be sure to extract the file into a folder.
+This should've downloaded a file `pa7-chatbot-main`. If it is still zipped, be sure to extract the file into a folder.
 
-This is where it is important that you remember the path where you saved your local repository!  Drag the `pa7-chatbot-main` folder into the folder where you are storing your repository.
+This is where it is important that you remember the path where you saved your local repository! Drag the `pa7-chatbot-main` folder into the folder where you are storing your repository.
 
 When you return to GitHub desktop you should see all the files are being tracked!
 
 ![27 Tracked Files](img/TrackedFiles.png)
 
-In total there are 27 Tracked Files.  Let's upload them to our shared repository!
+In total there are 15 Tracked Files. Let's upload them to our shared repository!
 
-Add a summary in the lowerleft hand corner to describe the update.  This should be a brief message, called a commit message.  When we make a commit we save a snapshot of the current version of our codebase!  You can call this commit something like `Added starter code`.
+Add a summary in the lowerleft hand corner to describe the update. This should be a brief message, called a commit message. When we make a commit we save a snapshot of the current version of our codebase! You can call this commit something like `Added starter code`.
 
 Then click `Commit to main`.
 
-This has saved a snapshot of your code locally, but we need to upload it so everyone in your group can access it!  Click `Publish branch` which will `push` your changes to GitHub.
+This has saved a snapshot of your code locally, but we need to upload it so everyone in your group can access it! Click `Publish branch` which will `push` your changes to GitHub.
 
 ![Publish Branch](img/PublishBranch.png)
 
-
 ### Step 6: Sync the repository
 
-***Everyone besides the person who completed step 5 needs to complete this step***.
+**_Everyone besides the person who completed step 5 needs to complete this step_**.
 
-Where the publish button was for the person making the changes, everyone will find a "Fetch origin" button.  Click it!
+Where the publish button was for the person making the changes, everyone will find a "Fetch origin" button. Click it!
 
 ![Fetch](img/GitHubFetch.png)
 
-This will check the GitHub repository for any updates.  It should find the changes that one group member just pushed.  Everyone should click the button again to "Pull" the changes.
+This will check the GitHub repository for any updates. It should find the changes that one group member just pushed. Everyone should click the button again to "Pull" the changes.
 
-**PAUSE!** Now is an important time to take a moment and check that everything is working!  Does everyone have a copy of the repository locally with all the same files?  Does your GitHub repository have all of the project files in a private repository?  Does everyone in your group have access to the repository?  If the answer to any of these questions is no, ask a CA for help!!
+**PAUSE!** Now is an important time to take a moment and check that everything is working! Does everyone have a copy of the repository locally with all the same files? Does your GitHub repository have all of the project files in a private repository? Does everyone in your group have access to the repository? If the answer to any of these questions is no, ask a CA for help!!
 
 ### Step 7: Making code changes
-***Everyone in your group should do this step, and do it with slightly different changes***
+
+**_Everyone in your group should do this step, and do it with slightly different changes_**
 
 Let's go through the typical workflow of making edits to your project and sharing the changes to your group.
 
-First fetch and pull any changes to the code that have been made.  This is what you did in Step 6.
+First fetch and pull any changes to the code that have been made. This is what you did in Step 6.
 
-Navigate to the `chatbot.py` file and open it up in your preferred editor.  This is going to be the file where you do the bulk of the work for PA7.
+Navigate to the `agent.py` file and open it up in your preferred editor. This is going to be the file where you do the bulk of the work for PA7.
 
 You'll find a method in this file `greeting`:
 
@@ -177,7 +178,7 @@ def greeting(self):
     return greeting_message
 ```
 
-This is the message that your chatbot will display to initiate the conversation.  
+You won't need this function for the assignment, but we will use it to test the workflow on Git.
 
 Have everyone in your group write a slightly different greeting message!
 
@@ -185,9 +186,9 @@ Now return to GitHub Desktop:
 
 ![Changed File in GitHub Desktop](img/ChangedFile.png)
 
-You should see the change tracked!  Just as before we'll add a `commit` message and then `push` to main!  (Refer to the last part Step 5 if you're confused).
+You should see the change tracked! Just as before we'll add a `commit` message and then `push` to main! (Refer to the last part Step 5 if you're confused).
 
-But wait?  For all but one of you you should be seeing this message:
+But wait? For all but one of you you should be seeing this message:
 
 ![Newer Commits on Remote](img/NewerCommits.png)
 
@@ -197,7 +198,7 @@ Click `Fetch` then `Pull origin`.
 
 ### Step 8: Resolving merge conflicts
 
-Often times when working on a shared repository you'll face issues where two people change the same line of code.  This results in a `merge conflict`, since `git` doesn't know which version to keep and which to discard.
+Often times when working on a shared repository you'll face issues where two people change the same line of code. This results in a `merge conflict`, since `git` doesn't know which version to keep and which to discard.
 
 Let's work through resolving this merge conflict.
 
@@ -205,7 +206,7 @@ Some of your group members should see this message:
 
 ![Merge Conflict](img/MergeConflict.png)
 
-There may be an option to open in Visual Studio Code, however this is not necessary.  You can resolve a merge conflict in any code editor (even notepad!).  Open up `chatbot.py` in an editor of your choice.
+There may be an option to open in Visual Studio Code, however this is not necessary. You can resolve a merge conflict in any code editor (even notepad!). Open up `agent.py` in an editor of your choice.
 
 You'll see both versions of the changes:
 
@@ -227,7 +228,7 @@ def greeting(self):
     ########################################################################
 ```
 
-Choose which one gets to stay and which one has to go!  Delete the special characters, and leave the file so that it can execute properly.
+Choose which one gets to stay and which one has to go! Delete the special characters, and leave the file so that it can execute properly.
 
 Return to GitHub desktop and you should see a message confirming that the merge conflict has been resolved:
 
@@ -237,11 +238,11 @@ Click `Continue Merge` and finish pushing your changes to the remote repository.
 
 ### (Optional) Step 9: Together AI API Setup
 
-If you happen to have finished with your GitHub setup early then now would be a great time to follow [this 5 minute guide](https://docs.google.com/document/d/1N5chC5b15ls-XXcpfjhSx71854fmvb_4DGD4qxkT0LU/edit) to get your Together API keys set up for the project!
+If you happen to have finished with your GitHub setup early then now would be a great time to follow [this 5 minute guide](https://docs.google.com/document/d/1AzdvSPBlw5BExhPnm4ONfi_tz9EjcbnsrqUtS1Zn1wc/edit?usp=sharing) to get your Together API keys set up for the project!
 
 ## Part 4: Setting Group Norms
 
-Communication is the key to success in team work. Communicate your expectations and plans for this project with your teammates!  Meanwhile, if you have any questions, the CAs are here to help you. Enjoy!
+Communication is the key to success in team work. Communicate your expectations and plans for this project with your teammates! Meanwhile, if you have any questions, the CAs are here to help you. Enjoy!
 
 Below are some tips on effective and efficient group discussion:
 
@@ -250,7 +251,6 @@ Below are some tips on effective and efficient group discussion:
 <br>
 
 <img src="https://github.com/user-attachments/assets/ce3f5162-184b-4391-a802-d47445be862b" alt="drawing" width="600"/>
-
 
 <br>
 
@@ -263,8 +263,3 @@ Below are some tips on effective and efficient group discussion:
 <br>
 
 <img src="https://github.com/user-attachments/assets/c8f2b401-dee0-4c12-96e0-d9ff1578e578" alt="drawing" width="600"/>
-
-
-
-
-
