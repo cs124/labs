@@ -3,22 +3,99 @@
 Agenda:
 
 - _Reminder: Quiz 8 out today!_
-- PA7 Overview (5 minutes)
-- Getting started with Github (45 minutes)
+- PA7 Overview (30 minutes): please sit next to your group members for PA7
+- Getting started with Github (20 minutes)
 - Group Norms (10 minutes)
 
 ## Part 1: PA7 Overview
 
-For PA7 we will be building a custom movie recommendation agent! We will use the DSPy library to build our agent to make tool calling. For each user query, the agent will first reason and determine which tools in the tool list are relevant, then call each tool (e.g. the recommend_movies tool) to complete each sub-component of the task.
+For PA7 we will be building a custom movie recommendation agent! We will use the DSPy library to build our agent to make tool calling. While a single LLM/chatbot can answer natural language queries, an agent is even more powerful as it chains multiple LLM calls to complete complex tasks that often require multiple steps. DSPy is a declarative framework for building modular AI software that enables users to build AI software from natural-language modules and compose them with different models. You can read more about DSPy [here](https://dspy.ai/).
+
+For each user query, the agent will first reason about the objective of the task and determine the relevant tools needed to complete the task. Then, the agent will determine the input for each tool call (functions that you will implement) and parse the output back to reason through the process again. Let's walk through an example together:
+
+You can then run the REPL script from PA7 to see your agent in action: `python repl.py`. Here is an example of the agent output
+
+```text
+Movie Ticket Agent> Hello! I'm the Movie Ticket Agent. How can I help you today?
+> My name is Peter, recommend 3 movies to me.
+Movie Ticket Agent>
+Prediction(
+    trajectory={'thought_0': 'I need to recommend 3 movies to Peter. I will use the recommend_movies tool to generate a list of movie titles for him.', 'tool_name_0': 'recommend_movies', 'tool_args_0': {'user_name': 'Peter', 'k': 3}, 'observation_0': ['Back to the Future (1985)', 'Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)', 'Star Wars: Episode VI - Return of the Jedi (1983)'], 'thought_1': 'I have successfully recommended 3 movies to Peter: "Back to the Future", "Raiders of the Lost Ark", and "Star Wars: Episode VI - Return of the Jedi". Now, I will ask Peter if he would like to book a ticket for any of these movies.', 'tool_name_1': 'finish', 'tool_args_1': {}, 'observation_1': 'Completed.'},
+    reasoning='I recommended 3 classic movies to Peter based on his request. The movies are "Back to the Future," "Raiders of the Lost Ark," and "Star Wars: Episode VI - Return of the Jedi." I have completed the recommendation process and am ready to assist him further if he wishes to book a ticket for any of these films.',
+    process_result='I have recommended the following 3 movies to you, Peter: "Back to the Future," "Raiders of the Lost Ark," and "Star Wars: Episode VI - Return of the Jedi." Let me know if you would like to book a ticket for any of these!'
+)
+```
+
+The diagram below outlines the workflow:
+
+```python
+User Prompt
+    │
+    ▼
+Prediction()
+    │
+    ▼
+trajectory = {
+   thought_i
+   tool_name_i
+   tool_args_i
+   observation_i
+}
+(repeated loop)
+    │
+    ▼
+reasoning
+    │
+    ▼
+process_result
+```
+
+The agent first determines the number of tools needed (i.e. the value of i), then for each tool call, the trajectory displays the input (tool_args_i) and output (observation_i), and the agent reasons through the output to determine the input for the next tool call. Within each tool call, the process looks like the following:
+
+```python
+thought_0
+  "User wants recommendations → call recommend_movies"
+
+        │
+        ▼
+
+tool_name_0 = recommend_movies
+tool_args_0 = { user_name: "Peter", k: 3 }
+
+        │
+        ▼
+
+observation_0 =
+  [
+    "Back to the Future (1985)",
+    "Raiders of the Lost Ark (1981)",
+    "Star Wars: Episode VI - Return of the Jedi (1983)"
+  ]
+
+```
+
+The relationship between each tool call is outlined below:
+
+```python
+thought_i
+    ↓ decides
+tool_name_i
+    ↓ receives
+tool_args_i
+    ↓ produces
+observation_i
+    ↓ informs
+thought_(i+1)
+```
 
 The assignment consists of a two parts. In the first part, you will implement the collaborative filtering algorithm to recommend movies to the user. In the second part, you will implement an LLM agent that can make tool calls to take on web search and memory functionalities.
 
-PA7 is worth 18\% of your total grade, and conveniently split into exactly 75 points, with an additional 5 points of extra credit!
+PA7 is worth 18\% of your total grade, and conveniently split into exactly 100 points, with an additional 5 points of extra credit!
 
 Here's the point breakdown:
 
-- [part 1] (53 Points)
-- [part 2] (5 Points)
+- [part 1] (68 Points)
+- [part 2] (32 Points)
 
 You can find instructions, rubrics, FAQs, and links to all resources for PA7 coding in the [PA7 GitHub README page](https://github.com/cs124/pa7-agent/blob/PA7_update/README.md).
 
@@ -32,11 +109,6 @@ You will have time to discuss with your teammates at the end of today's Lab!
 - Make sure your team has received together.ai credit.
 <!-- - Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/203819/files/14775807?module_item_id=2129781) for detailed info! -->
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
-
-<!-- | M3 | 1 |
-| M4 | -1 |
-| M5 | 1 |
-| M6 | 0 | -->
 
 ## Part 2: Getting started with Github
 
