@@ -107,7 +107,7 @@ You will have time to discuss with your teammates at the end of today's Lab!
 
 - Watch lecture videos up to Chatbots & Recommender Systems and Collaborative Filtering.
 - Make sure your team has received together.ai credit.
-<!-- - Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/203819/files/14775807?module_item_id=2129781) for detailed info! -->
+- Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/217991/files?preview=16650457) for detailed info!
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
 
 ## Part 2: Getting started with Github
