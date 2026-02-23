@@ -114,7 +114,8 @@ You will have time to discuss with your teammates at the end of today's Lab!
 
 **IMPORTANT ANNOUNCEMENTS:**
 - **No late days can be used for PA7!!!** There are no exceptions.
-- You will be working with two APIs: Together AI and Serp. Note that each time you run `repl.py`, you will be using up some API credit. Please use your $5 credit wisely! We highly recommend testing your code in `agent.py` in isolation before running `repl.py`.
+- If you filled out the group form on time, you should have received a $5 Together AI credit in your account! Most of your accounts should be on the "limited billing tier". This means that you may need to add a credit card to access your $5 credit.
+- You will be working with two APIs: Together AI and Serp. Note that each time you run `repl.py`, you will be using up some API credit. Please use your $5 Together credit wisely! We highly recommend testing your code in `agent.py` in isolation before running `repl.py`.
 - We will be using LLM-based grading for the coding portion. You can find more information on this on the assignment page. Wherever the LLM grader docks points, the teaching team will review your code and Gradescope transcript and make manual adjustments to make sure points are awarded back as needed.
 
 ## Part 2: Getting started with Github
