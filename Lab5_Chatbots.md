@@ -105,7 +105,7 @@ You will have time to discuss with your teammates at the end of today's Lab!
 
 **Before you start:**
 
-- Watch lecture videos up to Chatbots & Recommender Systems and Collaborative Filtering.
+- Watch lecture videos up to Recommender Systems and Collaborative Filtering.
 - Make sure your team has received together.ai credit.
 - Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/217991/files?preview=16650457) for detailed info!
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
@@ -187,19 +187,19 @@ Choose to `Clone` your group's repository to somewhere convenient on your PC. Ch
 
 There are several ways we can get the PA7 files into your local repo, but the easiest way without making any assumptions about your setup is to download a zip file from GitHub and extract it into this new local repo we've created!
 
-Navigate to the course [PA7 Repository](https://github.com/cs124/pa7-chatbot) (not the one you just created).
+Navigate to the course [PA7 Repository](https://github.com/cs124/pa7-agent/tree/main) (not the one you just created).
 
 Click `Code` and `Download ZIP`.
 
 ![Click Code then Download ZIP](img/PA7Download.png)
 
-This should've downloaded a file `pa7-chatbot-main`. If it is still zipped, be sure to extract the file into a folder.
+This should've downloaded a file `pa7-agent-main`. If it is still zipped, be sure to extract the file into a folder.
 
-This is where it is important that you remember the path where you saved your local repository! Drag the `pa7-chatbot-main` folder into the folder where you are storing your repository.
+This is where it is important that you remember the path where you saved your local repository! Drag the `pa7-agent-main` folder into the folder where you are storing your repository.
 
 When you return to GitHub desktop you should see all the files are being tracked!
 
-![27 Tracked Files](img/TrackedFiles.png)
+![15 Tracked Files](img/TrackedFiles.png)
 
 In total there are 15 Tracked Files. Let's upload them to our shared repository!
 
@@ -237,7 +237,7 @@ You'll find a method in this file `greeting`:
 
 ```python
 def greeting(self):
-    """Return a message that the chatbot uses to greet the user."""
+    """Return a message that the agent uses to greet the user."""
     ########################################################################
     # TODO: Write a short greeting message                                 #
     ########################################################################
