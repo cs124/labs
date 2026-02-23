@@ -9,11 +9,13 @@ Agenda:
 
 ## Part 1: PA7 Overview
 
-For PA7 we will be building a custom movie recommendation agent! We will use the DSPy library to build our agent to make tool calling. While a single LLM/chatbot can answer natural language queries, an agent is even more powerful as it chains multiple LLM calls to complete complex tasks that often require multiple steps. DSPy is a declarative framework for building modular AI software that enables users to build AI software from natural-language modules and compose them with different models. You can read more about DSPy [here](https://dspy.ai/).
+### Introduction to `DSPy`
+
+In PA7 (starter code [here](https://github.com/cs124/pa7-agent)), we will be building a custom movie recommendation agent! We will use the DSPy library to build an agent that can make tool calls (e.g., answer user questions about movies, help user book movie tickets, etc.). While a single LLM can answer natural language queries, an agent is even more powerful as it chains multiple LLM calls to complete complex tasks that often require multiple steps. DSPy is a declarative framework that enables users to build AI software from natural-language modules and compose them with different models. You can read more about DSPy [here](https://dspy.ai/).
 
 For each user query, the agent will first reason about the objective of the task and determine the relevant tools needed to complete the task. Then, the agent will determine the input for each tool call (functions that you will implement) and parse the output back to reason through the process again. Let's walk through an example together:
 
-You can then run the REPL script from PA7 to see your agent in action: `python repl.py`. Here is an example of the agent output
+After you have fully implemented your agent, you can run the REPL script from PA7 to see your agent in action: `python repl.py`. Here is an example of the agent output:
 
 ```text
 Movie Ticket Agent> Hello! I'm the Movie Ticket Agent. How can I help you today?
@@ -88,7 +90,9 @@ observation_i
 thought_(i+1)
 ```
 
-The assignment consists of a two parts. In the first part, you will implement the collaborative filtering algorithm to recommend movies to the user. In the second part, you will implement an LLM agent that can make tool calls to take on web search and memory functionalities.
+### Assignment overview
+
+PA7 consists of two parts. In the first part, you will implement a base agent that uses the collaborative filtering algorithm to recommend movies to the user and helps user book movie tickets. In the second part, you will implement an enhanced agent that also takes on web search and memory functionalities.
 
 PA7 is worth 18\% of your total grade, and conveniently split into exactly 100 points, with an additional 5 points of extra credit!
 
@@ -97,9 +101,7 @@ Here's the point breakdown:
 - [part 1] (68 Points)
 - [part 2] (32 Points)
 
-You can find instructions, rubrics, FAQs, and links to all resources for PA7 coding in the [PA7 GitHub README page](https://github.com/cs124/pa7-agent/blob/PA7_update/README.md).
-
-All submissions will be made through gradescope. **Note that no late days can be used for PA7!!!**
+You can find instructions, rubrics, FAQs, and links to all resources for PA7 [here](https://github.com/cs124/pa7-agent/).
 
 You will have time to discuss with your teammates at the end of today's Lab!
 
@@ -109,6 +111,12 @@ You will have time to discuss with your teammates at the end of today's Lab!
 - Make sure your team has received together.ai credit.
 - Check out the [PA7 Screencast](https://canvas.stanford.edu/courses/217991/files?preview=16650457) for detailed info!
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
+
+**IMPORTANT ANNOUNCEMENTS:**
+- **No late days can be used for PA7!!!** There are no exceptions.
+- If you filled out the group form on time, you should have received a $5 Together AI credit in your account! Most of your accounts should be on the "limited billing tier". This means that you may need to add a credit card to access your $5 credit.
+- You will be working with two APIs: Together AI and Serp. Note that each time you run `repl.py`, you will be using up some API credit. Please use your $5 Together credit wisely! We highly recommend testing your code in `agent.py` in isolation before running `repl.py`.
+- We will be using LLM-based grading for the coding portion. You can find more information on this on the assignment page. Wherever the LLM grader docks points, the teaching team will review your code and Gradescope transcript and make manual adjustments to make sure points are awarded back as needed.
 
 ## Part 2: Getting started with Github
 
