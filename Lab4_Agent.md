@@ -113,6 +113,7 @@ You will have time to discuss with your teammates at the end of today's Lab!
 - We will cover GitHub usage later today. Also check out [GitHub Tutorial video](https://canvas.stanford.edu/courses/203819/files/14391706?module_item_id=2052983) by Michael Ryan for step-by-step guidance.
 
 **IMPORTANT ANNOUNCEMENTS:**
+
 - **No late days can be used for PA7!!!** There are no exceptions.
 - If you filled out the group form on time, you should have received a $5 Together AI credit in your account! Most of your accounts should be on the "limited billing tier". This means that you may need to add a credit card to access your $5 credit.
 - You will be working with two APIs: Together AI and Serp. Note that each time you run `repl.py`, you will be using up some API credit. Please use your $5 Together credit wisely! We highly recommend testing your code in `agent.py` in isolation before running `repl.py`.
@@ -195,7 +196,7 @@ Choose to `Clone` your group's repository to somewhere convenient on your PC. Ch
 
 There are several ways we can get the PA7 files into your local repo, but the easiest way without making any assumptions about your setup is to download a zip file from GitHub and extract it into this new local repo we've created!
 
-Navigate to the course [PA7 Repository](https://github.com/cs124/pa7-agent/tree/main) (not the one you just created).
+Navigate to the course [PA7 Repository](https://github.com/cs124/pa7-agent) (not the one you just created).
 
 Click `Code` and `Download ZIP`.
 
