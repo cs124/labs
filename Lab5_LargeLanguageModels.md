@@ -1,6 +1,6 @@
 # Week 9: Collaborative Filtering & Ethical Use of LLMs in the Classroom
 
-<sub><sup>*written by isabel sieh & ishan khare, cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by isabel sieh & ishan khare, cs124 staff team, winter 2026*</sup></sub>
 
 Agenda:
  - Collaborative Filtering
@@ -30,12 +30,12 @@ We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). 
 ### Step 1: Build the synthetic user "likes" vector (0/1)
 
 In PA7, we have different synthetic users (in [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py)) where a user profile has a **list of movies they like**. 
-In PA7, we later represent this a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
+In PA7, we later represent this as a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
 
 - **liked** movie → **1**
 - not listed / unrated → **0**
 
-In this lab, we have a new user that has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
+In this lab, we have a new user who has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
 | movie | liked? |
 |------:|:------:|
 |    M1 |    0   |
@@ -107,7 +107,7 @@ Now you calculate $\texttt{score}(M1)$ and $\texttt{score}(M6)$.
 Now that we have a **score** for each candidate movie (M1, M2, M6), recommend the movie with the **highest score**.
 
 ## Part 2: The use of LLMs in the classroom (~50 min)
-For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
+For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
 
 ### Review Existing Policies (~15 mins)
 Writing course policies on the use of generative AI in the classroom is hard; we need to balance the potential benefits of using these tools for both students and faculty against the potential educational harms that may arise from their misuse. Below, we’ve compiled some example course policies that balance these tradeoffs well. First, review those policies. As you review these policies, discuss the following questions among your group members. Spend no more than 15 minutes on this exercise:
@@ -121,7 +121,7 @@ The syllabus from CS106B states: <i>University guidance on the use of generative
 
 <b>[CS 224N](https://web.stanford.edu/class/cs224n/): allows AI assistance with the expectation that students independently produce and fully understand their solutions, treating AI as a “collaborator” with appropriate discussions <br/></b>
 
-The syllabus from CS224N states: <i>Students are required to independently submit their solutions for CS224N homework assignments. Collaboration with generative AI tools such as Co-Pilot and ChatGPT is allowed, treating them as collaborators in the problem-solving process. However, the direct solicitation of answers or copying solutions, whether from peers or external sources, is strictly prohibited.</i><br/>
+The syllabus from CS224N states: <i>Students are required to independently submit their solutions for CS224N homework assignments. Collaboration with generative AI tools such as Copilot and ChatGPT is allowed, treating them as collaborators in the problem-solving process. However, the direct solicitation of answers or copying solutions, whether from peers or external sources, is strictly prohibited.</i><br/>
 <br/>
 
 <b>[LINGUIST 130A/230A](https://web.stanford.edu/class/linguist130a/syllabus.html): views AI-generated content as "another person’s original work," meaning it must be properly cited if used. Excessive reliance on AI-generated text is unlikely to be evaluated positively.<br/></b>
@@ -164,3 +164,4 @@ Save your file as a PDF, and submit at [this Google form](https://docs.google.co
 
 ### Conclusion & Share Out (~15 mins)
 We will now go back to the whole class and share out the policies you've created!
+
