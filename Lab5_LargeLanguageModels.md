@@ -12,6 +12,8 @@ Let's work through an example of item-item collaborative filtering similar to wh
 
 It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Sag1-jVuPQoIHhAu1dqJICY0UXyYIB-Qmhz2dvGo96I/edit?usp=sharing).
 
+**Check out the solutions spreadsheet [here](https://docs.google.com/spreadsheets/d/1B9eXhi9rBuhHHMBU_DY0OV7jmmb6qonjNcI3U66toCQ/edit?usp=sharing).**
+
 We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). Missing entries are stored as 0 in the matrix.
 
 ### Ratings Matrix (raw values, used for similarity)
@@ -27,13 +29,13 @@ We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). 
 
 ### Step 1: Build the synthetic user "likes" vector (0/1)
 
-In PA7, we have different synthetic users (in `synthetic_users.py`) where a user profile has a **list of movies they like**. 
+In PA7, we have different synthetic users (in [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py)) where a user profile has a **list of movies they like**. 
 In PA7, we later represent this a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
 
 - **liked** movie → **1**
 - not listed / unrated → **0**
 
-In this lab, we have a new user wthat has built a profile of movies they like, similar to `synthetic_users.py` in PA7.
+In this lab, we have a new user that has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
 | movie | liked? |
 |------:|:------:|
 |    M1 |    0   |
@@ -42,6 +44,7 @@ In this lab, we have a new user wthat has built a profile of movies they like, s
 |    M4 |    0   |
 |    M5 |    1   |
 |    M6 |    0   |
+
 This synthetic user below likes M3 and M5 (and hasn't liked the rest).
 
 ### Step 2: Compute Similarity Scores
