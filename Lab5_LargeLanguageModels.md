@@ -1,6 +1,6 @@
 # Week 9: Collaborative Filtering & Ethical Use of LLMs in the Classroom
 
-<sub><sup>*written by veronica rivera & jeong shin, cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by isabel sieh & ishan khare, cs124 staff team, winter 2025*</sup></sub>
 
 Agenda:
  - Collaborative Filtering
@@ -10,9 +10,11 @@ Agenda:
 
 Let's work through an example of item-item collaborative filtering similar to what is used in PA7:
 
-It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1RalPHyrnGHc3dGnDVzAZNZG4uNiZxrcMiO--Xo8awsw/edit#gid=0).
+It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Sag1-jVuPQoIHhAu1dqJICY0UXyYIB-Qmhz2dvGo96I/edit?usp=sharing).
 
-Let's say we have this matrix of movie reviews from various users:
+We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). Missing entries are stored as 0 in the matrix.
+
+### Ratings Matrix (raw values, used for similarity)
 
 |    | U1 | U2 | U3 | U4 |
 |----|---:|---:|---:|---:|
@@ -23,96 +25,83 @@ Let's say we have this matrix of movie reviews from various users:
 | M5 |    |  4 |  3 |  4 |
 | M6 |  1 |    |  3 |    |
 
-We have a new user with the following preferences:
+### Step 1: Build the synthetic user "likes" vector (0/1)
 
-U = [M1: ??, M2: ??, M3: 5, M4: 2, M5: 3, M6: ??]
+In PA7, we have different synthetic users (in `synthetic_users.py`) where a user profile has a **list of movies they like**. 
+In PA7, we later represent this a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
 
-Out of the movies they have not seen (M1, M2, and M6) we want to recommend the film that they are likely to rate the highest.
+- **liked** movie → **1**
+- not listed / unrated → **0**
 
-### Step 1.  Binarize the Ratings
-
-Start by binarizing the ratings!  We will use the following cutoffs (same as PA7):
-
-0 $\lt$ rating $\leq$ 2.5: **-1**
-
-Unrated: **0**
-
-2.5 $\lt$ rating $\leq$ 5: **1**
-
-We fill out this table for you in the interest of time!  Please ensure you understand how we got this matrix!
-
-Binarized Matrix:
-|    | U1 | U2 | U3 | U4 |
-|----|---:|---:|---:|---:|
-| M1 | -1 |  1 |  1 |  0 |
-| M2 |  0 |  0 |  1 |  1 |
-| M3 | -1 |  1 |  0 | -1 |
-| M4 |  0 | -1 |  1 |  0 |
-| M5 |  0 |  1 |  1 |  1 |
-| M6 | -1 |  0 |  1 |  0 |
-
-
-New User:
-| movie | binarized rating |
-|-------|------------------|
-|    M1 |                0 |
-|    M2 |                0 |
-|    M3 |                1 |
-|    M4 |               -1 |
-|    M5 |                1 |
-|    M6 |                0 |
-
+In this lab, we have a new user wthat has built a profile of movies they like, similar to `synthetic_users.py` in PA7.
+| movie | liked? |
+|------:|:------:|
+|    M1 |    0   |
+|    M2 |    0   |
+|    M3 |    1   |
+|    M4 |    0   |
+|    M5 |    1   |
+|    M6 |    0   |
+This synthetic user below likes M3 and M5 (and hasn't liked the rest).
 
 ### Step 2: Compute Similarity Scores
 
-**Important Note:** In lecture and Quiz 8, you will use mean-centered overlapping cosine similarity. But here (and in PA7), we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.
+**Important Note:** In lecture and Quiz 8, you use mean-centered overlapping cosine similarity. Here (and in PA7) we use **raw** cosine similarity on the rating rows—no mean-centering.
 
 Recall the formula for the cosine similarity of two vectors:
 
-$$\texttt{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
+$$\texttt{sim}(M_i, M_j) = \frac{M_i \cdot M_j}{\|M_i\|\|M_j\|}$$
 
-Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M3)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
+where $M_i$ is the **row vector of raw ratings** across dataset users (e.g. $M_1 = [1, 5, 3, 0]$, $M_5 = [0, 4, 3, 4]$).
 
+Compute the cosine similarity over all **movie** (item) row vectors. We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M3)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
 Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
 
-Compute the cosine similarity over all the ***MOVIE*** (item) vectors.  These are the rows of the above matrix.
 
 |    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
 |----|---:|---:|--------------:|-------------:|-------------:|------------:|
-| M1 |  1 | 0.41 |          **??** |            0 |         **??** |        0.82 |
-| M2 |    |  1 | -0.41         | 0.5          | 0.82         |         0.5 |
-| M3 |    |    |             1 |        -0.41 |            0 |        0.41 |
-| M4 |    |    |               |            1 |            0 |         0.5 |
+| M1 |  1 | 0.40 |          **??** |         0.83 |         **??** |        0.53 |
+| M2 |    |  1 | 0.14          | 0.70         | 0.76         |        0.74 |
+| M3 |    |    |             1 | 0.39         | 0.68         |        0.14 |
+| M4 |    |    |               |            1 | 0.70         |        0.85 |
 | M5 |    |    |               |              |            1 |         **??**  |
 | M6 |    |    |               |              |              |          1  |
 
-$\texttt{sim}(M1, M3)$ = ??
+$\texttt{sim}(M1, M3)$ = ??  
 
-$\texttt{sim}(M1, M5)$ = ??
+$\texttt{sim}(M1, M5)$ = ??  
 
 $\texttt{sim}(M5, M6)$ = ??
 
-### Step 3: Compute New User's Ratings
+### Step 3: Score each candidate movie (for ranking)
 
-**Important Note:** In lecture and Quiz 8, you will normalize the rating by dividing the sum of the similarity scores. But here (and in PA7), we will NOT do normalization.
+**Important:** In lecture and Quiz 8, you may normalize by the sum of similarities. Here (and in PA7) we do **not** normalize.
 
-Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
+For each movie the user has **not** put on their profile, we compute a **score**—the sum of its similarities to every movie on their profile. These scores are used only to **rank** candidates (higher = more similar to their likes); they are not predicted ratings on a 1–5 scale.
 
-We will take the weighted average over the binarized ratings of all movies rated by the new user.  We will weigh on similarity.
+For each movie $j$ with $\texttt{liked}[j] = 0$, compute:
 
-For example the predicted rating for movie 2 is:
+$$\texttt{score}(j) = \sum_{i \in L} \texttt{sim}(j, i)$$
 
-$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + $
-$\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
-$\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
+where $L$ is the set of movies the synthetic user put on their profile (the ones with 1). So we're just **summing similarities to liked movies**.
 
-$\texttt{Rating}(M2) = (-0.41)(1) + (0.5)(-1) + (0.82)(1) = -0.09$
+Because the user vector is 0/1, this is the same as:
 
-Now you calculate for M1 and M6.
+$$\texttt{score}(j) = \sum_i \texttt{sim}(j, i) \cdot \texttt{liked}[i]$$
+
+For our example (user likes M3 and M5):
+
+- $\texttt{score}(M1) = \texttt{sim}(M1, M3) + \texttt{sim}(M1, M5)$
+- $\texttt{score}(M2) = \texttt{sim}(M2, M3) + \texttt{sim}(M2, M5)$
+- $\texttt{score}(M6) = \texttt{sim}(M6, M3) + \texttt{sim}(M6, M5)$
+
+**Example:** $\texttt{score}(M2) = \texttt{sim}(M2,M3) + \texttt{sim}(M2,M5) = 0.14 + 0.76 = 0.90$
+
+Now you calculate $\texttt{score}(M1)$ and $\texttt{score}(M6)$.
 
 ### Step 4: Recommend a Movie
 
-Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
+Now that we have a **score** for each candidate movie (M1, M2, M6), recommend the movie with the **highest score**.
 
 ## Part 2: The use of LLMs in the classroom (~50 min)
 For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 

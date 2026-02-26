@@ -2,116 +2,78 @@
 
 ## Part 1: Collaborative Filtering
 
-Let's work through an example of item-item collaborative filtering similar to what will be used in PA7:
+Let's work through an example of item-item collaborative filtering similar to what is used in PA7:
 
-It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1RalPHyrnGHc3dGnDVzAZNZG4uNiZxrcMiO--Xo8awsw/edit#gid=0).
+It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Sag1-jVuPQoIHhAu1dqJICY0UXyYIB-Qmhz2dvGo96I/edit?usp=sharing).
 
 **Check out the solutions spreadsheet [here](https://docs.google.com/spreadsheets/d/1ne8lkV_2DZo4KmcpD3RXeuLxiTH3ECS7JpW9OI8JBsE/edit#gid=0).**
 
-Let's say we have this matrix of movie reviews from various users:
+We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). Missing entries are stored as 0 in the matrix (for computing similarity).
+
+### Ratings Matrix (raw values, used for similarity)
 
 |    | U1 | U2 | U3 | U4 |
 |----|---:|---:|---:|---:|
-| M1 |  1 |  5 |  3 |    |
-| M2 |    |    |  5 |  4 |
-| M3 |  2 |  4 |    |  1 |
-| M4 |    |  2 |  4 |    |
-| M5 |    |  4 |  3 |  4 |
-| M6 |  1 |    |  3 |    |
+| M1 |  1 |  5 |  3 |  0 |
+| M2 |  0 |  0 |  5 |  4 |
+| M3 |  2 |  4 |  0 |  1 |
+| M4 |  0 |  2 |  4 |  0 |
+| M5 |  0 |  4 |  3 |  4 |
+| M6 |  1 |  0 |  3 |  0 |
 
-We have a new user with the following preferences:
+Do **not** binarize this matrix. In PA7 you compute movie–movie similarity from these raw rating vectors (rows).
 
-U = [M1: ??, M2: ??, M3: 5, M4: 2, M5: 3, M6: ??]
+### Step 1: Build the synthetic user "likes" vector (0/1)
 
-Out of the movies they have not seen (M1, M2, and M6) we want to recommend the film that they are likely to rate the highest.
+In PA7, synthetic users (in `synthetic_users.py`) have a list of movies they like, represented as a 0/1 vector in `user_ratings_dict`. This synthetic user likes M3 and M5 only (no -1).
 
-### Step 1.  Binarize the Ratings
+**New User (0/1):**
 
-Start by binarizing the ratings!  We will use the following cutoffs (same as PA7):
-
-0 $\leq$ rating $\lt$ 3: **-1**
-
-Unrated: **0**
-
-3 $\leq$ rating $\leq$ 5: **1**
-
-We partially fill out this table for you.  Please fill out the missing binarization for M1 and M6, as well as the New User.
-
-Binarized Matrix:
-|    | U1 | U2 | U3 | U4 |
-|----|---:|---:|---:|---:|
-| M1 | -1 |  1 |  1 |  0 |
-| M2 |  0 |  0 |  1 |  1 |
-| M3 | -1 |  1 |  0 | -1 |
-| M4 |  0 | -1 |  1 |  0 |
-| M5 |  0 |  1 |  1 |  1 |
-| M6 | -1 |  0 |  1 |  0 |
-
-
-New User:
-| movie | binarized rating |
-|-------|------------------|
-|    M1 |                0 |
-|    M2 |                0 |
-|    M3 |                1 |
-|    M4 |               -1 |
-|    M5 |                1 |
-|    M6 |                0 |
+| movie | liked? |
+|------:|:------:|
+|    M1 |    0   |
+|    M2 |    0   |
+|    M3 |    1   |
+|    M4 |    0   |
+|    M5 |    1   |
+|    M6 |    0   |
 
 ### Step 2: Compute Similarity Scores
 
-For this part (as in PA7) we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.  Note that in PA7 we do not use mean-centering at all.
+We use **raw** cosine similarity on the rating rows (no mean-centering). $\texttt{sim}(M_i, M_j) = \frac{M_i \cdot M_j}{\|M_i\|\|M_j\|}$ with $M_i$ the row of raw ratings.
 
-Recall the formula for the cosine similarity of two vectors:
+|    | M1 | M2 |   M3 |   M4 |   M5 |   M6 |
+|----|---:|---:|-----:|-----:|-----:|-----:|
+| M1 |  1 | 0.40 | 0.81 | 0.83 | 0.77 | 0.53 |
+| M2 |    |  1 | 0.14 | 0.70 | 0.76 | 0.74 |
+| M3 |    |    |    1 | 0.39 | 0.68 | 0.14 |
+| M4 |    |    |      |    1 | 0.70 | 0.85 |
+| M5 |    |    |      |      |    1 | 0.44 |
+| M6 |    |    |      |      |      |    1 |
 
-$$\texttt{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
+> $\texttt{sim}(M1, M3)$: M1 = [1,5,3,0], M3 = [2,4,0,1]. Dot = 2+20+0+0 = 22. $|M1|=\sqrt{35}$, $|M3|=\sqrt{21}$. $\texttt{sim} = 22/\sqrt{735} \approx 0.81$.
 
-Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M3)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
+> $\texttt{sim}(M1, M5)$: Dot = 0+20+9+0 = 29. $|M5|=\sqrt{41}$. $\texttt{sim} = 29/\sqrt{1435} \approx 0.77$.
 
-Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
+> $\texttt{sim}(M5, M6)$: M6 = [1,0,3,0]. Dot = 0+0+9+0 = 9. $|M6|=\sqrt{10}$. $\texttt{sim} = 9/\sqrt{410} \approx 0.44$.
 
-Compute the cosine similarity over all the ***MOVIE*** (item) vectors.  These are the rows of the above matrix.
+### Step 3: Score each candidate movie (for ranking)
 
-|    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
-|----|---:|---:|--------------:|-------------:|-------------:|------------:|
-| M1 |  1 |  0.41 |            0.67 |            0 |           0.67 |         0.82 |
-| M2 |    |  1 | -0.41 | 0.5 | 0.82 |           0.5 |
-| M3 |    |    |             1 | -0.41 |            0 | 0.41 |
-| M4 |    |    |               |            1 |            0 |           0.5 |
-| M5 |    |    |               |              |            1 |          0.41 |
-| M6 |    |    |               |              |              |           1 |
+We do **not** normalize. For each movie not on the user's profile, we compute a **score** (sum of similarities to movies on their profile). These scores are for **ranking** only—higher means more similar to their likes; they are not predicted 1–5 ratings.
 
->$\texttt{sim}(M1, M3)$ = $\frac{(-1)(-1) + (1)(1) + (1)(0) + (0)(-1)}{\sqrt{(-1)^2 + 1^2 + 1^2 + 0^2}\cdot\sqrt{(-1)^2 + 1^2 + 0^2 + (-1)^2}} = \frac{2}{\sqrt{3} \cdot \sqrt{3}} = 0.66667$
+$\texttt{score}(j) = \sum_{i \in L} \texttt{sim}(j, i)$ where $L$ = movies on their profile (the 1s). User likes M3 and M5, so:
 
-> $\texttt{sim}(M1, M5)$ = $\frac{(-1)(0) + (1)(1) + (1)(1) + (0)(1)}{\sqrt{(-1)^2 + 1^2 + 1^2 + 0^2}\cdot\sqrt{0^2 + 1^2 + 1^2 + 1^2}} = \frac{2}{\sqrt{3} \cdot \sqrt{3}} = 0.66667$
+$\texttt{score}(M2) = \texttt{sim}(M2,M3) + \texttt{sim}(M2,M5) = 0.14 + 0.76 = 0.90$
 
-> $\texttt{sim}(M5, M6)$ = $\frac{(0)(-1) + (1)(0) + (1)(1) + (1)(0)}{\sqrt{0^2 + 1^2 + 1^2 + 1^2}\cdot\sqrt{(-1)^2 + 0^2 + 1^2 + 0^2}} = \frac{1}{\sqrt{3} \cdot \sqrt{2}} = 0.40825$
+> $\texttt{score}(M1) = \texttt{sim}(M1,M3) + \texttt{sim}(M1,M5) = 0.81 + 0.77 = 1.58$
 
-### Step 3: Compute New User's Ratings
-
-Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
-
-We will take the weighted average over the binarized ratings of all movies rated by the new user.  We will weigh on similarity.
-
-For example the predicted rating for movie 2 is:
-
-$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + $
-$\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
-$\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
-
-$\texttt{Rating}(M2) = (-0.41)(1) + (0.5)(-1) + (0.82)(1) = -0.09$
-
-Now you calculate for M1 and M6.
-
-> $\texttt{Rating}(M1) = (0.67)(1) + (0)(-1) + (0.67)(1) = 1.33$
-
-> $\texttt{Rating}(M6) = (0.41)(1) + (0.5)(-1) + (0.41)(1) = 0.32$
+> $\texttt{score}(M6) = \texttt{sim}(M6,M3) + \texttt{sim}(M6,M5) = 0.14 + 0.44 = 0.58$
 
 ### Step 4: Recommend a Movie
 
-Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
+Now that we have a **score** for each candidate (M1, M2, M6), we recommend the movie with the highest score.
 
-> M1 had the highest predicted rating, so we'll recommend that one!
+> M1 has the highest score (1.58), so we recommend M1.
 
 ## Part 2: Ethical Use of LLMs in the Classroom
 
