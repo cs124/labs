@@ -1,6 +1,6 @@
 # Week 9: Collaborative Filtering & Ethical Use of LLMs in the Classroom
 
-<sub><sup>*written by isabel sieh & esi eneinyang & ishan khare, cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by isabel sieh & esi eneinyang & ishan khare, cs124 staff team, winter 2026*</sup></sub>
 
 ## Agenda
  - Collaborative Filtering
@@ -30,12 +30,12 @@ We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). 
 ### Step 1: Build the synthetic user "likes" vector (0/1)
 
 In PA7, we have different synthetic users (in [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py)) where a user profile has a **list of movies they like**. 
-In PA7, we later represent this a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
+In PA7, we later represent this as a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
 
 - **liked** movie → **1**
 - not listed / unrated → **0**
 
-In this lab, we have a new user that has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
+In this lab, we have a new user who has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
 | movie | liked? |
 |------:|:------:|
 |    M1 |    0   |
