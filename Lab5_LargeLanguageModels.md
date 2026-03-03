@@ -1,8 +1,8 @@
 # Week 9: Collaborative Filtering & Ethical Use of LLMs in the Classroom
 
-<sub><sup>*written by isabel sieh & ishan khare, cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by isabel sieh & esi eneinyang & ishan khare, cs124 staff team, winter 2025*</sup></sub>
 
-Agenda:
+## Agenda
  - Collaborative Filtering
  - LLM Ethics
 
@@ -106,61 +106,102 @@ Now you calculate $\texttt{score}(M1)$ and $\texttt{score}(M6)$.
 
 Now that we have a **score** for each candidate movie (M1, M2, M6), recommend the movie with the **highest score**.
 
-## Part 2: The use of LLMs in the classroom (~50 min)
-For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
+## Part 2: The Use of LLMs in the Classroom (~50 min)
 
-### Review Existing Policies (~15 mins)
-Writing course policies on the use of generative AI in the classroom is hard; we need to balance the potential benefits of using these tools for both students and faculty against the potential educational harms that may arise from their misuse. Below, we’ve compiled some example course policies that balance these tradeoffs well. First, review those policies. As you review these policies, discuss the following questions among your group members. Spend no more than 15 minutes on this exercise:
-- What might be the benefits of a strict ban of generative AI tools in the classroom? What might be the drawbacks?
-- What might be the benefits of a policy that allows AI with disclosure? What risks does it introduce?
+### The AI Policy Problem (~5 min)
 
-<b>[CS 106B](https://web.stanford.edu/class/cs106b/): strict prohibition of AI <br/></b>
+Before we dive in, let's take a quick pulse of the room.
 
-The syllabus from CS106B states: <i>University guidance on the use of generative AI in classroom settings treats use of generative AI analogously to receiving assistance from another human. As a result, using ChatGPT or other generative AI tools on any graded work is a violation of the Honor Code, regardless of whether that use is disclosed.</i><br/>
-<br/>
+**Think about the classes you're taking this quarter:**
 
-<b>[CS 224N](https://web.stanford.edu/class/cs224n/): allows AI assistance with the expectation that students independently produce and fully understand their solutions, treating AI as a “collaborator” with appropriate discussions <br/></b>
+* How many have an explicit policy on generative AI use?  
+* How many of those policies contradict each other?  
+* Have you ever felt unsure whether using an AI tool for a specific task was "allowed"?
 
-The syllabus from CS224N states: <i>Students are required to independently submit their solutions for CS224N homework assignments. Collaboration with generative AI tools such as Co-Pilot and ChatGPT is allowed, treating them as collaborators in the problem-solving process. However, the direct solicitation of answers or copying solutions, whether from peers or external sources, is strictly prohibited.</i><br/>
-<br/>
+Stanford's [Generative AI Policy Guidance](https://communitystandards.stanford.edu/generative-ai-policy-guidance) provides a university-wide framework, but it leaves the specifics to each instructor. That means every class you take can have a completely different set of rules — and as a student, you're expected to track and follow all of them.
 
-<b>[LINGUIST 130A/230A](https://web.stanford.edu/class/linguist130a/syllabus.html): views AI-generated content as "another person’s original work," meaning it must be properly cited if used. Excessive reliance on AI-generated text is unlikely to be evaluated positively.<br/></b>
+Today, you're going to grapple with *why* that's so hard. By the end of this lab, you and your group will have drafted an AI policy for a real Stanford course — and had another group try to break it.
 
-The syllabus from LINGUIST 130A/230A states: <i>We interpret "another person's original work" to include content that was produced by an AI writing assistant like ChatGPT. This follows either by treating the AI assistant as a person for the purposes of this policy (controversial) or acknowledging that the AI assistant was trained directly on people's original work. Thus, while you are not forbidden from using these tools, you should consider the above policy carefully and quote where appropriate. Assignments that are in large part quoted from an AI assistant are very unlikely to be evaluated positively. In addition, if a student's work is substantially identical to another student's work, that will be grounds for an investigation of plagiarism regardless of whether the prose was produced by an AI assistant.</i><br/>
-<br/>
+---
 
-After reading these course policies, spend some time with your group discussing the following questions regarding how LLMs might be used—or misused—in a variety of classroom and real-world scenarios:<br/>
+### Gray Area Scenarios (~10 min)
 
-#### Homework Assignments
-- When might it be acceptable to use LLMs for coding or written homework? What harms might arise from using them (e.g. quality of learning, academic misconduct)?<br/>
-- What kind of disclosure should be required if students use LLMs for homework?<br/>
+Form groups of 3-4 people. Select a scribe and start a Google Doc to write your eventual attendance sheet submission responses. For each scenario below, discuss with your group for 2-3 minutes and decide: **Acceptable**, **Unacceptable**, or **It Depends**. There are no right answers, and the point is to surface where you and your groupmates disagree, and why.
 
-#### Grading & Feedback
-- For TAs or instructors, when do you think it would be okay to use an LLM to help grade assignments or provide feedback? What risks might arise from incorporating LLMs into the workflow of grading and giving feedback (e.g. privacy risks, errors in grading, quality of feedback)?<br/>
-- Should instructors disclose that AI was used in evaluating their work?<br/>
+**Scenario 1 — PWR (Program in Writing and Rhetoric)**
 
-### Building Your Own Policy (~20 mins)
-After discussing the policies above with your group, spend the next ~20 minutes crafting your own Generative AI policy for CS 124. We expect <b><ins>2-4 short paragraphs</ins></b> (in total) to specify clear cases in which 1) students can use LLMs in their coursework, and 2) the teaching team can use LLMs in grading and providing feedback. Here’s how we recommend structuring your work:<br/>
-#### Trade Offs
-What might be lost if you ban the use of generative AI altogether? What would be gained? Where should the line be drawn between acceptable help and academic misconduct?
+A student in PWR is working on an argumentative essay. They paste their draft into ChatGPT and ask it to "reorganize my argument to be more persuasive." They rewrite all the prose themselves, but the structure of the essay is now based on the AI's suggestion.
 
-#### Identify Key Areas to Address
-1. <b>Scope:</b> Which assignments or activities does your policy cover? (e.g., homework, exams, coding projects, written reflections)
-2. <b>Allowed vs. Prohibited Uses:</b> 
-   - For students: Define what is allowed, such as brainstorming, debugging, etc.
-   - For the teaching team: Specify acceptable practices, including providing feedback on papers, autograding, or other instructional support.
-3. <b>Disclosure:</b> If you allow AI usage, must students disclose it? If so, how?
-4. <b>Consequences:</b> How does your policy tie into Stanford’s Honor Code? What happens if a student violates your AI rules?
+**Scenario 2 — CS 124**
 
-#### Draft a Concise Policy
-Work together with your group to write a <b><ins>2-4 short paragraph policy</ins></b> that clearly states how students in CS 124 can or cannot use generative AI tools. 
-Keep the language clear and direct, and feel free to use the examples we provided above as inspiration or jumping off points. 
+A student working on a CS 124 programming assignment gets a cryptic error message. They paste the error into ChatGPT, which suggests a fix involving a regex pattern the student hasn't seen before. The student uses the fix and it works, but they aren't sure they could reproduce it on their own.
 
-#### Consider the Broader Impact
-Include a brief (1–2 sentence) explanation of why you made the choices you did. For example, if you’re allowing limited AI usage, how do you ensure it fosters learning rather than replacing it? Think about potential inequalities (e.g., some students may have more familiarity or better access to AI tools). Consider how your policy might affect collaboration and group work.
+**Scenario 3 — PWR**
 
-#### Submission Instructions
-Save your file as a PDF, and submit at [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfdDQ4r5H9NE5S7U7-r3Juj5EHlsQrlA62WSi-7Kur93_sN2Q/viewform). This is also how we'll track your attendance for today's lab.
+A non-native English speaker uses Claude to proofread and polish the grammar on their PWR essay before submitting. The ideas and arguments are entirely their own, but many sentences have been reworded by the AI.
 
-### Conclusion & Share Out (~15 mins)
-We will now go back to the whole class and share out the policies you've created!
+**Scenario 4 — CS 124**
+
+A student uses Cursor while working on a CS 124 PA. They write a comment describing what the function should do, and Cursor autocompletes the entire function. The student reviews it, confirms it looks right, and moves on.
+
+**Scenario 5 — Teaching Team**
+
+A TA uses an LLM to draft feedback comments on student assignments. The TA reviews and edits the AI-generated comments before posting them, but roughly 70% of the language in the final feedback was generated by the AI.
+
+After discussing, take note of where your group disagreed. Those disagreements are exactly the gaps that a written policy needs to address. **You will submit a summary of these disagreements in the attendance form (Q1).**
+
+---
+
+### Split Room: Draft Your Policy (~20 min)
+
+Now your group will draft a generative AI policy for a real Stanford course. Here's the twist: **not every course should have the same policy.**
+
+* **Side A of the room:** Draft a Gen AI policy for **CS 124** (an NLP course — coding-heavy, conceptual understanding matters, but AI tools are increasingly standard in the industry your students are entering).  
+* **Side B of the room:** Draft a Gen AI policy for **PWR** (Stanford's required writing course — the written output *is* the learning objective; developing your own voice, argument, and critical thinking is the entire point).
+
+Work together on your shared Google Doc. Your policy should be **2-4 short paragraphs** and must address the following:
+
+**1\. Allowed vs. Prohibited Uses**
+
+* For students: What specific uses of Gen AI tools are permitted? What is off-limits? Be concrete — "don't use AI to cheat" is not a policy.  
+* For the teaching team: Can TAs or instructors use AI in grading, feedback, or lesson planning? Under what conditions?
+
+**2\. Disclosure Requirements**
+
+* If AI use is allowed, must students disclose it? How — a footnote, a separate statement, an honor code checkbox?
+
+**3\. Consequences**
+
+* How does your policy connect to Stanford's Honor Code? What happens if a student violates your AI rules? Be specific.
+
+**4\. Rationale (1-2 sentences)**
+
+* Why did your group make the choices it did? What is the core learning objective of this course, and how does your policy protect it?
+
+As you draft, think back to the scenarios from the previous exercise. **Your policy should be able to cleanly handle each scenario relevant to your course.** If it can't, that's a sign something is underspecified. **You will submit your policy in the attendance form (Q2).**
+
+---
+
+### Stress Test Swap (~10 min)
+
+Time to break each other's policies.
+
+Each **CS 124 group** will swap their draft with a **PWR group** (and vice versa). Your job as the reviewing group:
+
+1. **Find the loopholes.** Identify a realistic scenario where a student could technically comply with the policy while clearly undermining the learning objective.  
+2. **Find the edge case.** What about a student with a disability who uses AI as an accessibility tool? What about a student who uses AI to understand the assignment prompt but not to complete it? What about a student with more money that can afford fancier language models?  
+3. **Find the ambiguity.** Is there any phrase in the policy that two reasonable people could interpret differently?
+
+Write **2-3 specific critiques** and pass the policy back. Original groups: review the feedback and note what you would revise. **You will submit a summary of these critiques in the attendance form (Q3).**
+
+---
+
+### Share Out & Wrap-Up (~5 min)
+
+Let's come back together as a class. A few questions for the room:
+
+* **Which course was harder to write a policy for — and why?**  
+* **Did any group find that their scenario verdicts from earlier contradicted the policy they ended up writing?**  
+* **What's the one thing you think every AI policy should include, regardless of the course?**
+
+The key takeaway: there is no universal AI policy that works for every class, because the *learning objective* of a course should drive the policy. A writing class where the output is the learning and a CS class where the output demonstrates the learning require fundamentally different rules — even if they're both happening on the same campus, in the same quarter, for the same students.
