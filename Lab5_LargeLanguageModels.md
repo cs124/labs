@@ -82,7 +82,7 @@ $\texttt{sim}(M5, M6)$ = ??
 
 For each movie the user has **not** put on their profile, we compute a **score**—the sum of its similarities to every movie on their profile. These scores are used only to **rank** candidates (higher = more similar to their likes); they are not predicted ratings on a 1–5 scale.
 
-For each movie $j$ with $\texttt{liked}[j] = 0$, compute:
+For each movie $j$ with $\texttt{liked}[j] = 1$, compute:
 
 $$\texttt{score}(j) = \sum_{i \in L} \texttt{sim}(j, i)$$
 
