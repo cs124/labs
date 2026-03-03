@@ -1,8 +1,8 @@
 # Week 9: Collaborative Filtering & Ethical Use of LLMs in the Classroom
 
-<sub><sup>*written by veronica rivera & jeong shin, cs124 staff team, winter 2025*</sup></sub>
+<sub><sup>*written by isabel sieh & esi eneinyang & ishan khare, cs124 staff team, winter 2026*</sup></sub>
 
-Agenda:
+## Agenda
  - Collaborative Filtering
  - LLM Ethics
 
@@ -10,9 +10,13 @@ Agenda:
 
 Let's work through an example of item-item collaborative filtering similar to what is used in PA7:
 
-It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1RalPHyrnGHc3dGnDVzAZNZG4uNiZxrcMiO--Xo8awsw/edit#gid=0).
+It will help to make a copy and follow along in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Sag1-jVuPQoIHhAu1dqJICY0UXyYIB-Qmhz2dvGo96I/edit?usp=sharing).
 
-Let's say we have this matrix of movie reviews from various users:
+**Check out the solutions spreadsheet [here](https://docs.google.com/spreadsheets/d/1B9eXhi9rBuhHHMBU_DY0OV7jmmb6qonjNcI3U66toCQ/edit?usp=sharing).**
+
+We have a **ratings matrix** from various users. Ratings are raw (e.g., 1–5). Missing entries are stored as 0 in the matrix.
+
+### Ratings Matrix (raw values, used for similarity)
 
 |    | U1 | U2 | U3 | U4 |
 |----|---:|---:|---:|---:|
@@ -23,152 +27,184 @@ Let's say we have this matrix of movie reviews from various users:
 | M5 |    |  4 |  3 |  4 |
 | M6 |  1 |    |  3 |    |
 
-We have a new user with the following preferences:
+### Step 1: Build the synthetic user "likes" vector (0/1)
 
-U = [M1: ??, M2: ??, M3: 5, M4: 2, M5: 3, M6: ??]
+In PA7, we have different synthetic users (in [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py)) where a user profile has a **list of movies they like**. 
+In PA7, we later represent this as a 0/1 vector (e.g. in `user_ratings_dict`). This is done for you (no code written):
 
-Out of the movies they have not seen (M1, M2, and M6) we want to recommend the film that they are likely to rate the highest.
+- **liked** movie → **1**
+- not listed / unrated → **0**
 
-### Step 1.  Binarize the Ratings
+In this lab, we have a new user who has built a profile of movies they like, similar to [`synthetic_users.py`](https://github.com/cs124/pa7-agent/blob/main/synthetic_users.py) in PA7.
+| movie | liked? |
+|------:|:------:|
+|    M1 |    0   |
+|    M2 |    0   |
+|    M3 |    1   |
+|    M4 |    0   |
+|    M5 |    1   |
+|    M6 |    0   |
 
-Start by binarizing the ratings!  We will use the following cutoffs (same as PA7):
-
-0 $\lt$ rating $\leq$ 2.5: **-1**
-
-Unrated: **0**
-
-2.5 $\lt$ rating $\leq$ 5: **1**
-
-We fill out this table for you in the interest of time!  Please ensure you understand how we got this matrix!
-
-Binarized Matrix:
-|    | U1 | U2 | U3 | U4 |
-|----|---:|---:|---:|---:|
-| M1 | -1 |  1 |  1 |  0 |
-| M2 |  0 |  0 |  1 |  1 |
-| M3 | -1 |  1 |  0 | -1 |
-| M4 |  0 | -1 |  1 |  0 |
-| M5 |  0 |  1 |  1 |  1 |
-| M6 | -1 |  0 |  1 |  0 |
-
-
-New User:
-| movie | binarized rating |
-|-------|------------------|
-|    M1 |                0 |
-|    M2 |                0 |
-|    M3 |                1 |
-|    M4 |               -1 |
-|    M5 |                1 |
-|    M6 |                0 |
-
+This synthetic user below likes M3 and M5 (and hasn't liked the rest).
 
 ### Step 2: Compute Similarity Scores
 
-**Important Note:** In lecture and Quiz 8, you will use mean-centered overlapping cosine similarity. But here (and in PA7), we will use raw cosine similarity, NOT mean-centered overlapping item cosine similarity.
+**Important Note:** In lecture and Quiz 8, you use mean-centered overlapping cosine similarity. Here (and in PA7) we use **raw** cosine similarity on the rating rows—no mean-centering.
 
 Recall the formula for the cosine similarity of two vectors:
 
-$$\texttt{sim}(v_1,v_2) = \frac{v_1 \cdot v_2}{||v_1||||v_2||} = \frac{v_1 \cdot v_2}{\sqrt{\sum\nolimits_{i=1}^{n} v_{1,i}^{2}} \cdot \sqrt{\sum\nolimits_{i=1}^{n} v_{2,i}^{2}}}$$
+$$\texttt{sim}(M_i, M_j) = \frac{M_i \cdot M_j}{\|M_i\|\|M_j\|}$$
 
-Use the binarized vectors when computing the cosine similarity.  We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M3)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
+where $M_i$ is the **row vector of raw ratings** across dataset users (e.g. $M_1 = [1, 5, 3, 0]$, $M_5 = [0, 4, 3, 4]$).
 
+Compute the cosine similarity over all **movie** (item) row vectors. We provide a few of the calculations for you, fill in the similarities for $\texttt{sim}(M1, M3)$, $\texttt{sim}(M1, M5)$, and $\texttt{sim}(M5, M6)$.
 Note this is a symmetric matrix, that is $\texttt{sim}(M1,M2) = \texttt{sim}(M2,M1)$.
 
-Compute the cosine similarity over all the ***MOVIE*** (item) vectors.  These are the rows of the above matrix.
 
 |    | M1 | M2 |            M3 |           M4 |           M5 |          M6 |
 |----|---:|---:|--------------:|-------------:|-------------:|------------:|
-| M1 |  1 | 0.41 |          **??** |            0 |         **??** |        0.82 |
-| M2 |    |  1 | -0.41         | 0.5          | 0.82         |         0.5 |
-| M3 |    |    |             1 |        -0.41 |            0 |        0.41 |
-| M4 |    |    |               |            1 |            0 |         0.5 |
+| M1 |  1 | 0.40 |          **??** |         0.83 |         **??** |        0.53 |
+| M2 |    |  1 | 0.14          | 0.70         | 0.76         |        0.74 |
+| M3 |    |    |             1 | 0.39         | 0.68         |        0.14 |
+| M4 |    |    |               |            1 | 0.70         |        0.85 |
 | M5 |    |    |               |              |            1 |         **??**  |
 | M6 |    |    |               |              |              |          1  |
 
-$\texttt{sim}(M1, M3)$ = ??
+$\texttt{sim}(M1, M3)$ = ??  
 
-$\texttt{sim}(M1, M5)$ = ??
+$\texttt{sim}(M1, M5)$ = ??  
 
 $\texttt{sim}(M5, M6)$ = ??
 
-### Step 3: Compute New User's Ratings
+### Step 3: Score each candidate movie (for ranking)
 
-**Important Note:** In lecture and Quiz 8, you will normalize the rating by dividing the sum of the similarity scores. But here (and in PA7), we will NOT do normalization.
+**Important:** In lecture and Quiz 8, you may normalize by the sum of similarities. Here (and in PA7) we do **not** normalize.
 
-Based on the New User's provided ratings for movies 3, 4, and 5, predict how they would rate movies 1, 2, and 6.
+For each movie the user has **not** put on their profile, we compute a **score**—the sum of its similarities to every movie on their profile. These scores are used only to **rank** candidates (higher = more similar to their likes); they are not predicted ratings on a 1–5 scale.
 
-We will take the weighted average over the binarized ratings of all movies rated by the new user.  We will weigh on similarity.
+For each movie $j$ with $\texttt{liked}[j] = 0$, compute:
 
-For example the predicted rating for movie 2 is:
+$$\texttt{score}(j) = \sum_{i \in L} \texttt{sim}(j, i)$$
 
-$\texttt{Rating}(M2) = \texttt{sim}(M2,M3) \cdot \texttt{binarized rating M3} + $
-$\texttt{sim}(M2,M4) \cdot \texttt{binarized rating M4} + $
-$\texttt{sim}(M2,M5) \cdot \texttt{binarized rating M5}$
+where $L$ is the set of movies the synthetic user put on their profile (the ones with 1). So we're just **summing similarities to liked movies**.
 
-$\texttt{Rating}(M2) = (-0.41)(1) + (0.5)(-1) + (0.82)(1) = -0.09$
+Because the user vector is 0/1, this is the same as:
 
-Now you calculate for M1 and M6.
+$$\texttt{score}(j) = \sum_i \texttt{sim}(j, i) \cdot \texttt{liked}[i]$$
+
+For our example (user likes M3 and M5):
+
+- $\texttt{score}(M1) = \texttt{sim}(M1, M3) + \texttt{sim}(M1, M5)$
+- $\texttt{score}(M2) = \texttt{sim}(M2, M3) + \texttt{sim}(M2, M5)$
+- $\texttt{score}(M6) = \texttt{sim}(M6, M3) + \texttt{sim}(M6, M5)$
+
+**Example:** $\texttt{score}(M2) = \texttt{sim}(M2,M3) + \texttt{sim}(M2,M5) = 0.14 + 0.76 = 0.90$
+
+Now you calculate $\texttt{score}(M1)$ and $\texttt{score}(M6)$.
 
 ### Step 4: Recommend a Movie
 
-Now that we have the expected ratings of the user for the movies they have not seen we need to actually recommend a movie.  Recommend the movie with the highest predicted rating!
+Now that we have a **score** for each candidate movie (M1, M2, M6), recommend the movie with the **highest score**.
 
-## Part 2: The use of LLMs in the classroom (~50 min)
-For this next section, form groups of 3-4 people as always. Your goal for today is to collaborate on developing a clear, concise policy on using generative AI tools (e.g. ChatGPT, Copilot) for CS 124 for Dan to use in next year’s course! You’ll first  examine some policies from other classes at Stanford. Then, by the end of today, you and your group will develop your own policy! Feel free to work on one laptop or start a Google Doc for collaboration. Dan will then choose from your policies to create next year’s class policy. 
+## Part 2: The Use of LLMs in the Classroom (~50 min)
 
-### Review Existing Policies (~15 mins)
-Writing course policies on the use of generative AI in the classroom is hard; we need to balance the potential benefits of using these tools for both students and faculty against the potential educational harms that may arise from their misuse. Below, we’ve compiled some example course policies that balance these tradeoffs well. First, review those policies. As you review these policies, discuss the following questions among your group members. Spend no more than 15 minutes on this exercise:
-- What might be the benefits of a strict ban of generative AI tools in the classroom? What might be the drawbacks?
-- What might be the benefits of a policy that allows AI with disclosure? What risks does it introduce?
+### The AI Policy Problem (~5 min)
 
-<b>[CS 106B](https://web.stanford.edu/class/cs106b/): strict prohibition of AI <br/></b>
+Fill in your lab answers (one per person) for this portion [here](https://docs.google.com/forms/d/e/1FAIpQLSeCJ0PuQIQU8gmQcUAuVsw72UnzIBpbVGCia24QQdqTCj6raQ/viewform?usp=publish-editor). This will also count as attendance! 
 
-The syllabus from CS106B states: <i>University guidance on the use of generative AI in classroom settings treats use of generative AI analogously to receiving assistance from another human. As a result, using ChatGPT or other generative AI tools on any graded work is a violation of the Honor Code, regardless of whether that use is disclosed.</i><br/>
-<br/>
+Before we dive in, let's take a quick pulse of the room.
 
-<b>[CS 224N](https://web.stanford.edu/class/cs224n/): allows AI assistance with the expectation that students independently produce and fully understand their solutions, treating AI as a “collaborator” with appropriate discussions <br/></b>
+**Think about the classes you're taking this quarter:**
 
-The syllabus from CS224N states: <i>Students are required to independently submit their solutions for CS224N homework assignments. Collaboration with generative AI tools such as Co-Pilot and ChatGPT is allowed, treating them as collaborators in the problem-solving process. However, the direct solicitation of answers or copying solutions, whether from peers or external sources, is strictly prohibited.</i><br/>
-<br/>
+* How many have an explicit policy on generative AI use?  
+* How many of those policies contradict each other?  
+* Have you ever felt unsure whether using an AI tool for a specific task was "allowed"?
 
-<b>[LINGUIST 130A/230A](https://web.stanford.edu/class/linguist130a/syllabus.html): views AI-generated content as "another person’s original work," meaning it must be properly cited if used. Excessive reliance on AI-generated text is unlikely to be evaluated positively.<br/></b>
 
-The syllabus from LINGUIST 130A/230A states: <i>We interpret "another person's original work" to include content that was produced by an AI writing assistant like ChatGPT. This follows either by treating the AI assistant as a person for the purposes of this policy (controversial) or acknowledging that the AI assistant was trained directly on people's original work. Thus, while you are not forbidden from using these tools, you should consider the above policy carefully and quote where appropriate. Assignments that are in large part quoted from an AI assistant are very unlikely to be evaluated positively. In addition, if a student's work is substantially identical to another student's work, that will be grounds for an investigation of plagiarism regardless of whether the prose was produced by an AI assistant.</i><br/>
-<br/>
+Stanford's [Generative AI Policy Guidance](https://communitystandards.stanford.edu/generative-ai-policy-guidance) provides a university-wide framework, but it leaves the specifics to each instructor. That means every class you take can have a completely different set of rules — and as a student, you're expected to track and follow all of them.
 
-After reading these course policies, spend some time with your group discussing the following questions regarding how LLMs might be used—or misused—in a variety of classroom and real-world scenarios:<br/>
+Today, you're going to grapple with *why* that's so hard. By the end of this lab, you and your group will have drafted an AI policy for a real Stanford course — and had another group try to break it.
 
-#### Homework Assignments
-- When might it be acceptable to use LLMs for coding or written homework? What harms might arise from using them (e.g. quality of learning, academic misconduct)?<br/>
-- What kind of disclosure should be required if students use LLMs for homework?<br/>
+---
 
-#### Grading & Feedback
-- For TAs or instructors, when do you think it would be okay to use an LLM to help grade assignments or provide feedback? What risks might arise from incorporating LLMs into the workflow of grading and giving feedback (e.g. privacy risks, errors in grading, quality of feedback)?<br/>
-- Should instructors disclose that AI was used in evaluating their work?<br/>
+### Gray Area Scenarios (~10 min)
 
-### Building Your Own Policy (~20 mins)
-After discussing the policies above with your group, spend the next ~20 minutes crafting your own Generative AI policy for CS 124. We expect <b><ins>2-4 short paragraphs</ins></b> (in total) to specify clear cases in which 1) students can use LLMs in their coursework, and 2) the teaching team can use LLMs in grading and providing feedback. Here’s how we recommend structuring your work:<br/>
-#### Trade Offs
-What might be lost if you ban the use of generative AI altogether? What would be gained? Where should the line be drawn between acceptable help and academic misconduct?
+Form groups of 3-4 people. Select a scribe and start a Google Doc to write your eventual attendance sheet submission responses. For each scenario below, discuss with your group for 2-3 minutes and decide: **Acceptable**, **Unacceptable**, or **It Depends**. There are no right answers, and the point is to surface where you and your groupmates disagree, and why.
 
-#### Identify Key Areas to Address
-1. <b>Scope:</b> Which assignments or activities does your policy cover? (e.g., homework, exams, coding projects, written reflections)
-2. <b>Allowed vs. Prohibited Uses:</b> 
-   - For students: Define what is allowed, such as brainstorming, debugging, etc.
-   - For the teaching team: Specify acceptable practices, including providing feedback on papers, autograding, or other instructional support.
-3. <b>Disclosure:</b> If you allow AI usage, must students disclose it? If so, how?
-4. <b>Consequences:</b> How does your policy tie into Stanford’s Honor Code? What happens if a student violates your AI rules?
+**Scenario 1 — PWR (Program in Writing and Rhetoric)**
 
-#### Draft a Concise Policy
-Work together with your group to write a <b><ins>2-4 short paragraph policy</ins></b> that clearly states how students in CS 124 can or cannot use generative AI tools. 
-Keep the language clear and direct, and feel free to use the examples we provided above as inspiration or jumping off points. 
+A student in PWR is working on an argumentative essay. They paste their draft into ChatGPT and ask it to "reorganize my argument to be more persuasive." They rewrite all the prose themselves, but the structure of the essay is now based on the AI's suggestion.
 
-#### Consider the Broader Impact
-Include a brief (1–2 sentence) explanation of why you made the choices you did. For example, if you’re allowing limited AI usage, how do you ensure it fosters learning rather than replacing it? Think about potential inequalities (e.g., some students may have more familiarity or better access to AI tools). Consider how your policy might affect collaboration and group work.
+**Scenario 2 — CS 124**
 
-#### Submission Instructions
-Save your file as a PDF, and submit at [this Google form](https://docs.google.com/forms/d/e/1FAIpQLSfdDQ4r5H9NE5S7U7-r3Juj5EHlsQrlA62WSi-7Kur93_sN2Q/viewform). This is also how we'll track your attendance for today's lab.
+A student working on a CS 124 programming assignment gets a cryptic error message. They paste the error into ChatGPT, which suggests a fix involving a regex pattern the student hasn't seen before. The student uses the fix and it works, but they aren't sure they could reproduce it on their own.
 
-### Conclusion & Share Out (~15 mins)
-We will now go back to the whole class and share out the policies you've created!
+**Scenario 3 — PWR**
+
+A non-native English speaker uses Claude to proofread and polish the grammar on their PWR essay before submitting. The ideas and arguments are entirely their own, but many sentences have been reworded by the AI.
+
+**Scenario 4 — CS 124**
+
+A student uses Cursor while working on a CS 124 PA. They write a comment describing what the function should do, and Cursor autocompletes the entire function. The student reviews it, confirms it looks right, and moves on.
+
+**Scenario 5 — Teaching Team**
+
+A TA uses an LLM to draft feedback comments on student assignments. The TA reviews and edits the AI-generated comments before posting them, but roughly 70% of the language in the final feedback was generated by the AI.
+
+After discussing, take note of where your group disagreed. Those disagreements are exactly the gaps that a written policy needs to address. **You will submit a summary of these disagreements in the attendance form (Q1).**
+
+---
+
+### Split Room: Draft Your Policy (~20 min)
+
+Now your group will draft a generative AI policy for a real Stanford course. Here's the twist: **not every course should have the same policy.**
+
+* **Side A of the room:** Draft a Gen AI policy for **CS 124** (an NLP course — coding-heavy, conceptual understanding matters, but AI tools are increasingly standard in the industry your students are entering).  
+* **Side B of the room:** Draft a Gen AI policy for **PWR** (Stanford's required writing course — the written output *is* the learning objective; developing your own voice, argument, and critical thinking is the entire point).
+
+Work together on your shared Google Doc. Your policy should be **2-4 short paragraphs** and must address the following:
+
+**1\. Allowed vs. Prohibited Uses**
+
+* For students: What specific uses of Gen AI tools are permitted? What is off-limits? Be concrete — "don't use AI to cheat" is not a policy.  
+* For the teaching team: Can TAs or instructors use AI in grading, feedback, or lesson planning? Under what conditions?
+
+**2\. Disclosure Requirements**
+
+* If AI use is allowed, must students disclose it? How — a footnote, a separate statement, an honor code checkbox?
+
+**3\. Consequences**
+
+* How does your policy connect to Stanford's Honor Code? What happens if a student violates your AI rules? Be specific.
+
+**4\. Rationale (1-2 sentences)**
+
+* Why did your group make the choices it did? What is the core learning objective of this course, and how does your policy protect it?
+
+As you draft, think back to the scenarios from the previous exercise. **Your policy should be able to cleanly handle each scenario relevant to your course.** If it can't, that's a sign something is underspecified. **You will submit your policy in the attendance form (Q2).**
+
+---
+
+### Stress Test Swap (~10 min)
+
+Time to break each other's policies.
+
+Each **CS 124 group** will swap their draft with a **PWR group** (and vice versa). Your job as the reviewing group:
+
+1. **Find the loopholes.** Identify a realistic scenario where a student could technically comply with the policy while clearly undermining the learning objective.  
+2. **Find the edge case.** What about a student with a disability who uses AI as an accessibility tool? What about a student who uses AI to understand the assignment prompt but not to complete it? What about a student with more money that can afford fancier language models?  
+3. **Find the ambiguity.** Is there any phrase in the policy that two reasonable people could interpret differently?
+
+Write **2-3 specific critiques** and pass the policy back. Original groups: review the feedback and note what you would revise. **You will submit a summary of these critiques in the attendance form (Q3).**
+
+---
+
+### Share Out & Wrap-Up (~5 min)
+
+Let's come back together as a class. A few questions for the room:
+
+* **Which course was harder to write a policy for — and why?**  
+* **Did any group find that their scenario verdicts from earlier contradicted the policy they ended up writing?**  
+* **What's the one thing you think every AI policy should include, regardless of the course?**
+
+The key takeaway: there is no universal AI policy that works for every class, because the *learning objective* of a course should drive the policy. A writing class where the output is the learning and a CS class where the output demonstrates the learning require fundamentally different rules — even if they're both happening on the same campus, in the same quarter, for the same students.
