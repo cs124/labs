@@ -110,6 +110,8 @@ Now that we have a **score** for each candidate movie (M1, M2, M6), recommend th
 
 ### The AI Policy Problem (~5 min)
 
+Fill in your lab answers (one per person) for this portion [here](https://docs.google.com/forms/d/e/1FAIpQLSeCJ0PuQIQU8gmQcUAuVsw72UnzIBpbVGCia24QQdqTCj6raQ/viewform?usp=publish-editor). This will also count as attendance! 
+
 Before we dive in, let's take a quick pulse of the room.
 
 **Think about the classes you're taking this quarter:**
@@ -117,6 +119,7 @@ Before we dive in, let's take a quick pulse of the room.
 * How many have an explicit policy on generative AI use?  
 * How many of those policies contradict each other?  
 * Have you ever felt unsure whether using an AI tool for a specific task was "allowed"?
+
 
 Stanford's [Generative AI Policy Guidance](https://communitystandards.stanford.edu/generative-ai-policy-guidance) provides a university-wide framework, but it leaves the specifics to each instructor. That means every class you take can have a completely different set of rules — and as a student, you're expected to track and follow all of them.
 
